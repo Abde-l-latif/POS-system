@@ -18,7 +18,7 @@ namespace PosPresentationLayer
 
         static public string GenerateProtectedKey()
         {
-            byte[] keyBytes = new byte[16]; // AES-128
+            byte[] keyBytes = new byte[16]; 
             using (var rng = new RNGCryptoServiceProvider())
                 rng.GetBytes(keyBytes);
 
