@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using PosPresentationLayer.UsersFolder;
+using PosPresentationLayer.PeopleFolder;
 
 namespace PosPresentationLayer
 {
@@ -21,6 +22,10 @@ namespace PosPresentationLayer
             fm.ShowDialog();
         }
 
-     
+        private void addPersonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddUpdatePersonScreen fm = new AddUpdatePersonScreen();
+            fm.ShowDialog();
+        }
     }
 }

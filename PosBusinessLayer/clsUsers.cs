@@ -14,7 +14,7 @@ namespace PosBusinessLayer
 
         private enMode _Mode = enMode.AddMode;
 
-        public int UserID { get; }
+        public int UserID { get; private set; }
 
         public int PersonID { get; set; }
 

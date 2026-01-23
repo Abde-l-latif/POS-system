@@ -32,6 +32,8 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.securityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,7 +42,8 @@
             this.menuStrip1.AutoSize = false;
             this.menuStrip1.BackColor = System.Drawing.Color.IndianRed;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsToolStripMenuItem});
+            this.settingsToolStripMenuItem,
+            this.personsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
@@ -69,7 +72,7 @@
             this.securityToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.securityIcons;
             this.securityToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.securityToolStripMenuItem.Name = "securityToolStripMenuItem";
-            this.securityToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.securityToolStripMenuItem.Size = new System.Drawing.Size(137, 30);
             this.securityToolStripMenuItem.Text = "Security ";
             // 
             // changePasswordToolStripMenuItem
@@ -81,6 +84,29 @@
             this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(192, 30);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            // 
+            // personsToolStripMenuItem
+            // 
+            this.personsToolStripMenuItem.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.personsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addPersonToolStripMenuItem});
+            this.personsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.personsToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.demographic;
+            this.personsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.personsToolStripMenuItem.Name = "personsToolStripMenuItem";
+            this.personsToolStripMenuItem.Size = new System.Drawing.Size(94, 37);
+            this.personsToolStripMenuItem.Text = "People";
+            // 
+            // addPersonToolStripMenuItem
+            // 
+            this.addPersonToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.addPersonToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.person_boy;
+            this.addPersonToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addPersonToolStripMenuItem.Name = "addPersonToolStripMenuItem";
+            this.addPersonToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.addPersonToolStripMenuItem.Text = "Add Person";
+            this.addPersonToolStripMenuItem.Click += new System.EventHandler(this.addPersonToolStripMenuItem_Click);
             // 
             // MainScreen
             // 
@@ -108,5 +134,7 @@
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem securityToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem personsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addPersonToolStripMenuItem;
     }
 }

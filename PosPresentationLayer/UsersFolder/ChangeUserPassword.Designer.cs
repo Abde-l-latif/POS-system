@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.LBtitle = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.changePasswordContole1 = new PosPresentationLayer.UsersFolder.Controls.ChangePasswordContole();
             this.userInformationControle1 = new PosPresentationLayer.UsersFolder.Controls.UserInformationControle();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,16 +46,6 @@
             this.LBtitle.TabIndex = 1;
             this.LBtitle.Text = "Change Password Screen";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PosPresentationLayer.Properties.Resources.changePasswordTitleIcon;
-            this.pictureBox1.Location = new System.Drawing.Point(281, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(90, 74);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // changePasswordContole1
             // 
             this.changePasswordContole1.Location = new System.Drawing.Point(3, 251);
@@ -67,10 +57,20 @@
             // userInformationControle1
             // 
             this.userInformationControle1.Location = new System.Drawing.Point(3, 125);
-            this.userInformationControle1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userInformationControle1.Margin = new System.Windows.Forms.Padding(4);
             this.userInformationControle1.Name = "userInformationControle1";
             this.userInformationControle1.Size = new System.Drawing.Size(656, 127);
             this.userInformationControle1.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PosPresentationLayer.Properties.Resources.changePasswordTitleIcon;
+            this.pictureBox1.Location = new System.Drawing.Point(281, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(90, 74);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // ChangeUserPassword
             // 

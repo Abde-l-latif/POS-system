@@ -49,6 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsGlobal.cs" />
+    <Compile Include="PeopleFolder\AddUpdatePersonScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PeopleFolder\AddUpdatePersonScreen.Designer.cs">
+      <DependentUpon>AddUpdatePersonScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsersFolder\ChangeUserPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
       <DependentUpon>UserInformationControle.cs</DependentUpon>
     </Compile>
     <Compile Include="utilitiesFolder\CustomMenuRenderer.cs" />
+    <EmbeddedResource Include="PeopleFolder\AddUpdatePersonScreen.resx">
+      <DependentUpon>AddUpdatePersonScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UsersFolder\ChangeUserPassword.resx">
       <DependentUpon>ChangeUserPassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +167,33 @@
       <Project>{5725005d-73be-4dd0-9b41-c0c607ac87d6}</Project>
       <Name>PosBusinessLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\demographic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_boy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_little_boy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_little_girl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_woman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
