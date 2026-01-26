@@ -16,9 +16,15 @@ namespace PosPresentationLayer.PeopleFolder
 {
     public partial class AddUpdatePersonScreen : Form
     {
-        clsPeople person;
 
-        char _Gender;
+        public event EventHandler<int> SelectPersonID;
+        enum enMode { addMode , UpdateMode}
+
+        private enMode _Mode = enMode.addMode;
+
+        clsPeople person = new clsPeople();
+
+        string _Gender;
 
         string _ImagePath = "";
 
@@ -26,34 +32,146 @@ namespace PosPresentationLayer.PeopleFolder
 
         public AddUpdatePersonScreen()
         {
+            _Mode = enMode.addMode;
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            InitializeGender();
-            InitializeProfile();
-            dateTimePicker1.MaxDate = DateTime.Now.AddYears(-18);
-            dateTimePicker1.MinDate = DateTime.Now.AddYears(-100);
+            _InitializeUI();
         }
 
-        private void InitializeGender()
+        public AddUpdatePersonScreen(int ID)
+        {
+            _Mode = enMode.UpdateMode;
+            InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
+            person = clsPeople.GetPersonByID(ID);
+            _InitializeUI();
+        }
+
+        private void _InitializeGender()
         {
             if(radioMale.Checked)
             {
-                _Gender = 'M';
+                _Gender = "M";
             }
             else 
             {
-                _Gender = 'F';
+                _Gender = "F";
             }
         }
 
-        private void InitializeProfile()
+        private void _InitializeProfile()
         {
-            if(_Gender == 'M')
+            if(_Gender == "M")
             {
                 pictureTitle.Image = Resources.person_man;
             }
             else
                 pictureTitle.Image = Resources.person_woman;
+        }
+
+        private void _InitializeDate()
+        {
+            dateTimePicker1.MaxDate = DateTime.Now.AddYears(-18);
+            dateTimePicker1.MinDate = DateTime.Now.AddYears(-100);
+        }
+
+        private void _InitializeUI()
+        {
+
+            _InitializeGender();
+            _InitializeProfile();
+            _InitializeDate();
+
+            if(_Mode == enMode.addMode)
+            {
+                LBtitle.Text = "Add Person Screen";
+                pictureBoxTitle.Image = Resources._operator;
+            }
+            else
+            {
+                LBtitle.Text = "Edit Person Screen";
+                pictureBoxTitle.Image = Resources.operatorEdit;
+
+                textFirstName.Text = person.FirstName; 
+                textLastName.Text = person.LastName;
+                textAddress.Text = person.PersonAddress;
+                dateTimePicker1.Value = person.BirthDate;
+                textPhone.Text = person.Phones[0].PhoneNumber.ToString();
+
+                if (person.Phones.Count > 1)
+                    textPhone2.Text = person.Phones[1].PhoneNumber.ToString();
+                else
+                    textPhone2.Text = "";
+
+                if (person.Gender == "M")
+                {
+                    _Gender = "M";
+                    radioMale.Checked = true;
+                    pictureTitle.Image = Resources.person_man;
+                }
+                else
+                {
+                    _Gender = "F";
+                    radioFemale.Checked = true;
+                    pictureTitle.Image = Resources.person_woman;
+                }
+
+                if (person.PersonImage == "")
+                    return;
+                else
+                    pictureTitle.Load(person.PersonImage); 
+            }
+        }
+
+        private void _HandelPhones()
+        {
+            if(_Mode == enMode.UpdateMode)
+            {
+
+                person.Phones[0].PhoneNumber = textPhone.Text;
+
+                if (person.Phones.Count > 1 && string.IsNullOrEmpty(textPhone2.Text))
+                {
+                    if (person.Phones[1].Delete())
+                    {
+                        person.Phones.RemoveAt(1);
+                    }
+
+                }
+                else if (person.Phones.Count == 1 && !string.IsNullOrEmpty(textPhone2.Text))
+                {
+                    clsPhones ph = new clsPhones();
+                    ph.PhoneNumber = textPhone2.Text;
+                    ph.PersonID = person.PersonID;
+
+                    if(ph.Save())
+                    {
+                        person.Phones.Add(ph);
+                    }
+
+                } else if(person.Phones.Count > 1 && !string.IsNullOrEmpty(textPhone2.Text))
+                {
+                    person.Phones[1].PhoneNumber = textPhone2.Text;
+                }
+
+
+
+            }
+            else if(_Mode == enMode.addMode)
+            {
+
+                clsPhones Phone = new clsPhones();
+                Phone.PhoneNumber = textPhone.Text;
+                person.Phones.Add(Phone);
+
+                if (!string.IsNullOrEmpty(textPhone2.Text))
+                {
+                    clsPhones Phone2 = new clsPhones();
+                    Phone2.PhoneNumber = textPhone2.Text;
+                    person.Phones.Add(Phone2);
+                }
+            }
+
         }
 
 
@@ -65,37 +183,28 @@ namespace PosPresentationLayer.PeopleFolder
                 return;
             }
 
-            person = new clsPeople();
-
             person.FirstName = textFirstName.Text;
             person.LastName = textLastName.Text;
             person.PersonAddress = textAddress.Text;
             person.BirthDate = Convert.ToDateTime(dateTimePicker1.Text);
             person.Gender = _Gender;
 
-            clsPhones Phone = new clsPhones();
-            Phone.PhoneNumber = textPhone.Text;
-            person.Phones.Add(Phone);
-
-            if (!string.IsNullOrEmpty(textPhone2.Text))
-            {
-                clsPhones Phone2 = new clsPhones();
-                Phone2.PhoneNumber = textPhone2.Text;
-                person.Phones.Add(Phone2);
-            }
-
+            _HandelPhones();
 
             _DeleteFromFolderIfIsMarked();
+
             person.PersonImage = _ImagePath;
 
             if(person.Save())
             {
                 LBpersonID.Text = person.PersonID.ToString();
+                SelectPersonID?.Invoke(this, person.PersonID);
                 MessageBox.Show("Operation Done successfully !", "succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
   
                 this.FormClosing -= AddUpdatePersonScreen_FormClosing;
 
                 this.Close();
+
                 return;
             }
             else
@@ -113,12 +222,12 @@ namespace PosPresentationLayer.PeopleFolder
 
             if (rb == radioMale)
             {
-                _Gender = 'M';
+                _Gender = "M";
                 pictureTitle.Image = Resources.person_man;
             }
             else if (rb == radioFemale)
             {
-                _Gender = 'F';
+                _Gender = "F";
                 pictureTitle.Image = Resources.person_woman;
             }
         }
@@ -194,7 +303,7 @@ namespace PosPresentationLayer.PeopleFolder
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            InitializeProfile();
+            _InitializeProfile();
 
             _MarkDeleteImage = true;
 

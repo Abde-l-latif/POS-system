@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.textPhone2 = new System.Windows.Forms.TextBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -61,7 +62,7 @@
             this.LBtitle = new System.Windows.Forms.Label();
             this.BTNSave = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.pictureBoxTitle = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -73,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTitle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTitle)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -103,12 +105,20 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.groupBox1.Location = new System.Drawing.Point(3, 66);
+            this.groupBox1.Location = new System.Drawing.Point(11, 132);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(610, 238);
+            this.groupBox1.Size = new System.Drawing.Size(668, 238);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Person";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(369, 108);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(106, 23);
+            this.dateTimePicker1.TabIndex = 27;
             // 
             // label9
             // 
@@ -253,7 +263,7 @@
             this.textAddress.Location = new System.Drawing.Point(369, 152);
             this.textAddress.Multiline = true;
             this.textAddress.Name = "textAddress";
-            this.textAddress.Size = new System.Drawing.Size(213, 67);
+            this.textAddress.Size = new System.Drawing.Size(235, 67);
             this.textAddress.TabIndex = 6;
             this.textAddress.Validating += new System.ComponentModel.CancelEventHandler(this.textAddress_Validating);
             // 
@@ -402,11 +412,11 @@
             // 
             // LBtitle
             // 
-            this.LBtitle.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBtitle.Font = new System.Drawing.Font("Microsoft YaHei", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBtitle.ForeColor = System.Drawing.Color.IndianRed;
-            this.LBtitle.Location = new System.Drawing.Point(154, 23);
+            this.LBtitle.Location = new System.Drawing.Point(195, 103);
             this.LBtitle.Name = "LBtitle";
-            this.LBtitle.Size = new System.Drawing.Size(305, 26);
+            this.LBtitle.Size = new System.Drawing.Size(305, 31);
             this.LBtitle.TabIndex = 2;
             this.LBtitle.Text = "Add Person Screen";
             this.LBtitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -420,7 +430,7 @@
             this.BTNSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTNSave.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNSave.ForeColor = System.Drawing.Color.White;
-            this.BTNSave.Location = new System.Drawing.Point(481, 310);
+            this.BTNSave.Location = new System.Drawing.Point(515, 372);
             this.BTNSave.Name = "BTNSave";
             this.BTNSave.Size = new System.Drawing.Size(132, 28);
             this.BTNSave.TabIndex = 7;
@@ -432,19 +442,22 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // dateTimePicker1
+            // pictureBoxTitle
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(369, 108);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(106, 23);
-            this.dateTimePicker1.TabIndex = 27;
+            this.pictureBoxTitle.Image = global::PosPresentationLayer.Properties.Resources._operator;
+            this.pictureBoxTitle.Location = new System.Drawing.Point(302, 8);
+            this.pictureBoxTitle.Name = "pictureBoxTitle";
+            this.pictureBoxTitle.Size = new System.Drawing.Size(88, 88);
+            this.pictureBoxTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxTitle.TabIndex = 8;
+            this.pictureBoxTitle.TabStop = false;
             // 
             // AddUpdatePersonScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 350);
+            this.ClientSize = new System.Drawing.Size(692, 405);
+            this.Controls.Add(this.pictureBoxTitle);
             this.Controls.Add(this.BTNSave);
             this.Controls.Add(this.LBtitle);
             this.Controls.Add(this.groupBox1);
@@ -467,6 +480,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTitle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTitle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -506,5 +520,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.PictureBox pictureBoxTitle;
     }
 }

@@ -55,6 +55,36 @@
     <Compile Include="PeopleFolder\AddUpdatePersonScreen.Designer.cs">
       <DependentUpon>AddUpdatePersonScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="PeopleFolder\Controls\personDetailsWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PeopleFolder\Controls\personDetailsWithFilter.Designer.cs">
+      <DependentUpon>personDetailsWithFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PeopleFolder\FindPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PeopleFolder\FindPerson.Designer.cs">
+      <DependentUpon>FindPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PeopleFolder\ManagePeople.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PeopleFolder\ManagePeople.Designer.cs">
+      <DependentUpon>ManagePeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PeopleFolder\Controls\PersonDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PeopleFolder\Controls\PersonDetails.Designer.cs">
+      <DependentUpon>PersonDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PeopleFolder\PersonDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PeopleFolder\PersonDetailsForm.Designer.cs">
+      <DependentUpon>PersonDetailsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsersFolder\ChangeUserPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +120,21 @@
     <Compile Include="utilitiesFolder\CustomMenuRenderer.cs" />
     <EmbeddedResource Include="PeopleFolder\AddUpdatePersonScreen.resx">
       <DependentUpon>AddUpdatePersonScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PeopleFolder\Controls\personDetailsWithFilter.resx">
+      <DependentUpon>personDetailsWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PeopleFolder\FindPerson.resx">
+      <DependentUpon>FindPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PeopleFolder\ManagePeople.resx">
+      <DependentUpon>ManagePeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PeopleFolder\Controls\PersonDetails.resx">
+      <DependentUpon>PersonDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PeopleFolder\PersonDetailsForm.resx">
+      <DependentUpon>PersonDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsersFolder\ChangeUserPassword.resx">
       <DependentUpon>ChangeUserPassword.cs</DependentUpon>
@@ -194,6 +239,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\operator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\operatorEdit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\demographic %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\patient_information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FindPerson.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

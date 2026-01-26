@@ -27,5 +27,17 @@ namespace PosPresentationLayer
             AddUpdatePersonScreen fm = new AddUpdatePersonScreen();
             fm.ShowDialog();
         }
+
+        private void managePeopleListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManagePeople fm = new ManagePeople();
+            fm.ShowDialog();
+        }
+
+        private void findPersonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FindPerson fm = new FindPerson();
+            fm.ShowDialog();
+        }
     }
 }

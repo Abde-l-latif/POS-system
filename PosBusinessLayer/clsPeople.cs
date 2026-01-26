@@ -6,6 +6,8 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Runtime.CompilerServices;
 
 namespace PosBusinessLayer
 {
@@ -27,7 +29,7 @@ namespace PosBusinessLayer
 
         public string PersonImage { get; set; }
 
-        public char Gender { get; set; }
+        public string Gender { get; set; }
 
         public List<clsPhones> Phones { get; set; }
 
@@ -37,10 +39,63 @@ namespace PosBusinessLayer
             Phones = new List<clsPhones>();
         }
 
+        public clsPeople(int PersonID, string FirstName, string LastName, DateTime BirthDate,
+            string PersonAddress, string PersonImage, string Gender , List<clsPhones> Phones)
+        {
+            _Mode = enMode.updateMode;
+            this.PersonID = PersonID;
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.BirthDate = BirthDate;
+            this.PersonAddress = PersonAddress;
+            this.PersonImage = PersonImage;
+            this.Gender = Gender;
+            this.Phones = Phones;
+
+        }
+
         private bool _AddPerson()
         {
             this.PersonID = clsDataPeople.InsertPerson(this.FirstName, this.LastName, this.BirthDate, this.PersonAddress, this.PersonImage, this.Gender);
             return this.PersonID != -1; 
+        }
+
+        private bool _UpdatePerson()
+        {
+            return clsDataPeople.UpdatePerson(this.PersonID, this.FirstName, this.LastName, this.BirthDate, this.PersonAddress, this.PersonImage, this.Gender);
+        }
+
+        static public clsPeople GetPersonByID(int ID)
+        {
+
+            string FirstName = "", LastName = "" , PersonAddress = "" , PersonImage = "";
+            DateTime BirthDate = DateTime.Now;
+            string Gender = "";
+            List<clsPhones> Phones = new List<clsPhones>();
+
+
+            if (clsDataPeople.SelectPersonByID(ID, ref FirstName, ref LastName, ref BirthDate,
+            ref PersonAddress, ref PersonImage, ref Gender))
+            {
+                DataTable DT = clsPhones.GetPersonPhones(ID); 
+
+                foreach(DataRow row in DT.Rows)
+                {
+                    Phones.Add(new clsPhones((int)row["PhoneID"], (string)row["PhoneNumber"], (int)row["PersonID"]));
+                }
+
+                return new clsPeople(ID, FirstName, LastName, BirthDate,
+                PersonAddress, PersonImage, Gender, Phones);
+
+            }
+            else
+                return null;
+        }
+
+
+        static public DataTable GetPeopleList()
+        {
+            return clsDataPeople.SelectAllPeopleData();
         }
 
         public bool Save()
@@ -69,9 +124,28 @@ namespace PosBusinessLayer
                
      
             }
+            else if(_Mode == enMode.updateMode)
+            {
+                using (var scope = new TransactionScope())
+                {
+                    if (_UpdatePerson())
+                    {
+                        foreach (var phone in Phones)
+                        {
+                            if (!phone.Save())
+                                return false;
+                        }
+                    }
+                    else
+                        return false;
+
+                    scope.Complete();
+                    return true;
+                }
+            }
 
 
-            return false; 
+                return false; 
         }
 
     }
