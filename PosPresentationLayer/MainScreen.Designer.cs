@@ -37,6 +37,8 @@
             this.findPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managePeopleListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +49,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
             this.personsToolStripMenuItem,
-            this.managementToolStripMenuItem});
+            this.managementToolStripMenuItem,
+            this.aToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
@@ -76,7 +79,7 @@
             this.securityToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.securityIcons;
             this.securityToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.securityToolStripMenuItem.Name = "securityToolStripMenuItem";
-            this.securityToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.securityToolStripMenuItem.Size = new System.Drawing.Size(137, 30);
             this.securityToolStripMenuItem.Text = "Security ";
             // 
             // changePasswordToolStripMenuItem
@@ -109,7 +112,7 @@
             this.addPersonToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.person_boy;
             this.addPersonToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addPersonToolStripMenuItem.Name = "addPersonToolStripMenuItem";
-            this.addPersonToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.addPersonToolStripMenuItem.Size = new System.Drawing.Size(157, 30);
             this.addPersonToolStripMenuItem.Text = "Add Person";
             this.addPersonToolStripMenuItem.Click += new System.EventHandler(this.addPersonToolStripMenuItem_Click);
             // 
@@ -119,7 +122,7 @@
             this.findPersonToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.FindPerson;
             this.findPersonToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.findPersonToolStripMenuItem.Name = "findPersonToolStripMenuItem";
-            this.findPersonToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.findPersonToolStripMenuItem.Size = new System.Drawing.Size(157, 30);
             this.findPersonToolStripMenuItem.Text = "Find Person";
             this.findPersonToolStripMenuItem.Click += new System.EventHandler(this.findPersonToolStripMenuItem_Click);
             // 
@@ -145,6 +148,21 @@
             this.managePeopleListToolStripMenuItem.Size = new System.Drawing.Size(213, 38);
             this.managePeopleListToolStripMenuItem.Text = "Manage People List";
             this.managePeopleListToolStripMenuItem.Click += new System.EventHandler(this.managePeopleListToolStripMenuItem_Click);
+            // 
+            // aToolStripMenuItem
+            // 
+            this.aToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addUserToolStripMenuItem});
+            this.aToolStripMenuItem.Name = "aToolStripMenuItem";
+            this.aToolStripMenuItem.Size = new System.Drawing.Size(47, 37);
+            this.aToolStripMenuItem.Text = "Users";
+            // 
+            // addUserToolStripMenuItem
+            // 
+            this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addUserToolStripMenuItem.Text = "Add User";
+            this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // MainScreen
             // 
@@ -177,5 +195,7 @@
         private System.Windows.Forms.ToolStripMenuItem managementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem managePeopleListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem findPersonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
     }
 }

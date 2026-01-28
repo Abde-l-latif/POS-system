@@ -192,5 +192,42 @@ namespace PosDataAccessLayer
                 return EffectedRows != 0 ;
             }
         }
+
+        static public bool IsPersonExist(int PersonID)
+        {
+            bool Exists = false;
+
+            using (SqlConnection connection = new SqlConnection(clsDataSettings.ConnectionString))
+            {
+                try
+                {
+
+                    using (SqlCommand command = new SqlCommand("sp_IsPersonExist", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Input parameters
+                        command.Parameters.AddWithValue("@PersonID", PersonID);
+
+                        // Output parameter
+                        SqlParameter outputParam = new SqlParameter("@Exists", SqlDbType.Bit);
+                        outputParam.Direction = ParameterDirection.Output;
+                        command.Parameters.Add(outputParam);
+
+                        connection.Open();
+
+                        command.ExecuteNonQuery();
+
+                        Exists = Convert.ToBoolean(outputParam.Value);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
+            return Exists;
+        }
     }
 }

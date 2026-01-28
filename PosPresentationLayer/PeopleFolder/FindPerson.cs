@@ -15,6 +15,7 @@ namespace PosPresentationLayer.PeopleFolder
         public FindPerson()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
     }
 }

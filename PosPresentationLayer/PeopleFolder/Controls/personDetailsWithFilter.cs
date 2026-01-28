@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PosBusinessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,27 @@ namespace PosPresentationLayer.PeopleFolder.Controls
 {
     public partial class personDetailsWithFilter : UserControl
     {
+
+        public event EventHandler<int> PersonSelected;
+
         public personDetailsWithFilter()
         {
             InitializeComponent();
+        }
+
+        private bool _FilterField = true;
+
+        public bool FilterField
+        {
+            get
+            {
+                return _FilterField;
+            }
+            set
+            {
+                _FilterField = value;
+                groupBox1.Enabled = _FilterField;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,7 +44,16 @@ namespace PosPresentationLayer.PeopleFolder.Controls
                 return;
             }
 
-            personDetails1.FillByPersonID(Convert.ToInt32(textFilter.Text));
+            if(clsPeople.IsPersonExist(Convert.ToInt32(textFilter.Text)))
+            {
+
+                personDetails1.FillByPersonID(Convert.ToInt32(textFilter.Text));
+                PersonSelected?.Invoke(this, Convert.ToInt32(textFilter.Text));
+                FilterField = false;
+
+            }
+            else
+                MessageBox.Show("Person not found make sure you wrote the correct id ", "Not Found" , MessageBoxButtons.OK , MessageBoxIcon.Error);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -38,6 +66,8 @@ namespace PosPresentationLayer.PeopleFolder.Controls
         private void getPersonId(object sender , int id)
         {
             personDetails1.FillByPersonID(id);
+            PersonSelected?.Invoke(this, Convert.ToInt32(textFilter.Text));
+            FilterField = false;
         }
     }
 }

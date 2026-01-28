@@ -39,5 +39,11 @@ namespace PosPresentationLayer
             FindPerson fm = new FindPerson();
             fm.ShowDialog();
         }
+
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddUser fm = new AddUser();
+            fm.ShowDialog();
+        }
     }
 }

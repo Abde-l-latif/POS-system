@@ -283,6 +283,16 @@ namespace PosPresentationLayer.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap role {
+            get {
+                object obj = ResourceManager.GetObject("role", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search__1_ {
             get {
                 object obj = ResourceManager.GetObject("search__1_", resourceCulture);

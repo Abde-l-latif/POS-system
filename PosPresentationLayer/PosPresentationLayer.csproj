@@ -85,6 +85,12 @@
     <Compile Include="PeopleFolder\PersonDetailsForm.Designer.cs">
       <DependentUpon>PersonDetailsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsersFolder\AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersFolder\AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsersFolder\ChangeUserPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PeopleFolder\PersonDetailsForm.resx">
       <DependentUpon>PersonDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersFolder\AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsersFolder\ChangeUserPassword.resx">
       <DependentUpon>ChangeUserPassword.cs</DependentUpon>
@@ -266,6 +275,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\FindPerson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\role.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

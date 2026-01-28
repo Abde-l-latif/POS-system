@@ -92,6 +92,11 @@ namespace PosBusinessLayer
                 return null;
         }
 
+        static public bool IsPersonExist(int PersonID)
+        {
+            return clsDataPeople.IsPersonExist(PersonID);
+        }
+
 
         static public DataTable GetPeopleList()
         {

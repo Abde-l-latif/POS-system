@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices.WindowsRuntime;
 
@@ -132,6 +133,47 @@ namespace PosDataAccessLayer
             }
 
             return EffectedRows; 
+        }
+
+        static public int InsertUser(int PersonID, int RoleID, bool IsActive, string Username, string UserPassword)
+        {
+            int result = -1; 
+
+            using (SqlConnection connection = new SqlConnection(clsDataSettings.ConnectionString))
+            {
+                try
+                {
+
+                    using (SqlCommand command = new SqlCommand("sp_AddUserRow", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        // Input parameters
+                        command.Parameters.AddWithValue("@PersonID", PersonID);
+                        command.Parameters.AddWithValue("@RoleID", RoleID);
+                        command.Parameters.AddWithValue("@IsActive", IsActive);
+                        command.Parameters.AddWithValue("@Username", Username);
+                        command.Parameters.AddWithValue("@UserPassword", UserPassword);
+
+                        // Output parameter
+                        SqlParameter outputParam = new SqlParameter("@UserID", SqlDbType.Int);
+                        outputParam.Direction = ParameterDirection.Output;
+                        command.Parameters.Add(outputParam);
+
+                        connection.Open();
+
+                        command.ExecuteNonQuery();
+
+                       result = (int)outputParam.Value;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
+            return result;
         }
     }
 }

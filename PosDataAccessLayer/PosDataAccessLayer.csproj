@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="clsDataPeople.cs" />
     <Compile Include="clsDataPhones.cs" />
+    <Compile Include="clsDataRoles.cs" />
     <Compile Include="clsDataSettings.cs" />
     <Compile Include="clsDataUsers.cs" />
     <Compile Include="clsSecureInfo.cs" />

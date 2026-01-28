@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="clsPeople.cs" />
     <Compile Include="clsPhones.cs" />
+    <Compile Include="clsRoles.cs" />
     <Compile Include="clsUsers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

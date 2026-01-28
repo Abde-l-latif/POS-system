@@ -18,6 +18,9 @@ namespace PosBusinessLayer
 
         public int PersonID { get; set; }
 
+
+        public clsPeople Person;
+
         public int RoleID { get; set; }
 
         public bool IsActive { get; set; }
@@ -40,6 +43,7 @@ namespace PosBusinessLayer
         {
             this.UserID = UserID;
             this.PersonID = PersonID;
+            Person = clsPeople.GetPersonByID(PersonID);
             this.RoleID = RoleID;
             this.IsActive = IsActive;
             this.CreatedAt = CreatedAt;
@@ -84,12 +88,20 @@ namespace PosBusinessLayer
             return clsDataUsers.UpdateUserInformation(this.UserID, this.RoleID, this.IsActive, this.Username, this.UserPassword);
         }
 
+        private bool _AddUser()
+        {
+            this.UserID = clsDataUsers.InsertUser(this.PersonID , this.RoleID , this.IsActive, this.Username, this.UserPassword);
+            return this.UserID != -1;
+        }
+
         public bool Save()
         {
-            if(_Mode == enMode.UpdateMode)
+            if (_Mode == enMode.UpdateMode)
             {
                 return _UpdateUser();
             }
+            else if(_Mode == enMode.AddMode)
+                return _AddUser();
 
             return false;
         }
