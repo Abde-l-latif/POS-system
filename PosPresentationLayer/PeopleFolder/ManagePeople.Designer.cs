@@ -39,6 +39,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textFilter = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.LBrecords = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,7 +49,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 234);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 224);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1035, 296);
@@ -84,7 +85,7 @@
             // 
             this.LBtitle.Font = new System.Drawing.Font("Microsoft YaHei", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBtitle.ForeColor = System.Drawing.Color.IndianRed;
-            this.LBtitle.Location = new System.Drawing.Point(302, 143);
+            this.LBtitle.Location = new System.Drawing.Point(302, 133);
             this.LBtitle.Name = "LBtitle";
             this.LBtitle.Size = new System.Drawing.Size(433, 31);
             this.LBtitle.TabIndex = 3;
@@ -94,7 +95,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PosPresentationLayer.Properties.Resources.demographic__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(445, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(445, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(137, 128);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -105,7 +106,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 206);
+            this.label1.Location = new System.Drawing.Point(6, 196);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 4;
@@ -120,7 +121,7 @@
             "Person ID",
             "First Name",
             "Gender"});
-            this.comboBox1.Location = new System.Drawing.Point(74, 203);
+            this.comboBox1.Location = new System.Drawing.Point(74, 193);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(159, 24);
             this.comboBox1.TabIndex = 5;
@@ -128,7 +129,7 @@
             // 
             // textFilter
             // 
-            this.textFilter.Location = new System.Drawing.Point(241, 204);
+            this.textFilter.Location = new System.Drawing.Point(241, 194);
             this.textFilter.Name = "textFilter";
             this.textFilter.Size = new System.Drawing.Size(161, 22);
             this.textFilter.TabIndex = 6;
@@ -141,18 +142,30 @@
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = global::PosPresentationLayer.Properties.Resources.person_boy;
-            this.button2.Location = new System.Drawing.Point(408, 203);
+            this.button2.Location = new System.Drawing.Point(408, 193);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(43, 24);
             this.button2.TabIndex = 8;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // LBrecords
+            // 
+            this.LBrecords.AutoSize = true;
+            this.LBrecords.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBrecords.ForeColor = System.Drawing.Color.IndianRed;
+            this.LBrecords.Location = new System.Drawing.Point(966, 201);
+            this.LBrecords.Name = "LBrecords";
+            this.LBrecords.Size = new System.Drawing.Size(67, 17);
+            this.LBrecords.TabIndex = 9;
+            this.LBrecords.Text = "0 Records";
+            // 
             // ManagePeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1042, 533);
+            this.Controls.Add(this.LBrecords);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textFilter);
             this.Controls.Add(this.comboBox1);
@@ -185,5 +198,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textFilter;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label LBrecords;
     }
 }

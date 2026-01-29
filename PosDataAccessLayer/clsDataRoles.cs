@@ -17,13 +17,13 @@ namespace PosDataAccessLayer
 
             using (SqlConnection connection = new SqlConnection(clsDataSettings.ConnectionString))
             {
+                string Query = "SELECT * FROM Roles;";
+
                 try
                 {
 
-                    using (SqlCommand command = new SqlCommand("sp_GetAllRoles", connection))
+                    using (SqlCommand command = new SqlCommand(Query, connection))
                     {
-                        command.CommandType = CommandType.StoredProcedure;
-
                         connection.Open();
 
                         using (SqlDataReader reader = command.ExecuteReader())

@@ -8,6 +8,36 @@ namespace PosDataAccessLayer
     public class clsDataUsers
     {
 
+        static public DataTable GetAllUsersInformation()
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(clsDataSettings.ConnectionString))
+            {
+                string Query = "SELECT * FROM V_UsersInformation;";
+
+                try
+                {
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            dt.Load(reader);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
+            return dt;
+        }
+
         static public bool FindByUserID(int UserID, ref int PersonID, ref int RoleID, ref bool IsActive, ref DateTime CreatedAt,
             ref DateTime UpdatedAt, ref string Username, ref string UserPassword)
         {
@@ -141,30 +171,28 @@ namespace PosDataAccessLayer
 
             using (SqlConnection connection = new SqlConnection(clsDataSettings.ConnectionString))
             {
+                string query = @"INSERT INTO Users (PersonID , RoleID , IsActive , CreatedAt,  UpdatedAt , Username , UserPassword )
+                VALUES (@PersonID , @RoleID , @IsActive , GETDATE(), GETDATE() , @Username , @UserPassword);
+                SELECT SCOPE_IDENTITY();";
+
                 try
                 {
 
-                    using (SqlCommand command = new SqlCommand("sp_AddUserRow", connection))
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.CommandType = CommandType.StoredProcedure;
 
-                        // Input parameters
                         command.Parameters.AddWithValue("@PersonID", PersonID);
                         command.Parameters.AddWithValue("@RoleID", RoleID);
                         command.Parameters.AddWithValue("@IsActive", IsActive);
                         command.Parameters.AddWithValue("@Username", Username);
                         command.Parameters.AddWithValue("@UserPassword", UserPassword);
 
-                        // Output parameter
-                        SqlParameter outputParam = new SqlParameter("@UserID", SqlDbType.Int);
-                        outputParam.Direction = ParameterDirection.Output;
-                        command.Parameters.Add(outputParam);
-
                         connection.Open();
 
-                        command.ExecuteNonQuery();
+                        object id = command.ExecuteScalar();
 
-                       result = (int)outputParam.Value;
+                        result = Convert.ToInt32(id);
+
                     }
                 }
                 catch (Exception ex)

@@ -45,5 +45,11 @@ namespace PosPresentationLayer
             AddUser fm = new AddUser();
             fm.ShowDialog();
         }
+
+        private void manageUsersListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageUsersForm fm = new ManageUsersForm();
+            fm.ShowDialog();
+        }
     }
 }

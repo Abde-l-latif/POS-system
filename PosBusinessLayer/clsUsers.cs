@@ -1,6 +1,7 @@
 ﻿using PosDataAccessLayer;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -81,6 +82,11 @@ namespace PosBusinessLayer
             }
             else
                 return null;
+        }
+
+        static public DataTable GetAllUsers()
+        {
+            return clsDataUsers.GetAllUsersInformation(); 
         }
 
         private bool _UpdateUser()

@@ -43,6 +43,7 @@ namespace PosPresentationLayer.PeopleFolder
             dataGridView1.ReadOnly = true;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.AllowUserToAddRows = false;
+            LBrecords.Text = dataGridView1.Rows.Count.ToString() + " Records"; 
 
         }
 
@@ -64,6 +65,7 @@ namespace PosPresentationLayer.PeopleFolder
 
                 Dt = clsPeople.GetPeopleList();
                 dataGridView1.DataSource = Dt;
+                LBrecords.Text = dataGridView1.Rows.Count.ToString() + " Records";
             }
         }
 
@@ -93,6 +95,8 @@ namespace PosPresentationLayer.PeopleFolder
                         FilterWith = "none";
                         textFilter.Enabled = false;
                         textFilter.Text = "";
+                        Dt.DefaultView.RowFilter = "";
+                        LBrecords.Text = dataGridView1.Rows.Count.ToString() + " Records";
                         break;
                     }
             }
@@ -100,22 +104,19 @@ namespace PosPresentationLayer.PeopleFolder
 
         private void textFilter_TextChanged(object sender, EventArgs e)
         {
-
-            if(FilterWith == "none")
-            {
-                Dt.DefaultView.RowFilter = "";
+            if (textFilter.Text == "")
                 return;
-            }
 
             if(FilterWith != "PersonID")
             {
                 Dt.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'" , FilterWith, textFilter.Text);
-                return ;
             }
             else
             {
                 Dt.DefaultView.RowFilter = string.Format("CONVERT([{0}], 'System.String') Like '{1}%'", FilterWith, textFilter.Text);
             }
+
+            LBrecords.Text = dataGridView1.Rows.Count.ToString() + " Records";
         }
 
         private void button2_Click(object sender, EventArgs e)

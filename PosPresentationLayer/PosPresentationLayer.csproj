@@ -123,6 +123,12 @@
     <Compile Include="UsersFolder\Controls\UserInformationControle.Designer.cs">
       <DependentUpon>UserInformationControle.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsersFolder\ManageUsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersFolder\ManageUsersForm.Designer.cs">
+      <DependentUpon>ManageUsersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="utilitiesFolder\CustomMenuRenderer.cs" />
     <EmbeddedResource Include="PeopleFolder\AddUpdatePersonScreen.resx">
       <DependentUpon>AddUpdatePersonScreen.cs</DependentUpon>
@@ -169,6 +175,9 @@
     </Compile>
     <EmbeddedResource Include="UsersFolder\Controls\UserInformationControle.resx">
       <DependentUpon>UserInformationControle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersFolder\ManageUsersForm.resx">
+      <DependentUpon>ManageUsersForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -278,6 +287,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\role.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userss.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

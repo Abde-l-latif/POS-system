@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -195,36 +196,32 @@ namespace PosDataAccessLayer
 
         static public bool IsPersonExist(int PersonID)
         {
+
             bool Exists = false;
 
-            using (SqlConnection connection = new SqlConnection(clsDataSettings.ConnectionString))
+            using (SqlConnection Connection = new SqlConnection(clsDataSettings.ConnectionString))
             {
+                Connection.Open();
+
+                string Query = @"select found = 1 from Persons where PersonID = @PersonID;";
+
                 try
                 {
-
-                    using (SqlCommand command = new SqlCommand("sp_IsPersonExist", connection))
+ 
+                    using (SqlCommand Command = new SqlCommand(Query, Connection))
                     {
-                        command.CommandType = CommandType.StoredProcedure;
+                        Command.Parameters.AddWithValue("@PersonID", PersonID);
 
-                        // Input parameters
-                        command.Parameters.AddWithValue("@PersonID", PersonID);
+                        object result = Command.ExecuteScalar();
 
-                        // Output parameter
-                        SqlParameter outputParam = new SqlParameter("@Exists", SqlDbType.Bit);
-                        outputParam.Direction = ParameterDirection.Output;
-                        command.Parameters.Add(outputParam);
-
-                        connection.Open();
-
-                        command.ExecuteNonQuery();
-
-                        Exists = Convert.ToBoolean(outputParam.Value);
+                        Exists = Convert.ToInt32(result) == 1;
                     }
                 }
                 catch (Exception ex)
                 {
                     throw ex;
                 }
+
             }
 
             return Exists;

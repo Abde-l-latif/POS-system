@@ -39,6 +39,7 @@
             this.managePeopleListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageUsersListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             // 
             this.menuStrip1.AutoSize = false;
             this.menuStrip1.BackColor = System.Drawing.Color.IndianRed;
+            this.menuStrip1.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
             this.personsToolStripMenuItem,
@@ -79,7 +81,7 @@
             this.securityToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.securityIcons;
             this.securityToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.securityToolStripMenuItem.Name = "securityToolStripMenuItem";
-            this.securityToolStripMenuItem.Size = new System.Drawing.Size(137, 30);
+            this.securityToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.securityToolStripMenuItem.Text = "Security ";
             // 
             // changePasswordToolStripMenuItem
@@ -112,7 +114,7 @@
             this.addPersonToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.person_boy;
             this.addPersonToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addPersonToolStripMenuItem.Name = "addPersonToolStripMenuItem";
-            this.addPersonToolStripMenuItem.Size = new System.Drawing.Size(157, 30);
+            this.addPersonToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.addPersonToolStripMenuItem.Text = "Add Person";
             this.addPersonToolStripMenuItem.Click += new System.EventHandler(this.addPersonToolStripMenuItem_Click);
             // 
@@ -122,7 +124,7 @@
             this.findPersonToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.FindPerson;
             this.findPersonToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.findPersonToolStripMenuItem.Name = "findPersonToolStripMenuItem";
-            this.findPersonToolStripMenuItem.Size = new System.Drawing.Size(157, 30);
+            this.findPersonToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.findPersonToolStripMenuItem.Text = "Find Person";
             this.findPersonToolStripMenuItem.Click += new System.EventHandler(this.findPersonToolStripMenuItem_Click);
             // 
@@ -130,7 +132,8 @@
             // 
             this.managementToolStripMenuItem.BackColor = System.Drawing.Color.PaleVioletRed;
             this.managementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.managePeopleListToolStripMenuItem});
+            this.managePeopleListToolStripMenuItem,
+            this.manageUsersListToolStripMenuItem});
             this.managementToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.managementToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.managementToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.tools;
@@ -151,18 +154,36 @@
             // 
             // aToolStripMenuItem
             // 
+            this.aToolStripMenuItem.BackColor = System.Drawing.Color.PaleVioletRed;
             this.aToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addUserToolStripMenuItem});
+            this.aToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aToolStripMenuItem.ForeColor = System.Drawing.Color.Snow;
+            this.aToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.users;
+            this.aToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.aToolStripMenuItem.Name = "aToolStripMenuItem";
-            this.aToolStripMenuItem.Size = new System.Drawing.Size(47, 37);
+            this.aToolStripMenuItem.Size = new System.Drawing.Size(77, 37);
             this.aToolStripMenuItem.Text = "Users";
             // 
             // addUserToolStripMenuItem
             // 
+            this.addUserToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.addUserToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.user_add;
+            this.addUserToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.addUserToolStripMenuItem.Text = "Add User";
             this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
+            // 
+            // manageUsersListToolStripMenuItem
+            // 
+            this.manageUsersListToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.manageUsersListToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.users;
+            this.manageUsersListToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.manageUsersListToolStripMenuItem.Name = "manageUsersListToolStripMenuItem";
+            this.manageUsersListToolStripMenuItem.Size = new System.Drawing.Size(213, 38);
+            this.manageUsersListToolStripMenuItem.Text = "Manage Users List";
+            this.manageUsersListToolStripMenuItem.Click += new System.EventHandler(this.manageUsersListToolStripMenuItem_Click);
             // 
             // MainScreen
             // 
@@ -197,5 +218,6 @@
         private System.Windows.Forms.ToolStripMenuItem findPersonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageUsersListToolStripMenuItem;
     }
 }
