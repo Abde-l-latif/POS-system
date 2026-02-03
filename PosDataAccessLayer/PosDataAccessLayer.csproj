@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsDataCategories.cs" />
     <Compile Include="clsDataPeople.cs" />
     <Compile Include="clsDataPhones.cs" />
+    <Compile Include="clsDataProducts.cs" />
     <Compile Include="clsDataRoles.cs" />
     <Compile Include="clsDataSettings.cs" />
     <Compile Include="clsDataUsers.cs" />

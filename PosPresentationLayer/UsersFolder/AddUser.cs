@@ -52,8 +52,16 @@ namespace PosPresentationLayer.UsersFolder
 
         private void _getPersonId(object sender , int id)
         {
-            user.PersonID = id;
-            BTNSave.Enabled = true; 
+            if(!clsUsers.IsPersonAlreadyUser(id))
+            {
+                user.PersonID = id;
+                BTNSave.Enabled = true; 
+            }
+            else
+            {
+                MessageBox.Show("Operation Failed this person already is a user !", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                personDetailsWithFilter1.FilterField = true;
+            }
         }
 
         private void textUsername_Validating(object sender, CancelEventArgs e)

@@ -84,6 +84,11 @@ namespace PosBusinessLayer
                 return null;
         }
 
+        static public bool IsPersonAlreadyUser(int PersonID)
+        {
+            return clsDataUsers.IsPersonAlreadyUser(PersonID);
+        }
+
         static public DataTable GetAllUsers()
         {
             return clsDataUsers.GetAllUsersInformation(); 

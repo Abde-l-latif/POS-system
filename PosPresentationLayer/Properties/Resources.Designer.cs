@@ -83,6 +83,16 @@ namespace PosPresentationLayer.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap box {
+            get {
+                object obj = ResourceManager.GetObject("box", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap calendar {
             get {
                 object obj = ResourceManager.GetObject("calendar", resourceCulture);
@@ -193,6 +203,16 @@ namespace PosPresentationLayer.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap marshmallow {
+            get {
+                object obj = ResourceManager.GetObject("marshmallow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap operatorEdit {
             get {
                 object obj = ResourceManager.GetObject("operatorEdit", resourceCulture);
@@ -283,6 +303,16 @@ namespace PosPresentationLayer.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap plus {
+            get {
+                object obj = ResourceManager.GetObject("plus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap role {
             get {
                 object obj = ResourceManager.GetObject("role", resourceCulture);
@@ -316,6 +346,16 @@ namespace PosPresentationLayer.Properties {
         internal static System.Drawing.Bitmap settingsIcon {
             get {
                 object obj = ResourceManager.GetObject("settingsIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap supplier {
+            get {
+                object obj = ResourceManager.GetObject("supplier", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

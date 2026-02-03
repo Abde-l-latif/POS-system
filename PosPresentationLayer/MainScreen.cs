@@ -3,6 +3,7 @@ using System;
 using System.Windows.Forms;
 using PosPresentationLayer.UsersFolder;
 using PosPresentationLayer.PeopleFolder;
+using PosPresentationLayer.ProductFolder;
 
 namespace PosPresentationLayer
 {
@@ -49,6 +50,18 @@ namespace PosPresentationLayer
         private void manageUsersListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ManageUsersForm fm = new ManageUsersForm();
+            fm.ShowDialog();
+        }
+
+        private void addNewProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddProductsForm fm = new AddProductsForm();
+            fm.ShowDialog();
+        }
+
+        private void manageProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageProducts fm = new ManageProducts();
             fm.ShowDialog();
         }
     }

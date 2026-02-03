@@ -71,6 +71,7 @@ namespace PosPresentationLayer.PeopleFolder
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            textFilter.KeyPress -= textFilter_KeyPress;
             textFilter.Enabled = true;
 
             switch (comboBox1.Text.ToString())
@@ -78,6 +79,7 @@ namespace PosPresentationLayer.PeopleFolder
                 case "Person ID":
                     {
                         FilterWith = "PersonID";
+                        textFilter.KeyPress += textFilter_KeyPress;
                         break;
                     }
                 case "First Name":
@@ -128,6 +130,10 @@ namespace PosPresentationLayer.PeopleFolder
             dataGridView1.DataSource = Dt;
         }
 
-
+        private void textFilter_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }

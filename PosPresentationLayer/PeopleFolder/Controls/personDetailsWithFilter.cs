@@ -48,8 +48,8 @@ namespace PosPresentationLayer.PeopleFolder.Controls
             {
 
                 personDetails1.FillByPersonID(Convert.ToInt32(textFilter.Text));
-                PersonSelected?.Invoke(this, Convert.ToInt32(textFilter.Text));
                 FilterField = false;
+                PersonSelected?.Invoke(this, Convert.ToInt32(textFilter.Text));
 
             }
             else

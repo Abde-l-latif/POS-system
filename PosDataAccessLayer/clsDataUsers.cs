@@ -203,5 +203,37 @@ namespace PosDataAccessLayer
 
             return result;
         }
+
+        static public bool IsPersonAlreadyUser(int PersonID)
+        {
+            bool Found = false;
+
+            using (SqlConnection connection = new SqlConnection(clsDataSettings.ConnectionString))
+            {
+                string Query = "SELECT Find = 1 FROM Users WHERE PersonID = @PersonID;";
+                try
+                {
+
+                    using (SqlCommand command = new SqlCommand(Query, connection))
+                    {
+                        command.Parameters.AddWithValue("@PersonID", PersonID);
+
+                        connection.Open();
+
+                        object result = command.ExecuteScalar();
+
+                        Found = Convert.ToInt32(result) == 1;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+            }
+
+            return Found;   
+        }
     }
 }

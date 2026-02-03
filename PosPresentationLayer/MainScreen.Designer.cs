@@ -37,9 +37,14 @@
             this.findPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.managePeopleListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageUsersListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageUsersListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.suppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +57,9 @@
             this.settingsToolStripMenuItem,
             this.personsToolStripMenuItem,
             this.managementToolStripMenuItem,
-            this.aToolStripMenuItem});
+            this.aToolStripMenuItem,
+            this.productsToolStripMenuItem,
+            this.suppliersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
@@ -81,7 +88,7 @@
             this.securityToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.securityIcons;
             this.securityToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.securityToolStripMenuItem.Name = "securityToolStripMenuItem";
-            this.securityToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.securityToolStripMenuItem.Size = new System.Drawing.Size(137, 30);
             this.securityToolStripMenuItem.Text = "Security ";
             // 
             // changePasswordToolStripMenuItem
@@ -114,7 +121,7 @@
             this.addPersonToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.person_boy;
             this.addPersonToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addPersonToolStripMenuItem.Name = "addPersonToolStripMenuItem";
-            this.addPersonToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.addPersonToolStripMenuItem.Size = new System.Drawing.Size(157, 30);
             this.addPersonToolStripMenuItem.Text = "Add Person";
             this.addPersonToolStripMenuItem.Click += new System.EventHandler(this.addPersonToolStripMenuItem_Click);
             // 
@@ -124,7 +131,7 @@
             this.findPersonToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.FindPerson;
             this.findPersonToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.findPersonToolStripMenuItem.Name = "findPersonToolStripMenuItem";
-            this.findPersonToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.findPersonToolStripMenuItem.Size = new System.Drawing.Size(157, 30);
             this.findPersonToolStripMenuItem.Text = "Find Person";
             this.findPersonToolStripMenuItem.Click += new System.EventHandler(this.findPersonToolStripMenuItem_Click);
             // 
@@ -133,7 +140,8 @@
             this.managementToolStripMenuItem.BackColor = System.Drawing.Color.PaleVioletRed;
             this.managementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.managePeopleListToolStripMenuItem,
-            this.manageUsersListToolStripMenuItem});
+            this.manageUsersListToolStripMenuItem,
+            this.manageProductToolStripMenuItem});
             this.managementToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.managementToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.managementToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.tools;
@@ -148,9 +156,29 @@
             this.managePeopleListToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.demographic;
             this.managePeopleListToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.managePeopleListToolStripMenuItem.Name = "managePeopleListToolStripMenuItem";
-            this.managePeopleListToolStripMenuItem.Size = new System.Drawing.Size(213, 38);
+            this.managePeopleListToolStripMenuItem.Size = new System.Drawing.Size(225, 38);
             this.managePeopleListToolStripMenuItem.Text = "Manage People List";
             this.managePeopleListToolStripMenuItem.Click += new System.EventHandler(this.managePeopleListToolStripMenuItem_Click);
+            // 
+            // manageUsersListToolStripMenuItem
+            // 
+            this.manageUsersListToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.manageUsersListToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.users;
+            this.manageUsersListToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.manageUsersListToolStripMenuItem.Name = "manageUsersListToolStripMenuItem";
+            this.manageUsersListToolStripMenuItem.Size = new System.Drawing.Size(225, 38);
+            this.manageUsersListToolStripMenuItem.Text = "Manage Users List";
+            this.manageUsersListToolStripMenuItem.Click += new System.EventHandler(this.manageUsersListToolStripMenuItem_Click);
+            // 
+            // manageProductToolStripMenuItem
+            // 
+            this.manageProductToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.manageProductToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.marshmallow;
+            this.manageProductToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.manageProductToolStripMenuItem.Name = "manageProductToolStripMenuItem";
+            this.manageProductToolStripMenuItem.Size = new System.Drawing.Size(225, 38);
+            this.manageProductToolStripMenuItem.Text = "Manage Products List";
+            this.manageProductToolStripMenuItem.Click += new System.EventHandler(this.manageProductToolStripMenuItem_Click);
             // 
             // aToolStripMenuItem
             // 
@@ -171,19 +199,54 @@
             this.addUserToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.user_add;
             this.addUserToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(140, 30);
             this.addUserToolStripMenuItem.Text = "Add User";
             this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
-            // manageUsersListToolStripMenuItem
+            // productsToolStripMenuItem
             // 
-            this.manageUsersListToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.manageUsersListToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.users;
-            this.manageUsersListToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.manageUsersListToolStripMenuItem.Name = "manageUsersListToolStripMenuItem";
-            this.manageUsersListToolStripMenuItem.Size = new System.Drawing.Size(213, 38);
-            this.manageUsersListToolStripMenuItem.Text = "Manage Users List";
-            this.manageUsersListToolStripMenuItem.Click += new System.EventHandler(this.manageUsersListToolStripMenuItem_Click);
+            this.productsToolStripMenuItem.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.productsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewProductToolStripMenuItem});
+            this.productsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.productsToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.marshmallow;
+            this.productsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(106, 37);
+            this.productsToolStripMenuItem.Text = "Products";
+            // 
+            // addNewProductToolStripMenuItem
+            // 
+            this.addNewProductToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.addNewProductToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.plus;
+            this.addNewProductToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addNewProductToolStripMenuItem.Name = "addNewProductToolStripMenuItem";
+            this.addNewProductToolStripMenuItem.Size = new System.Drawing.Size(192, 30);
+            this.addNewProductToolStripMenuItem.Text = "Add New Product";
+            this.addNewProductToolStripMenuItem.Click += new System.EventHandler(this.addNewProductToolStripMenuItem_Click);
+            // 
+            // suppliersToolStripMenuItem
+            // 
+            this.suppliersToolStripMenuItem.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.suppliersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewSupplierToolStripMenuItem});
+            this.suppliersToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suppliersToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.suppliersToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.supplier;
+            this.suppliersToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.suppliersToolStripMenuItem.Name = "suppliersToolStripMenuItem";
+            this.suppliersToolStripMenuItem.Size = new System.Drawing.Size(109, 37);
+            this.suppliersToolStripMenuItem.Text = "Suppliers";
+            // 
+            // addNewSupplierToolStripMenuItem
+            // 
+            this.addNewSupplierToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.addNewSupplierToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.plus;
+            this.addNewSupplierToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addNewSupplierToolStripMenuItem.Name = "addNewSupplierToolStripMenuItem";
+            this.addNewSupplierToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
+            this.addNewSupplierToolStripMenuItem.Text = "Add New Supplier";
             // 
             // MainScreen
             // 
@@ -219,5 +282,10 @@
         private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageUsersListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem suppliersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewProductToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNewSupplierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageProductToolStripMenuItem;
     }
 }

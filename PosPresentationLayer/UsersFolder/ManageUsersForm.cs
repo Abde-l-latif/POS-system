@@ -60,24 +60,26 @@ namespace PosPresentationLayer.UsersFolder
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textFilter.Enabled = true;
-            comboBox2.Enabled = false;
-            comboBox2.Visible = false;
 
             if (comboBox1.Text == "none")
             {
                 FilterWith = "none";
                 textFilter.Text = "";
-                textFilter.Enabled = false;
+                textFilter.Visible = false;
                 Dt.DefaultView.RowFilter = "";
                 LBrecords.Text = dataGridView1.Rows.Count.ToString() + " Records";
                 return;
             }
            
+            textFilter.Visible = true;
+            comboBox2.Enabled = false;
+            comboBox2.Visible = false;
+            textFilter.KeyPress -= textFilter_KeyPress;
             switch(comboBox1.Text)
             {
                 case "User ID":
                     FilterWith = "UserID";
+                    textFilter.KeyPress += textFilter_KeyPress;
                     break;
                 case "First Name":
                     FilterWith = "FirstName";
@@ -93,7 +95,7 @@ namespace PosPresentationLayer.UsersFolder
                     comboBox2.SelectedIndex = 0;
                     comboBox2.Enabled = true;
                     comboBox2.Visible = true;
-                    textFilter.Enabled = false;
+                    textFilter.Visible = false;
                     break;
                 default:
                     FilterWith = "none";
@@ -105,7 +107,11 @@ namespace PosPresentationLayer.UsersFolder
         private void textFilter_TextChanged(object sender, EventArgs e)
         {
             if (textFilter.Text == "")
+            {
+                Dt.DefaultView.RowFilter = "";
+                LBrecords.Text = dataGridView1.Rows.Count.ToString() + " Records";
                 return;
+            }
 
 
             if (FilterWith != "UserID" && FilterWith != "IsActive")
@@ -136,6 +142,12 @@ namespace PosPresentationLayer.UsersFolder
             LBrecords.Text = dataGridView1.Rows.Count.ToString() + " Records";
 
 
+        }
+
+        private void textFilter_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }
