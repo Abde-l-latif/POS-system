@@ -45,6 +45,7 @@
             this.addNewProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchForProducts1 = new PosPresentationLayer.ProductFolder.Controls.SearchForProducts();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +64,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1081, 43);
+            this.menuStrip1.Size = new System.Drawing.Size(1234, 43);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -248,16 +249,25 @@
             this.addNewSupplierToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
             this.addNewSupplierToolStripMenuItem.Text = "Add New Supplier";
             // 
+            // searchForProducts1
+            // 
+            this.searchForProducts1.Location = new System.Drawing.Point(250, 47);
+            this.searchForProducts1.Margin = new System.Windows.Forms.Padding(4);
+            this.searchForProducts1.Name = "searchForProducts1";
+            this.searchForProducts1.Size = new System.Drawing.Size(984, 749);
+            this.searchForProducts1.TabIndex = 1;
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1081, 556);
+            this.ClientSize = new System.Drawing.Size(1234, 799);
+            this.Controls.Add(this.searchForProducts1);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.MistyRose;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainScreen";
@@ -287,5 +297,6 @@
         private System.Windows.Forms.ToolStripMenuItem addNewProductToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewSupplierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageProductToolStripMenuItem;
+        private ProductFolder.Controls.SearchForProducts searchForProducts1;
     }
 }

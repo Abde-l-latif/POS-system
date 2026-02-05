@@ -91,6 +91,18 @@
     <Compile Include="ProductFolder\AddProductsForm.Designer.cs">
       <DependentUpon>AddProductsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductFolder\Controls\ProductBoxControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProductFolder\Controls\ProductBoxControl.Designer.cs">
+      <DependentUpon>ProductBoxControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductFolder\Controls\SearchForProducts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProductFolder\Controls\SearchForProducts.Designer.cs">
+      <DependentUpon>SearchForProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductFolder\ManageProducts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +174,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductFolder\AddProductsForm.resx">
       <DependentUpon>AddProductsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductFolder\Controls\ProductBoxControl.resx">
+      <DependentUpon>ProductBoxControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductFolder\Controls\SearchForProducts.resx">
+      <DependentUpon>SearchForProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductFolder\ManageProducts.resx">
       <DependentUpon>ManageProducts.cs</DependentUpon>
@@ -326,6 +344,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_box.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -50,6 +50,11 @@ namespace PosBusinessLayer
             return clsDataProducts.GetAllProducts();
         }
 
+        static public DataTable GetProductsByName(string name, short Page, short PageSize)
+        {
+            return clsDataProducts.GetProductsByName(name , Page , PageSize);
+        }
+
         private bool _AddProduct()
         {
 

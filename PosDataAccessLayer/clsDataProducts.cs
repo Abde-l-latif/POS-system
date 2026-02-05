@@ -39,6 +39,43 @@ namespace PosDataAccessLayer
             return dt;
         }
 
+        static public DataTable GetProductsByName(string ProductName, short Page, short PageSize)
+        {
+            DataTable dt = new DataTable();
+
+            try
+            {
+                using (SqlConnection Connection = new SqlConnection(clsDataSettings.ConnectionString))
+                {
+                    string Query = @"SELECT * FROM Products WHERE ProductName LIKE @ProductName 
+                        ORDER BY ProductName
+                        OFFSET @Offset ROWS
+                        FETCH NEXT (@PageSize + 1) ROWS ONLY; ;";
+
+                    using (SqlCommand cmd = new SqlCommand(Query, Connection))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductName", ProductName + '%');
+                        cmd.Parameters.AddWithValue("@Offset", (Page * PageSize));
+                        cmd.Parameters.AddWithValue("@PageSize", PageSize);
+
+                        Connection.Open();
+
+                        using (SqlDataReader Reader = cmd.ExecuteReader())
+                        {
+                            dt.Load(Reader);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return dt;
+        }
+
+
         static public int InsertProducts(string ProductName , string BarCode , decimal SellingPrice , decimal BuyingPrice , int StockQuantity , bool IsActive,
             int CategoryID , int CreatedByUserID , string ProductImage, decimal? TaxRate)
         {
