@@ -61,6 +61,7 @@ namespace PosDataAccessLayer
 
             return IsFound;
         }
+
         static public DataTable SelectAllPeopleData()
         {
             DataTable dt = new DataTable();

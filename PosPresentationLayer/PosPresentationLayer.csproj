@@ -85,11 +85,11 @@
     <Compile Include="PeopleFolder\PersonDetailsForm.Designer.cs">
       <DependentUpon>PersonDetailsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ProductFolder\AddProductsForm.cs">
+    <Compile Include="ProductFolder\AddUpdateProductsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProductFolder\AddProductsForm.Designer.cs">
-      <DependentUpon>AddProductsForm.cs</DependentUpon>
+    <Compile Include="ProductFolder\AddUpdateProductsForm.Designer.cs">
+      <DependentUpon>AddUpdateProductsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ProductFolder\Controls\ProductBoxControl.cs">
       <SubType>UserControl</SubType>
@@ -97,17 +97,41 @@
     <Compile Include="ProductFolder\Controls\ProductBoxControl.Designer.cs">
       <DependentUpon>ProductBoxControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductFolder\Controls\ProductDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProductFolder\Controls\ProductDetails.Designer.cs">
+      <DependentUpon>ProductDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductFolder\Controls\ProductDetailsWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProductFolder\Controls\ProductDetailsWithFilter.Designer.cs">
+      <DependentUpon>ProductDetailsWithFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductFolder\Controls\SearchForProducts.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ProductFolder\Controls\SearchForProducts.Designer.cs">
       <DependentUpon>SearchForProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductFolder\FindProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductFolder\FindProductForm.Designer.cs">
+      <DependentUpon>FindProductForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductFolder\ManageProducts.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ProductFolder\ManageProducts.Designer.cs">
       <DependentUpon>ManageProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductFolder\ProductDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductFolder\ProductDetailsForm.Designer.cs">
+      <DependentUpon>ProductDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UsersFolder\AddUser.cs">
       <SubType>Form</SubType>
@@ -172,17 +196,29 @@
     <EmbeddedResource Include="PeopleFolder\PersonDetailsForm.resx">
       <DependentUpon>PersonDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProductFolder\AddProductsForm.resx">
-      <DependentUpon>AddProductsForm.cs</DependentUpon>
+    <EmbeddedResource Include="ProductFolder\AddUpdateProductsForm.resx">
+      <DependentUpon>AddUpdateProductsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductFolder\Controls\ProductBoxControl.resx">
       <DependentUpon>ProductBoxControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProductFolder\Controls\ProductDetails.resx">
+      <DependentUpon>ProductDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductFolder\Controls\ProductDetailsWithFilter.resx">
+      <DependentUpon>ProductDetailsWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProductFolder\Controls\SearchForProducts.resx">
       <DependentUpon>SearchForProducts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProductFolder\FindProductForm.resx">
+      <DependentUpon>FindProductForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProductFolder\ManageProducts.resx">
       <DependentUpon>ManageProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductFolder\ProductDetailsForm.resx">
+      <DependentUpon>ProductDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsersFolder\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
@@ -347,6 +383,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\open_box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

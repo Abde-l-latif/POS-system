@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +17,13 @@ namespace PosPresentationLayer.ProductFolder.Controls
         DataTable DT;
         const short _PageSize = 8;
         short _Page = 0;
+        string _Column = ""; 
+        string _OrderBy = "";
         Timer _searchTimer = new Timer();
+
+        enum enMode { LoadMode , SearchMode }
+
+        enMode _Mode = enMode.LoadMode;
 
         public SearchForProducts()
         {
@@ -24,15 +31,14 @@ namespace PosPresentationLayer.ProductFolder.Controls
             _InitializePreviousNextButton();
             _searchTimer.Interval = 400; 
             _searchTimer.Tick += SearchTimer_Tick;
-            panel1.Visible = true;
+            comboSort.SelectedIndex = 0;
         }
 
         private void SearchTimer_Tick(object sender, EventArgs e)
         {
-            _searchTimer.Stop(); 
+            _searchTimer.Stop();
 
             _Page = 0;
-            flowLayoutPanel1.Controls.Clear();
             _CreateProductBoxes();
         }
 
@@ -71,7 +77,22 @@ namespace PosPresentationLayer.ProductFolder.Controls
         }
         private void _CreateProductBoxes()
         {
-            DT = clsProducts.GetProductsByName(textSearch.Text, _Page, _PageSize);
+            if(_Mode == enMode.LoadMode)
+            {
+                DT = clsProducts.GetAllProducts(_Page, _PageSize, _Column, _OrderBy);
+            }
+            else if(_Mode == enMode.SearchMode)
+            {
+                if (String.IsNullOrEmpty(textSearch.Text))
+                {
+                    _InitializePreviousNextButton();
+                    return;
+                }
+
+                DT = clsProducts.GetProductsByName(textSearch.Text, _Page, _PageSize);
+            }
+
+            flowLayoutPanel1.Controls.Clear();
 
             _PreparePreviousNextButton();
 
@@ -100,27 +121,15 @@ namespace PosPresentationLayer.ProductFolder.Controls
 
         private void textSearch_TextChanged(object sender, EventArgs e)
         {
-            _InitializePreviousNextButton();
-            
+            _Mode = enMode.SearchMode;
+
             _searchTimer.Stop();
             _searchTimer.Start();
-
-
-            if (String.IsNullOrEmpty(textSearch.Text))
-            {
-               panel1.Visible = true;
-                return;
-            }
-            else
-            {
-                panel1.Visible = false;
-            }
-           
+         
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            flowLayoutPanel1.Controls.Clear();
 
             _Page++;
 
@@ -129,12 +138,50 @@ namespace PosPresentationLayer.ProductFolder.Controls
 
         private void button2_Click(object sender, EventArgs e)
         {
-            flowLayoutPanel1.Controls.Clear();
 
             if(_Page > 0)
                 _Page--;
 
 
+            _CreateProductBoxes();
+        }
+
+        private void SearchForProducts_Load(object sender, EventArgs e)
+        {
+            _CreateProductBoxes();
+        }
+
+        private void comboSort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _Mode = enMode.LoadMode;
+
+            switch (comboSort.Text)
+            {
+                case "Name Asc":
+                    {
+                        _Column = "ProductName";
+                        _OrderBy = "ASC"; 
+                        break; 
+                    }
+                case "Name Desc":
+                    {
+                        _Column = "ProductName";
+                        _OrderBy = "DESC";
+                        break;
+                    }
+                case "Price Desc":
+                    {
+                        _Column = "SellingPrice";
+                        _OrderBy = "DESC";
+                        break;
+                    }
+                case "Price Asc":
+                    {
+                        _Column = "SellingPrice";
+                        _OrderBy = "ASC";
+                        break;
+                    }
+            }
             _CreateProductBoxes();
         }
     }

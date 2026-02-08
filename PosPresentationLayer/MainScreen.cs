@@ -55,13 +55,19 @@ namespace PosPresentationLayer
 
         private void addNewProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddProductsForm fm = new AddProductsForm();
+            AddUpdateProductsForm fm = new AddUpdateProductsForm();
             fm.ShowDialog();
         }
 
         private void manageProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ManageProducts fm = new ManageProducts();
+            fm.ShowDialog();
+        }
+
+        private void findProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FindProductForm fm = new FindProductForm();
             fm.ShowDialog();
         }
     }

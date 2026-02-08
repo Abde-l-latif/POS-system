@@ -1,6 +1,6 @@
 ﻿namespace PosPresentationLayer.ProductFolder
 {
-    partial class AddProductsForm
+    partial class AddUpdateProductsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -53,9 +53,10 @@
             this.BtnCancel = new System.Windows.Forms.Button();
             this.BtnBrowse = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.LbTitle = new System.Windows.Forms.Label();
             this.BtnSave = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.LbDefaultTax = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -187,6 +188,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.LbDefaultTax);
             this.tabPage2.Controls.Add(this.groupTax);
             this.tabPage2.Controls.Add(this.checkTax);
             this.tabPage2.Controls.Add(this.textSellingPrice);
@@ -206,7 +208,7 @@
             this.groupTax.Controls.Add(this.label7);
             this.groupTax.Controls.Add(this.textTax);
             this.groupTax.Enabled = false;
-            this.groupTax.Location = new System.Drawing.Point(17, 162);
+            this.groupTax.Location = new System.Drawing.Point(17, 196);
             this.groupTax.Name = "groupTax";
             this.groupTax.Size = new System.Drawing.Size(147, 49);
             this.groupTax.TabIndex = 7;
@@ -234,11 +236,11 @@
             // checkTax
             // 
             this.checkTax.AutoSize = true;
-            this.checkTax.Location = new System.Drawing.Point(18, 134);
+            this.checkTax.Location = new System.Drawing.Point(18, 168);
             this.checkTax.Name = "checkTax";
-            this.checkTax.Size = new System.Drawing.Size(147, 21);
+            this.checkTax.Size = new System.Drawing.Size(95, 21);
             this.checkTax.TabIndex = 5;
-            this.checkTax.Text = "You want to add Tax";
+            this.checkTax.Text = "Custom Tax";
             this.checkTax.UseVisualStyleBackColor = true;
             this.checkTax.CheckedChanged += new System.EventHandler(this.checkTax_CheckedChanged);
             // 
@@ -337,16 +339,16 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // LbTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.IndianRed;
-            this.label1.Location = new System.Drawing.Point(5, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 26);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "New Products";
+            this.LbTitle.AutoSize = true;
+            this.LbTitle.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbTitle.ForeColor = System.Drawing.Color.IndianRed;
+            this.LbTitle.Location = new System.Drawing.Point(5, 19);
+            this.LbTitle.Name = "LbTitle";
+            this.LbTitle.Size = new System.Drawing.Size(145, 26);
+            this.LbTitle.TabIndex = 1;
+            this.LbTitle.Text = "New Products";
             // 
             // BtnSave
             // 
@@ -369,18 +371,28 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // AddProductsForm
+            // LbDefaultTax
+            // 
+            this.LbDefaultTax.AutoSize = true;
+            this.LbDefaultTax.ForeColor = System.Drawing.Color.IndianRed;
+            this.LbDefaultTax.Location = new System.Drawing.Point(19, 136);
+            this.LbDefaultTax.Name = "LbDefaultTax";
+            this.LbDefaultTax.Size = new System.Drawing.Size(115, 17);
+            this.LbDefaultTax.TabIndex = 8;
+            this.LbDefaultTax.Text = "Default Tax is 20%";
+            // 
+            // AddUpdateProductsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(561, 436);
             this.Controls.Add(this.BtnSave);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LbTitle);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "AddProductsForm";
+            this.Name = "AddUpdateProductsForm";
             this.Text = "AddProductsForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddProductsForm_FormClosing);
             this.tabControl1.ResumeLayout(false);
@@ -403,7 +415,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LbTitle;
         private System.Windows.Forms.TextBox textBarCode;
         private System.Windows.Forms.Label label;
         private System.Windows.Forms.TextBox textProductName;
@@ -427,5 +439,6 @@
         private System.Windows.Forms.Button BtnCancel;
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label LbDefaultTax;
     }
 }

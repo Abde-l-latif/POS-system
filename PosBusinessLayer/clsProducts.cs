@@ -30,6 +30,10 @@ namespace PosBusinessLayer
 
         public bool IsActive { get; set; }
 
+        public DateTime CreatedAt { get; set; }
+
+        public DateTime UpdatedAt { get; set; }
+
         public decimal buyingPrice { get; set; }
 
         public int CategoryID { get; set; }
@@ -45,14 +49,64 @@ namespace PosBusinessLayer
             _Mode = enMode.AddMode;
         }
 
+        public clsProducts(int ProductID, string ProductName, string BarCode, decimal SellingPrice, decimal BuyingPrice, int StockQuantity, bool IsActive,
+        DateTime CreatedAt, DateTime UpdatedAt, int CategoryID, int CreatedByUserID, string ProductImage, decimal TaxRate)
+        {
+            _Mode = enMode.UpdateMode;
+            this.ProductID = ProductID;
+            this.ProductName = ProductName;
+            this.BarCode = BarCode;
+            this.SellingPrice = SellingPrice;
+            this.BuyingPrice = BuyingPrice;
+            this.StockQuantity = StockQuantity;
+            this.IsActive = IsActive;
+            this.CreatedAt = CreatedAt;
+            this.UpdatedAt = UpdatedAt;
+            this.CategoryID = CategoryID;
+            this.CreatedByUserID = CreatedByUserID;
+            this.ProductImage = ProductImage;
+            this.TaxRate = TaxRate;
+        }
+
+
         static public DataTable GetAllProducts()
         {
             return clsDataProducts.GetAllProducts();
         }
 
+        static public DataTable GetAllProducts(short Page, short PageSize, string Column, string OrderBy)
+        {
+            return clsDataProducts.GetAllProducts(Page, PageSize, Column, OrderBy); 
+        }
+
         static public DataTable GetProductsByName(string name, short Page, short PageSize)
         {
             return clsDataProducts.GetProductsByName(name , Page , PageSize);
+        }
+
+        static public clsProducts GetProductByID(int ProductID)
+        {
+            string ProductName = "", BarCode = "", ProductImage = "";
+            decimal SellingPrice = 0, BuyingPrice = 0, TaxRate = 0;
+            int StockQuantity = 0;
+            bool IsActive = false;
+            DateTime CreatedAt = DateTime.Now, UpdatedAt = DateTime.Now;
+            int CategoryID = -1, CreatedByUserID = -1;
+
+            if (clsDataProducts.GetProductId(ProductID, ref ProductName, ref BarCode, ref SellingPrice, ref BuyingPrice, ref StockQuantity, ref IsActive,
+            ref CreatedAt, ref UpdatedAt, ref CategoryID, ref CreatedByUserID, ref ProductImage, ref TaxRate))
+            {
+                return new clsProducts(ProductID, ProductName, BarCode, SellingPrice, BuyingPrice, StockQuantity, IsActive,
+                CreatedAt, UpdatedAt, CategoryID, CreatedByUserID, ProductImage, TaxRate);
+            }
+            else
+                return null; 
+
+        }
+
+        static public int GetIdOfFilteredProduct(string Column, string Value)
+        {
+            return clsDataProducts.GetIdOfFilteredProduct(Column, Value);
         }
 
         private bool _AddProduct()
@@ -64,16 +118,23 @@ namespace PosBusinessLayer
             return false;
         }
 
+
+        private bool _UpdateProducts()
+        {
+            return clsDataProducts.UpdateProducts(this.ProductID , this.ProductName, this.BarCode , this.SellingPrice, this.BuyingPrice, this.StockQuantity, this.IsActive,
+            this.CategoryID, this.CreatedByUserID, this.ProductImage, this.TaxRate) != -1; 
+        }
+
         public bool Save()
         {
             if (_Mode == enMode.AddMode)
             {
                 _AddProduct();
-                _Mode = enMode.UpdateMode; 
+                _Mode = enMode.UpdateMode;
                 return true;
             }
-
-            else return false;
+            else
+                return _UpdateProducts(); 
         }
 
     }

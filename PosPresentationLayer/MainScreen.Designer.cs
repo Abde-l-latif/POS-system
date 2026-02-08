@@ -43,6 +43,7 @@
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.findProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.searchForProducts1 = new PosPresentationLayer.ProductFolder.Controls.SearchForProducts();
@@ -208,7 +209,8 @@
             // 
             this.productsToolStripMenuItem.BackColor = System.Drawing.Color.PaleVioletRed;
             this.productsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewProductToolStripMenuItem});
+            this.addNewProductToolStripMenuItem,
+            this.findProductToolStripMenuItem});
             this.productsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.productsToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.marshmallow;
@@ -226,6 +228,16 @@
             this.addNewProductToolStripMenuItem.Size = new System.Drawing.Size(192, 30);
             this.addNewProductToolStripMenuItem.Text = "Add New Product";
             this.addNewProductToolStripMenuItem.Click += new System.EventHandler(this.addNewProductToolStripMenuItem_Click);
+            // 
+            // findProductToolStripMenuItem
+            // 
+            this.findProductToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.findProductToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.product__1_;
+            this.findProductToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.findProductToolStripMenuItem.Name = "findProductToolStripMenuItem";
+            this.findProductToolStripMenuItem.Size = new System.Drawing.Size(192, 30);
+            this.findProductToolStripMenuItem.Text = "Find Product";
+            this.findProductToolStripMenuItem.Click += new System.EventHandler(this.findProductToolStripMenuItem_Click);
             // 
             // suppliersToolStripMenuItem
             // 
@@ -251,10 +263,11 @@
             // 
             // searchForProducts1
             // 
-            this.searchForProducts1.Location = new System.Drawing.Point(250, 47);
+            this.searchForProducts1.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.searchForProducts1.Location = new System.Drawing.Point(283, 47);
             this.searchForProducts1.Margin = new System.Windows.Forms.Padding(4);
             this.searchForProducts1.Name = "searchForProducts1";
-            this.searchForProducts1.Size = new System.Drawing.Size(984, 749);
+            this.searchForProducts1.Size = new System.Drawing.Size(873, 749);
             this.searchForProducts1.TabIndex = 1;
             // 
             // MainScreen
@@ -298,5 +311,6 @@
         private System.Windows.Forms.ToolStripMenuItem addNewSupplierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageProductToolStripMenuItem;
         private ProductFolder.Controls.SearchForProducts searchForProducts1;
+        private System.Windows.Forms.ToolStripMenuItem findProductToolStripMenuItem;
     }
 }

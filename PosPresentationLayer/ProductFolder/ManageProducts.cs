@@ -57,7 +57,7 @@ namespace PosPresentationLayer.ProductFolder
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AddProductsForm fm = new AddProductsForm();
+            AddUpdateProductsForm fm = new AddUpdateProductsForm();
             fm.ShowDialog();
 
             _ReloadDataGrid();
@@ -161,6 +161,31 @@ namespace PosPresentationLayer.ProductFolder
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
                 e.Handled = true;
    
+        }
+
+        private void updateProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.SelectedRows.Count > 0)
+            {
+                int ProductID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+
+                AddUpdateProductsForm fm = new AddUpdateProductsForm(ProductID);
+                fm.ShowDialog();
+
+                _ReloadDataGrid();
+            }
+        }
+
+        private void productDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int ProductID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+
+                ProductDetailsForm fm = new ProductDetailsForm(ProductID);
+                fm.ShowDialog();
+
+            }
         }
     }
 }

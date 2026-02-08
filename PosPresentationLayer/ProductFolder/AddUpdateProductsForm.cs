@@ -13,18 +13,79 @@ using System.Windows.Forms;
 
 namespace PosPresentationLayer.ProductFolder
 {
-    public partial class AddProductsForm : Form
+    public partial class AddUpdateProductsForm : Form
     {
+        public event EventHandler<int> GetProductID;
+        enum enMode { addMode , UpdateMode}
+        
+        enMode _Mode;
+
+        clsProducts Product ;  
 
         string _ImagePath = "";
 
+        string _UpdateModeImagePath = ""; 
+
         bool _MarkDeleteImage = false;
 
-        public AddProductsForm()
+        public AddUpdateProductsForm()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             _InitializeCategories();
+            _Mode = enMode.addMode;
+            Product = new clsProducts();
+        }
+
+        public AddUpdateProductsForm(int productID)
+        {
+            InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
+            _InitializeCategories();
+            _Mode = enMode.UpdateMode;
+            Product = clsProducts.GetProductByID(productID);
+            _InitializeUI();
+        }
+
+        private void _FillProductDataOnUI()
+        {
+            textProductName.Text = Product.ProductName;
+            textBarCode.Text = Product.BarCode;
+            textQuantity.Text = Product.StockQuantity.ToString("00");
+            comboBox1.SelectedValue = Product.CategoryID;
+            checkActive.Checked = Product.IsActive;
+            textBuyingPrice.Text = Product.BuyingPrice.ToString("0.00");
+            textSellingPrice.Text = Product.SellingPrice.ToString("0.00");
+            textTax.Text = Product.TaxRate.ToString();
+
+            if (!String.IsNullOrEmpty(Product.ProductImage))
+            {
+                using(var img = Image.FromFile(Product.ProductImage))
+                {
+                    pictureBox1.Image = new Bitmap(img);
+                };
+
+                _ImagePath = Product.ProductImage;
+
+                _UpdateModeImagePath = Product.ProductImage;
+
+                BtnBrowse.Enabled = false;
+                
+            }
+        }
+
+        private void _InitializeUI()
+        {
+
+            LbDefaultTax.Text = $"Default Tax is {clsSettings.GetSystemTax()} %"; 
+
+            if (_Mode == enMode.addMode)
+                LbTitle.Text = "New Product";
+            else
+            {
+                LbTitle.Text = "Update Product";
+                _FillProductDataOnUI();
+            }
         }
 
         private void _InitializeCategories()
@@ -58,7 +119,6 @@ namespace PosPresentationLayer.ProductFolder
                 return;
             }
 
-            clsProducts Product = new clsProducts(); 
 
             Product.ProductName = textProductName.Text;
             Product.BarCode = textBarCode.Text;
@@ -72,16 +132,28 @@ namespace PosPresentationLayer.ProductFolder
             if(!String.IsNullOrEmpty(textTax.Text))
                 Product.TaxRate = Convert.ToDecimal(textTax.Text);
 
+
+            if(!String.IsNullOrEmpty(_UpdateModeImagePath)
+                && _UpdateModeImagePath != _ImagePath)
+            {
+                if (File.Exists(_UpdateModeImagePath))
+                {
+                    File.Delete(_UpdateModeImagePath);
+                }
+            }
+
             if (pictureBox1.Image != null)
             {
                 Product.ProductImage = _ImagePath;
                 _ImagePath = string.Empty;
             }
+
                 
 
             if (Product.Save())
             {
                 MessageBox.Show("Product Saved Successfully", "Succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GetProductID?.Invoke(this, Product.ProductID);
                 BtnSave.Enabled = false;
             }
             else
@@ -129,6 +201,8 @@ namespace PosPresentationLayer.ProductFolder
 
             File.Copy(FilePath, destinationPath, true);
 
+            _DeleteFromFolderIfIsMarked();
+
             _ImagePath = destinationPath;
 
             return destinationPath;
@@ -149,6 +223,8 @@ namespace PosPresentationLayer.ProductFolder
                 {
                     pictureBox1.Image = new Bitmap(img);
                 }
+
+                BtnBrowse.Enabled = false; 
             }
 
         }
@@ -157,29 +233,37 @@ namespace PosPresentationLayer.ProductFolder
         {
             _MarkDeleteImage = true;
             pictureBox1.Image = null;
+            BtnBrowse.Enabled = true;
         }
 
         private void _DeleteFromFolderIfIsMarked()
         {
             if (_MarkDeleteImage)
             {
-
-                if (File.Exists(_ImagePath))
+                if(_ImagePath != _UpdateModeImagePath)
                 {
-                    File.Delete(_ImagePath);
+                    if (File.Exists(_ImagePath))
+                    {
+                        File.Delete(_ImagePath);
+                    }
+
+                    _MarkDeleteImage = false;
+                    _ImagePath = "";
                 }
 
-                _MarkDeleteImage = false;
-                _ImagePath = "";
             }
         }
 
         private void AddProductsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+           
             if (!String.IsNullOrEmpty(_ImagePath))
             {
-                _MarkDeleteImage = true;
-                _DeleteFromFolderIfIsMarked();
+                if(_ImagePath != _UpdateModeImagePath)
+                {
+                    _MarkDeleteImage = true;
+                    _DeleteFromFolderIfIsMarked();
+                }
             }
         }
     }

@@ -39,5 +39,47 @@ namespace PosDataAccessLayer
 
             return dt;
         }
+
+        static public bool FindCategory(int CategoryID, ref string CategoryName, ref bool IsActive, ref DateTime CreatedAt, ref  DateTime UpdatedAt)
+        {
+            bool IsFound = false;
+
+            using (SqlConnection Connection = new SqlConnection(clsDataSettings.ConnectionString))
+            {
+                Connection.Open();
+
+                string Query = @"Select * from Categories where CategoryID = @CategoryID;";
+
+                try
+                {
+                    using (SqlCommand Command = new SqlCommand(Query, Connection))
+                    {
+                        Command.Parameters.AddWithValue("@CategoryID", CategoryID);
+
+                        using (SqlDataReader Reader = Command.ExecuteReader())
+                        {
+                            if (Reader.Read())
+                            {
+                                IsFound = true;
+
+                                CategoryName = (string)Reader["CategoryName"];
+                                IsActive = (bool)Reader["IsActive"];
+                                CreatedAt = (DateTime)Reader["CreatedAt"];
+                                UpdatedAt = (DateTime)Reader["UpdatedAt"];
+
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    IsFound = false;
+                    throw ex;
+                }
+
+            }
+
+            return IsFound;
+        }
     }
 }
