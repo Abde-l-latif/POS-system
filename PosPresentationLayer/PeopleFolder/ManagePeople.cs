@@ -54,6 +54,8 @@ namespace PosPresentationLayer.PeopleFolder
                 PersonDetailsForm fm = new PersonDetailsForm((int)dataGridView1.SelectedCells[0].Value);
                 fm.ShowDialog(); 
             }
+            else
+                MessageBox.Show("Please Select first a row", "Unselected", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void editPersonInformationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,6 +69,8 @@ namespace PosPresentationLayer.PeopleFolder
                 dataGridView1.DataSource = Dt;
                 LBrecords.Text = dataGridView1.Rows.Count.ToString() + " Records";
             }
+            else
+                MessageBox.Show("Please Select first a row", "Unselected", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

@@ -41,6 +41,7 @@
             this.textProductName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.LbDefaultTax = new System.Windows.Forms.Label();
             this.groupTax = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textTax = new System.Windows.Forms.TextBox();
@@ -56,7 +57,7 @@
             this.LbTitle = new System.Windows.Forms.Label();
             this.BtnSave = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.LbDefaultTax = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -79,6 +80,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.checkActive);
@@ -202,6 +204,16 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Price&Tax";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // LbDefaultTax
+            // 
+            this.LbDefaultTax.AutoSize = true;
+            this.LbDefaultTax.ForeColor = System.Drawing.Color.IndianRed;
+            this.LbDefaultTax.Location = new System.Drawing.Point(19, 136);
+            this.LbDefaultTax.Name = "LbDefaultTax";
+            this.LbDefaultTax.Size = new System.Drawing.Size(115, 17);
+            this.LbDefaultTax.TabIndex = 8;
+            this.LbDefaultTax.Text = "Default Tax is 20%";
             // 
             // groupTax
             // 
@@ -371,15 +383,19 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // LbDefaultTax
+            // button2
             // 
-            this.LbDefaultTax.AutoSize = true;
-            this.LbDefaultTax.ForeColor = System.Drawing.Color.IndianRed;
-            this.LbDefaultTax.Location = new System.Drawing.Point(19, 136);
-            this.LbDefaultTax.Name = "LbDefaultTax";
-            this.LbDefaultTax.Size = new System.Drawing.Size(115, 17);
-            this.LbDefaultTax.TabIndex = 8;
-            this.LbDefaultTax.Text = "Default Tax is 20%";
+            this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::PosPresentationLayer.Properties.Resources.plus;
+            this.button2.Location = new System.Drawing.Point(245, 214);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(39, 24);
+            this.button2.TabIndex = 24;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // AddUpdateProductsForm
             // 
@@ -440,5 +456,6 @@
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label LbDefaultTax;
+        private System.Windows.Forms.Button button2;
     }
 }

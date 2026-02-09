@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using PosPresentationLayer.UsersFolder;
 using PosPresentationLayer.PeopleFolder;
 using PosPresentationLayer.ProductFolder;
+using PosPresentationLayer.CategoriesFolder;
 
 namespace PosPresentationLayer
 {
@@ -68,6 +69,18 @@ namespace PosPresentationLayer
         private void findProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FindProductForm fm = new FindProductForm();
+            fm.ShowDialog();
+        }
+
+        private void addCategoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddUpdateCategoryForm fm = new AddUpdateCategoryForm();
+            fm.ShowDialog();
+        }
+
+        private void showCategoriesListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CategoriesListForm fm = new CategoriesListForm();
             fm.ShowDialog();
         }
     }

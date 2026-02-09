@@ -17,6 +17,7 @@ namespace PosPresentationLayer.ProductFolder.Controls
         public ProductDetails()
         {
             InitializeComponent();
+            linkLabel1.Enabled = false;
         }
 
         private string _ImagePath;
@@ -37,8 +38,9 @@ namespace PosPresentationLayer.ProductFolder.Controls
                 LbCreatedAt.Text = Product.CreatedAt.ToShortDateString();
                 LbUpdatedAt.Text = Product.UpdatedAt.ToShortDateString();
                 LbVat.Text = Product.TaxRate.ToString();
+                linkLabel1.Enabled = true;
 
-                if(!String.IsNullOrEmpty(Product.ProductImage))
+                if (!String.IsNullOrEmpty(Product.ProductImage))
                 {
                     using (var img = Image.FromFile(Product.ProductImage))
                     {

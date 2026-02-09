@@ -32,6 +32,9 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.securityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageCategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showCategoriesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,7 +76,8 @@
             // 
             this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.PaleVioletRed;
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.securityToolStripMenuItem});
+            this.securityToolStripMenuItem,
+            this.manageCategoriesToolStripMenuItem});
             this.settingsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.Snow;
             this.settingsToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.settingsIcon;
@@ -90,7 +94,7 @@
             this.securityToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.securityIcons;
             this.securityToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.securityToolStripMenuItem.Name = "securityToolStripMenuItem";
-            this.securityToolStripMenuItem.Size = new System.Drawing.Size(137, 30);
+            this.securityToolStripMenuItem.Size = new System.Drawing.Size(202, 30);
             this.securityToolStripMenuItem.Text = "Security ";
             // 
             // changePasswordToolStripMenuItem
@@ -102,6 +106,38 @@
             this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(192, 30);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            // 
+            // manageCategoriesToolStripMenuItem
+            // 
+            this.manageCategoriesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addCategoryToolStripMenuItem,
+            this.showCategoriesListToolStripMenuItem});
+            this.manageCategoriesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.manageCategoriesToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.inventory_category;
+            this.manageCategoriesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.manageCategoriesToolStripMenuItem.Name = "manageCategoriesToolStripMenuItem";
+            this.manageCategoriesToolStripMenuItem.Size = new System.Drawing.Size(202, 30);
+            this.manageCategoriesToolStripMenuItem.Text = "Manage Categories";
+            // 
+            // addCategoryToolStripMenuItem
+            // 
+            this.addCategoryToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.addCategoryToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.inventory_categoryAdd;
+            this.addCategoryToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addCategoryToolStripMenuItem.Name = "addCategoryToolStripMenuItem";
+            this.addCategoryToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
+            this.addCategoryToolStripMenuItem.Text = "Add Category";
+            this.addCategoryToolStripMenuItem.Click += new System.EventHandler(this.addCategoryToolStripMenuItem_Click);
+            // 
+            // showCategoriesListToolStripMenuItem
+            // 
+            this.showCategoriesListToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.showCategoriesListToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.inventory_categoryList;
+            this.showCategoriesListToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.showCategoriesListToolStripMenuItem.Name = "showCategoriesListToolStripMenuItem";
+            this.showCategoriesListToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
+            this.showCategoriesListToolStripMenuItem.Text = "Show Categories List";
+            this.showCategoriesListToolStripMenuItem.Click += new System.EventHandler(this.showCategoriesListToolStripMenuItem_Click);
             // 
             // personsToolStripMenuItem
             // 
@@ -312,5 +348,8 @@
         private System.Windows.Forms.ToolStripMenuItem manageProductToolStripMenuItem;
         private ProductFolder.Controls.SearchForProducts searchForProducts1;
         private System.Windows.Forms.ToolStripMenuItem findProductToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageCategoriesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addCategoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showCategoriesListToolStripMenuItem;
     }
 }

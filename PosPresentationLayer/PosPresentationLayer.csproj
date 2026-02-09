@@ -48,6 +48,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriesFolder\AddUpdateCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoriesFolder\AddUpdateCategoryForm.Designer.cs">
+      <DependentUpon>AddUpdateCategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategoriesFolder\CategoriesListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategoriesFolder\CategoriesListForm.Designer.cs">
+      <DependentUpon>CategoriesListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="clsGlobal.cs" />
     <Compile Include="PeopleFolder\AddUpdatePersonScreen.cs">
       <SubType>Form</SubType>
@@ -178,6 +190,12 @@
       <DependentUpon>ManageUsersForm.cs</DependentUpon>
     </Compile>
     <Compile Include="utilitiesFolder\CustomMenuRenderer.cs" />
+    <EmbeddedResource Include="CategoriesFolder\AddUpdateCategoryForm.resx">
+      <DependentUpon>AddUpdateCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategoriesFolder\CategoriesListForm.resx">
+      <DependentUpon>CategoriesListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PeopleFolder\AddUpdatePersonScreen.resx">
       <DependentUpon>AddUpdatePersonScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -389,6 +407,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\product.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory_category.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory_categoryAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory_categoryAddScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory_categoryList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory_categoryListScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory_categoryMiniUpdate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory_categoryUpdate.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

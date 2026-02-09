@@ -154,6 +154,27 @@
   <data name="id" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\id.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="inventory_category" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inventory_category.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inventory_categoryAdd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inventory_categoryAdd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inventory_categoryAddScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inventory_categoryAddScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inventory_categoryList" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inventory_categoryList.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inventory_categoryListScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inventory_categoryListScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inventory_categoryMiniUpdate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inventory_categoryMiniUpdate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inventory_categoryUpdate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inventory_categoryUpdate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LoginImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoginImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

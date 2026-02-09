@@ -1,4 +1,5 @@
 ﻿using PosBusinessLayer;
+using PosPresentationLayer.CategoriesFolder;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -265,6 +266,14 @@ namespace PosPresentationLayer.ProductFolder
                     _DeleteFromFolderIfIsMarked();
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddUpdateCategoryForm fm = new AddUpdateCategoryForm();
+            fm.ShowDialog();
+
+            _InitializeCategories();
         }
     }
 }

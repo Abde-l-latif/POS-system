@@ -174,6 +174,8 @@ namespace PosPresentationLayer.ProductFolder
 
                 _ReloadDataGrid();
             }
+            else
+                MessageBox.Show("Please Select first a row", "Unselected" , MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void productDetailsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -186,6 +188,8 @@ namespace PosPresentationLayer.ProductFolder
                 fm.ShowDialog();
 
             }
+            else
+                MessageBox.Show("Please Select first a row", "Unselected", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
