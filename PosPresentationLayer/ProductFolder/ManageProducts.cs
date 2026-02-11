@@ -65,7 +65,13 @@ namespace PosPresentationLayer.ProductFolder
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBox1.Text == "Is Active")
+            textFilter.KeyPress -= textFilter_KeyPress;
+            comboBox2.Enabled = false;
+            comboBox2.Visible = false;
+            textFilter.Visible = true;
+            textFilter.Enabled = true;
+
+            if (comboBox1.Text == "Is Active")
             {
                 FilterText = "IsActive"; 
                 comboBox2.SelectedIndex = 0;
@@ -78,17 +84,13 @@ namespace PosPresentationLayer.ProductFolder
 
             if (comboBox1.Text == "none")
             {
-                textFilter.Visible = false;
+                textFilter.Enabled = false;
                 textFilter.Text = "";
                 DT.DefaultView.RowFilter = "";
                 LBrecords.Text = Convert.ToString(dataGridView1.Rows.Count) + " Records";
                 return;
             }
 
-            textFilter.KeyPress -= textFilter_KeyPress;
-            comboBox2.Enabled = false;
-            comboBox2.Visible = false;
-            textFilter.Visible = true;
 
             switch (comboBox1.Text)
             {
@@ -128,13 +130,12 @@ namespace PosPresentationLayer.ProductFolder
             if(comboBox2.Text == "Yes")
             {
                 DT.DefaultView.RowFilter = String.Format("[{0}] = {1}" , FilterText , 1);
-                LBrecords.Text = Convert.ToString(dataGridView1.Rows.Count) + " Records";
             }
             else
             {
                 DT.DefaultView.RowFilter = String.Format("[{0}] = {1}", FilterText, 0);
-                LBrecords.Text = Convert.ToString(dataGridView1.Rows.Count) + " Records";
             }
+            LBrecords.Text = Convert.ToString(dataGridView1.Rows.Count) + " Records";
         }
 
         private void textFilter_TextChanged(object sender, EventArgs e)

@@ -21,6 +21,25 @@ namespace PosPresentationLayer.PeopleFolder.Controls
             InitializeComponent();
         }
 
+        public PersonDetails personDetails
+        {
+            get
+            {
+                return personDetails1;
+            }
+        }
+
+        public int PersonID
+        {
+            set 
+            {
+                int PersonID = Convert.ToInt32(value);
+                personDetails1.FillByPersonID(PersonID);   
+            }
+        }
+
+        private string _text = string.Empty;
+
         private bool _FilterField = true;
 
         public bool FilterField
@@ -33,6 +52,19 @@ namespace PosPresentationLayer.PeopleFolder.Controls
             {
                 _FilterField = value;
                 groupBox1.Enabled = _FilterField;
+            }
+        }
+
+        public string TextField
+        {
+            get
+            {
+                return _text;
+            }
+            set
+            {
+                _text = value;
+                textFilter.Text = _text;
             }
         }
 
@@ -49,6 +81,7 @@ namespace PosPresentationLayer.PeopleFolder.Controls
 
                 personDetails1.FillByPersonID(Convert.ToInt32(textFilter.Text));
                 FilterField = false;
+                personDetails1.EnableUpdate = true;
                 PersonSelected?.Invoke(this, Convert.ToInt32(textFilter.Text));
 
             }
@@ -66,6 +99,7 @@ namespace PosPresentationLayer.PeopleFolder.Controls
         private void getPersonId(object sender , int id)
         {
             personDetails1.FillByPersonID(id);
+            personDetails1.EnableUpdate = true;
             PersonSelected?.Invoke(this, Convert.ToInt32(textFilter.Text));
             FilterField = false;
         }

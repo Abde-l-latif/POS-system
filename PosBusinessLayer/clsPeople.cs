@@ -17,7 +17,7 @@ namespace PosBusinessLayer
 
         private enMode _Mode;
 
-        public int PersonID { get; private set; }
+        public int PersonID { get; protected set; }
 
         public string FirstName { get; set; }
 
@@ -103,7 +103,7 @@ namespace PosBusinessLayer
             return clsDataPeople.SelectAllPeopleData();
         }
 
-        public bool Save()
+        public virtual bool Save()
         {
     
             if (_Mode == enMode.addMode)

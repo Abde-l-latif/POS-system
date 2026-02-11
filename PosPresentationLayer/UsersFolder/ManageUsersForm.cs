@@ -60,21 +60,23 @@ namespace PosPresentationLayer.UsersFolder
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            textFilter.Visible = true;
+            textFilter.Enabled = true;
+            comboBox2.Enabled = false;
+            comboBox2.Visible = false;
+            textFilter.KeyPress -= textFilter_KeyPress;
 
             if (comboBox1.Text == "none")
             {
                 FilterWith = "none";
                 textFilter.Text = "";
-                textFilter.Visible = false;
+                textFilter.Enabled = false;
                 Dt.DefaultView.RowFilter = "";
                 LBrecords.Text = dataGridView1.Rows.Count.ToString() + " Records";
                 return;
             }
            
-            textFilter.Visible = true;
-            comboBox2.Enabled = false;
-            comboBox2.Visible = false;
-            textFilter.KeyPress -= textFilter_KeyPress;
+
             switch(comboBox1.Text)
             {
                 case "User ID":

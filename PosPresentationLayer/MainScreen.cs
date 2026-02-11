@@ -5,6 +5,7 @@ using PosPresentationLayer.UsersFolder;
 using PosPresentationLayer.PeopleFolder;
 using PosPresentationLayer.ProductFolder;
 using PosPresentationLayer.CategoriesFolder;
+using PosPresentationLayer.SuppliersFolder;
 
 namespace PosPresentationLayer
 {
@@ -81,6 +82,18 @@ namespace PosPresentationLayer
         private void showCategoriesListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CategoriesListForm fm = new CategoriesListForm();
+            fm.ShowDialog();
+        }
+
+        private void addNewSupplierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddUpdateSupplierForm fm = new AddUpdateSupplierForm();
+            fm.ShowDialog();
+        }
+
+        private void manageSuppliersListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageSupplierList fm = new ManageSupplierList();
             fm.ShowDialog();
         }
     }

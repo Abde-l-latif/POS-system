@@ -203,6 +203,8 @@ namespace PosPresentationLayer.PeopleFolder
   
                 this.FormClosing -= AddUpdatePersonScreen_FormClosing;
 
+                this.DialogResult = DialogResult.OK;
+
                 this.Close();
 
                 return;

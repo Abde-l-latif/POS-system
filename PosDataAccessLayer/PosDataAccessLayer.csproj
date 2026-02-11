@@ -47,6 +47,7 @@
     <Compile Include="clsDataProducts.cs" />
     <Compile Include="clsDataRoles.cs" />
     <Compile Include="clsDataSettings.cs" />
+    <Compile Include="clsDataSuppliers.cs" />
     <Compile Include="clsDataUsers.cs" />
     <Compile Include="clsSecureInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

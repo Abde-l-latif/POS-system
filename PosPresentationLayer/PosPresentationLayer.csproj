@@ -145,6 +145,18 @@
     <Compile Include="ProductFolder\ProductDetailsForm.Designer.cs">
       <DependentUpon>ProductDetailsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuppliersFolder\AddUpdateSupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuppliersFolder\AddUpdateSupplierForm.Designer.cs">
+      <DependentUpon>AddUpdateSupplierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuppliersFolder\ManageSupplierList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuppliersFolder\ManageSupplierList.Designer.cs">
+      <DependentUpon>ManageSupplierList.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsersFolder\AddUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +249,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductFolder\ProductDetailsForm.resx">
       <DependentUpon>ProductDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuppliersFolder\AddUpdateSupplierForm.resx">
+      <DependentUpon>AddUpdateSupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuppliersFolder\ManageSupplierList.resx">
+      <DependentUpon>ManageSupplierList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsersFolder\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
@@ -428,6 +446,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\inventory_categoryUpdate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SupplierEdit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\suppliersAdd.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

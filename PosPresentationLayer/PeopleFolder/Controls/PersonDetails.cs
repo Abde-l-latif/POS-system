@@ -14,15 +14,28 @@ namespace PosPresentationLayer.PeopleFolder
 {
     public partial class PersonDetails : UserControl
     {
+
+        clsPeople Person = new clsPeople();
         public PersonDetails()
         {
             InitializeComponent();
+            linkLabel1.Enabled = false; 
         }
 
+        private bool _EnableUpdate = false;
 
+        public bool EnableUpdate
+        {
+            get { return _EnableUpdate; }
+            set
+            {
+                _EnableUpdate = value;
+                linkLabel1.Enabled = _EnableUpdate;
+            }
+        }
         public void FillByPersonID(int ID)
         {
-            clsPeople Person = clsPeople.GetPersonByID(ID);
+            Person = clsPeople.GetPersonByID(ID);
 
             if(Person != null)
             {
@@ -58,11 +71,25 @@ namespace PosPresentationLayer.PeopleFolder
                     pictureTitle.Load(Person.PersonImage);
                 }
 
+                EnableUpdate = true;
+
             }
             else
             {
                 MessageBox.Show($"Person with {ID} Not Found !" , "Not Found" , MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            AddUpdatePersonScreen fm = new AddUpdatePersonScreen(Person.PersonID);
+             
+            if(fm.ShowDialog() == DialogResult.OK)
+            {
+                FillByPersonID(Person.PersonID);
+                EnableUpdate = false;
+            }
+        
         }
     }
 }
