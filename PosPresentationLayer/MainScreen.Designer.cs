@@ -42,6 +42,8 @@
             this.managePeopleListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageUsersListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageSuppliersListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageCustomerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,9 +51,15 @@
             this.findProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.suppliersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.findSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.findCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.flowProductCard = new System.Windows.Forms.FlowLayoutPanel();
             this.searchForProducts1 = new PosPresentationLayer.ProductFolder.Controls.SearchForProducts();
-            this.manageSuppliersListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -65,7 +73,8 @@
             this.managementToolStripMenuItem,
             this.aToolStripMenuItem,
             this.productsToolStripMenuItem,
-            this.suppliersToolStripMenuItem});
+            this.suppliersToolStripMenuItem,
+            this.customersToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
@@ -181,7 +190,8 @@
             this.managePeopleListToolStripMenuItem,
             this.manageUsersListToolStripMenuItem,
             this.manageProductToolStripMenuItem,
-            this.manageSuppliersListToolStripMenuItem});
+            this.manageSuppliersListToolStripMenuItem,
+            this.manageCustomerListToolStripMenuItem});
             this.managementToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.managementToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.managementToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.tools;
@@ -196,7 +206,7 @@
             this.managePeopleListToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.demographic;
             this.managePeopleListToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.managePeopleListToolStripMenuItem.Name = "managePeopleListToolStripMenuItem";
-            this.managePeopleListToolStripMenuItem.Size = new System.Drawing.Size(228, 38);
+            this.managePeopleListToolStripMenuItem.Size = new System.Drawing.Size(230, 38);
             this.managePeopleListToolStripMenuItem.Text = "Manage People List";
             this.managePeopleListToolStripMenuItem.Click += new System.EventHandler(this.managePeopleListToolStripMenuItem_Click);
             // 
@@ -206,7 +216,7 @@
             this.manageUsersListToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.users;
             this.manageUsersListToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.manageUsersListToolStripMenuItem.Name = "manageUsersListToolStripMenuItem";
-            this.manageUsersListToolStripMenuItem.Size = new System.Drawing.Size(228, 38);
+            this.manageUsersListToolStripMenuItem.Size = new System.Drawing.Size(230, 38);
             this.manageUsersListToolStripMenuItem.Text = "Manage Users List";
             this.manageUsersListToolStripMenuItem.Click += new System.EventHandler(this.manageUsersListToolStripMenuItem_Click);
             // 
@@ -216,9 +226,28 @@
             this.manageProductToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.marshmallow;
             this.manageProductToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.manageProductToolStripMenuItem.Name = "manageProductToolStripMenuItem";
-            this.manageProductToolStripMenuItem.Size = new System.Drawing.Size(228, 38);
+            this.manageProductToolStripMenuItem.Size = new System.Drawing.Size(230, 38);
             this.manageProductToolStripMenuItem.Text = "Manage Products List";
             this.manageProductToolStripMenuItem.Click += new System.EventHandler(this.manageProductToolStripMenuItem_Click);
+            // 
+            // manageSuppliersListToolStripMenuItem
+            // 
+            this.manageSuppliersListToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.manageSuppliersListToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.supplier;
+            this.manageSuppliersListToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.manageSuppliersListToolStripMenuItem.Name = "manageSuppliersListToolStripMenuItem";
+            this.manageSuppliersListToolStripMenuItem.Size = new System.Drawing.Size(230, 38);
+            this.manageSuppliersListToolStripMenuItem.Text = "Manage Suppliers List";
+            this.manageSuppliersListToolStripMenuItem.Click += new System.EventHandler(this.manageSuppliersListToolStripMenuItem_Click);
+            // 
+            // manageCustomerListToolStripMenuItem
+            // 
+            this.manageCustomerListToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.manageCustomerListToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.network_diagramFind;
+            this.manageCustomerListToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.manageCustomerListToolStripMenuItem.Name = "manageCustomerListToolStripMenuItem";
+            this.manageCustomerListToolStripMenuItem.Size = new System.Drawing.Size(230, 38);
+            this.manageCustomerListToolStripMenuItem.Text = "Manage Customer List";
             // 
             // aToolStripMenuItem
             // 
@@ -281,7 +310,8 @@
             // 
             this.suppliersToolStripMenuItem.BackColor = System.Drawing.Color.PaleVioletRed;
             this.suppliersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewSupplierToolStripMenuItem});
+            this.addNewSupplierToolStripMenuItem,
+            this.findSupplierToolStripMenuItem});
             this.suppliersToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.suppliersToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.suppliersToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.supplier;
@@ -300,30 +330,84 @@
             this.addNewSupplierToolStripMenuItem.Text = "Add New Supplier";
             this.addNewSupplierToolStripMenuItem.Click += new System.EventHandler(this.addNewSupplierToolStripMenuItem_Click);
             // 
+            // findSupplierToolStripMenuItem
+            // 
+            this.findSupplierToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.findSupplierToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.customer;
+            this.findSupplierToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.findSupplierToolStripMenuItem.Name = "findSupplierToolStripMenuItem";
+            this.findSupplierToolStripMenuItem.Size = new System.Drawing.Size(195, 30);
+            this.findSupplierToolStripMenuItem.Text = "Find Supplier";
+            this.findSupplierToolStripMenuItem.Click += new System.EventHandler(this.findSupplierToolStripMenuItem_Click);
+            // 
+            // customersToolStripMenuItem
+            // 
+            this.customersToolStripMenuItem.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.customersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addCustomerToolStripMenuItem,
+            this.findCustomerToolStripMenuItem});
+            this.customersToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customersToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.customersToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.network_diagram;
+            this.customersToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.customersToolStripMenuItem.Name = "customersToolStripMenuItem";
+            this.customersToolStripMenuItem.Size = new System.Drawing.Size(109, 37);
+            this.customersToolStripMenuItem.Text = "Customers";
+            // 
+            // addCustomerToolStripMenuItem
+            // 
+            this.addCustomerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.addCustomerToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.network_diagramAdd;
+            this.addCustomerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addCustomerToolStripMenuItem.Name = "addCustomerToolStripMenuItem";
+            this.addCustomerToolStripMenuItem.Size = new System.Drawing.Size(174, 30);
+            this.addCustomerToolStripMenuItem.Text = "Add Customer";
+            // 
+            // findCustomerToolStripMenuItem
+            // 
+            this.findCustomerToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.findCustomerToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.network_diagramFind;
+            this.findCustomerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.findCustomerToolStripMenuItem.Name = "findCustomerToolStripMenuItem";
+            this.findCustomerToolStripMenuItem.Size = new System.Drawing.Size(174, 30);
+            this.findCustomerToolStripMenuItem.Text = "Find Customer";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.flowProductCard);
+            this.groupBox1.ForeColor = System.Drawing.Color.IndianRed;
+            this.groupBox1.Location = new System.Drawing.Point(4, 52);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(366, 508);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Cards";
+            // 
+            // flowProductCard
+            // 
+            this.flowProductCard.AutoScroll = true;
+            this.flowProductCard.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowProductCard.Location = new System.Drawing.Point(4, 20);
+            this.flowProductCard.Name = "flowProductCard";
+            this.flowProductCard.Size = new System.Drawing.Size(356, 482);
+            this.flowProductCard.TabIndex = 0;
+            this.flowProductCard.WrapContents = false;
+            // 
             // searchForProducts1
             // 
             this.searchForProducts1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.searchForProducts1.Location = new System.Drawing.Point(283, 47);
+            this.searchForProducts1.Location = new System.Drawing.Point(366, 47);
             this.searchForProducts1.Margin = new System.Windows.Forms.Padding(4);
             this.searchForProducts1.Name = "searchForProducts1";
             this.searchForProducts1.Size = new System.Drawing.Size(873, 749);
             this.searchForProducts1.TabIndex = 1;
-            // 
-            // manageSuppliersListToolStripMenuItem
-            // 
-            this.manageSuppliersListToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.manageSuppliersListToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.supplier;
-            this.manageSuppliersListToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.manageSuppliersListToolStripMenuItem.Name = "manageSuppliersListToolStripMenuItem";
-            this.manageSuppliersListToolStripMenuItem.Size = new System.Drawing.Size(228, 38);
-            this.manageSuppliersListToolStripMenuItem.Text = "Manage Suppliers List";
-            this.manageSuppliersListToolStripMenuItem.Click += new System.EventHandler(this.manageSuppliersListToolStripMenuItem_Click);
             // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 799);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.searchForProducts1);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -336,6 +420,7 @@
             this.Text = "MainScreen";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -365,5 +450,12 @@
         private System.Windows.Forms.ToolStripMenuItem addCategoryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showCategoriesListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageSuppliersListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem findSupplierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageCustomerListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addCustomerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem findCustomerToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.FlowLayoutPanel flowProductCard;
     }
 }

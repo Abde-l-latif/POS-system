@@ -63,6 +63,31 @@ namespace PosBusinessLayer
             return clsDataSuppliers.UpdateSuppliers(this.SupplierID, this.PersonID, this.IsActive, DateTime.Now);
         }
 
+        public bool isSupplierExist()
+        {
+            return clsDataSuppliers.IsSupplierExist(this.SupplierID);
+        }
+
+        static public bool isSupplierExist(int ID)
+        {
+            return clsDataSuppliers.IsSupplierExist(ID);
+        }
+
+        public bool isPersonAlreadySupplier()
+        {
+            return clsDataSuppliers.IsPersonAlreadySupplier(this.PersonID);
+        }
+
+        static public bool isPersonAlreadySupplier(int ID)
+        {
+            return clsDataSuppliers.IsPersonAlreadySupplier(ID);
+        }
+
+        static public int GetSupplierIDByFirstName(string FirstName)
+        {
+            return clsDataSuppliers.GetSupplierIDByFirstName(FirstName);
+        }
+
         public static DataTable GetAllSuppliers()
         {
             return clsDataSuppliers.GetAllSuppliers();

@@ -109,6 +109,12 @@
     <Compile Include="ProductFolder\Controls\ProductBoxControl.Designer.cs">
       <DependentUpon>ProductBoxControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductFolder\Controls\ProductCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProductFolder\Controls\ProductCard.Designer.cs">
+      <DependentUpon>ProductCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductFolder\Controls\ProductDetails.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -151,11 +157,35 @@
     <Compile Include="SuppliersFolder\AddUpdateSupplierForm.Designer.cs">
       <DependentUpon>AddUpdateSupplierForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuppliersFolder\Controls\SupplierDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SuppliersFolder\Controls\SupplierDetails.Designer.cs">
+      <DependentUpon>SupplierDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuppliersFolder\Controls\SupplierDetailsWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SuppliersFolder\Controls\SupplierDetailsWithFilter.Designer.cs">
+      <DependentUpon>SupplierDetailsWithFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuppliersFolder\FindSupplierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuppliersFolder\FindSupplierForm.Designer.cs">
+      <DependentUpon>FindSupplierForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SuppliersFolder\ManageSupplierList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SuppliersFolder\ManageSupplierList.Designer.cs">
       <DependentUpon>ManageSupplierList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuppliersFolder\SupplierDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuppliersFolder\SupplierDetailsForm.Designer.cs">
+      <DependentUpon>SupplierDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UsersFolder\AddUser.cs">
       <SubType>Form</SubType>
@@ -232,6 +262,9 @@
     <EmbeddedResource Include="ProductFolder\Controls\ProductBoxControl.resx">
       <DependentUpon>ProductBoxControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProductFolder\Controls\ProductCard.resx">
+      <DependentUpon>ProductCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProductFolder\Controls\ProductDetails.resx">
       <DependentUpon>ProductDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,8 +286,20 @@
     <EmbeddedResource Include="SuppliersFolder\AddUpdateSupplierForm.resx">
       <DependentUpon>AddUpdateSupplierForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SuppliersFolder\Controls\SupplierDetails.resx">
+      <DependentUpon>SupplierDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuppliersFolder\Controls\SupplierDetailsWithFilter.resx">
+      <DependentUpon>SupplierDetailsWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuppliersFolder\FindSupplierForm.resx">
+      <DependentUpon>FindSupplierForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SuppliersFolder\ManageSupplierList.resx">
       <DependentUpon>ManageSupplierList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuppliersFolder\SupplierDetailsForm.resx">
+      <DependentUpon>SupplierDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsersFolder\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
@@ -452,6 +497,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\suppliersAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_column.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\network_diagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\network_diagramAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\network_diagramAddTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\network_diagramFind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\network_diagramFindTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\network_diagramUpdate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\network_diagramUpdateTitle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

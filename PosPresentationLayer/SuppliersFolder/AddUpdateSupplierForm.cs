@@ -15,7 +15,7 @@ namespace PosPresentationLayer.SuppliersFolder
 {
     public partial class AddUpdateSupplierForm : Form
     {
-
+        public event EventHandler<int> SupplierIdSelected; 
         clsSupplier supplier = new clsSupplier();
         enum enMode { AddMode , UpdateMode }
 
@@ -58,6 +58,8 @@ namespace PosPresentationLayer.SuppliersFolder
                 personDetailsWithFilter1.FilterField = false;
 
                 personDetailsWithFilter1.PersonID = supplier.PersonID;
+                personDetailsWithFilter1.personDetails.EnableUpdate = true;
+
                 LbSupplierID.Text = supplier.SupplierID.ToString();
                 LBpersonID.Text = supplier.PersonID.ToString();
                 checkBox1.Checked = supplier.IsActive;
@@ -69,8 +71,6 @@ namespace PosPresentationLayer.SuppliersFolder
             {
                 pictureTitle.Image = Resources.suppliersAdd;
                 LbTitle.Text = "Add New Supplier";
-                
-
             }
         }
 
@@ -78,10 +78,18 @@ namespace PosPresentationLayer.SuppliersFolder
         {   
             supplier.IsActive = checkBox1.Checked;
 
+            if (supplier.isPersonAlreadySupplier())
+            {
+                MessageBox.Show("This Person is Already a supplier !", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                personDetailsWithFilter1.FilterField = true;
+                return;
+            }
+
             if(supplier.Save())
             {
                 MessageBox.Show("Operation Done successfully !", "succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LbSupplierID.Text = supplier.SupplierID.ToString();
+                SupplierIdSelected?.Invoke(this, supplier.SupplierID);
                 BtnSave.Enabled = false;
                 personDetailsWithFilter1.personDetails.EnableUpdate = false; 
             }

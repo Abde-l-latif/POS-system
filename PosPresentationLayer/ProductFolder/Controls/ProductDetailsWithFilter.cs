@@ -63,7 +63,6 @@ namespace PosPresentationLayer.ProductFolder.Controls
             if(FilterText == "ProductID")
             {
                 productDetails1.LoadByProductId(Convert.ToInt32(TextBoxFilter.Text));
-                groupBox2.Enabled = false;
                 return; 
             }
 
@@ -71,7 +70,6 @@ namespace PosPresentationLayer.ProductFolder.Controls
             {
                 ProductID = clsProducts.GetIdOfFilteredProduct(FilterText, TextBoxFilter.Text); 
                 productDetails1.LoadByProductId(ProductID);
-                groupBox2.Enabled = false;
             }
             else
             {

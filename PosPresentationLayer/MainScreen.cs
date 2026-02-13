@@ -6,6 +6,8 @@ using PosPresentationLayer.PeopleFolder;
 using PosPresentationLayer.ProductFolder;
 using PosPresentationLayer.CategoriesFolder;
 using PosPresentationLayer.SuppliersFolder;
+using PosBusinessLayer;
+using PosPresentationLayer.ProductFolder.Controls;
 
 namespace PosPresentationLayer
 {
@@ -17,6 +19,23 @@ namespace PosPresentationLayer
             StartPosition = FormStartPosition.CenterScreen;
             this.WindowState = FormWindowState.Maximized;
             menuStrip1.Renderer = new CustomMenuRenderer();
+            searchForProducts1.ProductInfoSelected += SetProductCard;
+        }
+
+        private void SetProductCard(object sender, clsProducts Product)
+        {
+            ProductCard Card = new ProductCard();
+
+            if(!String.IsNullOrEmpty(Product.ProductImage))
+                Card.ImagePath = Product.ProductImage;
+
+            Card.ProducName = Product.ProductName;
+
+            Card.Quantity = 1;
+
+            Card.Price = Product.SellingPrice;
+
+            flowProductCard.Controls.Add(Card);
         }
 
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
@@ -96,5 +115,13 @@ namespace PosPresentationLayer
             ManageSupplierList fm = new ManageSupplierList();
             fm.ShowDialog();
         }
+
+        private void findSupplierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FindSupplierForm fm = new FindSupplierForm();
+            fm.ShowDialog();
+        }
+
+
     }
 }

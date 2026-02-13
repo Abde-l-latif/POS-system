@@ -18,7 +18,21 @@ namespace PosPresentationLayer.ProductFolder.Controls
         public ProductBoxControl()
         {
             InitializeComponent();
+            _registerClick(this);
         }
+
+        private void _registerClick(Control Controle)
+        {
+            Controle.Click += ProductBoxControl_Click;
+
+            foreach (Control c in Controle.Controls)
+            {
+                _registerClick(c);
+
+            }
+        }
+
+
 
         public int ProductID { get; set; }
 
@@ -38,12 +52,6 @@ namespace PosPresentationLayer.ProductFolder.Controls
         }
 
 
-
-        private void ProductBoxControl_DoubleClick(object sender, EventArgs e)
-        {
-            ProductClicked?.Invoke(this , ProductID);
-        }
-
         private void ProductBoxControl_Load(object sender, EventArgs e)
         {
             LbProductName.Text = ProdName;
@@ -58,6 +66,11 @@ namespace PosPresentationLayer.ProductFolder.Controls
             }
             else
                 ProductPic.Image = Resources.box;
+        }
+
+        private void ProductBoxControl_Click(object sender, EventArgs e)
+        {
+            ProductClicked?.Invoke(this, ProductID);
         }
     }
 }

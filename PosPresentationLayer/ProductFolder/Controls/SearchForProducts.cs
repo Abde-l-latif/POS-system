@@ -14,6 +14,8 @@ namespace PosPresentationLayer.ProductFolder.Controls
 {
     public partial class SearchForProducts : UserControl
     {
+        public event EventHandler<clsProducts> ProductInfoSelected; 
+
         DataTable DT;
         const short _PageSize = 8;
         short _Page = 0;
@@ -31,7 +33,7 @@ namespace PosPresentationLayer.ProductFolder.Controls
             _InitializePreviousNextButton();
             _searchTimer.Interval = 400; 
             _searchTimer.Tick += SearchTimer_Tick;
-            comboSort.SelectedIndex = 0;
+            comboSort.SelectedIndex = 0;  
         }
 
         private void SearchTimer_Tick(object sender, EventArgs e)
@@ -102,6 +104,7 @@ namespace PosPresentationLayer.ProductFolder.Controls
                 {
                     ProductBoxControl box = new ProductBoxControl();
 
+                    box.ProductClicked += _ProductClicked;
                     box.ProductID = Convert.ToInt32(dr["ProductID"]);
                     box.ProductPrice = Convert.ToDecimal(dr["SellingPrice"]);
                     box.ProdName = Convert.ToString(dr["ProductName"]);
@@ -117,6 +120,12 @@ namespace PosPresentationLayer.ProductFolder.Controls
                 }
 
             }
+        }
+
+        private void _ProductClicked(object Sender, int ProductID)
+        {
+            clsProducts product = clsProducts.GetProductByID(ProductID);
+            ProductInfoSelected?.Invoke(this, product);
         }
 
         private void textSearch_TextChanged(object sender, EventArgs e)
@@ -184,5 +193,6 @@ namespace PosPresentationLayer.ProductFolder.Controls
             }
             _CreateProductBoxes();
         }
+
     }
 }

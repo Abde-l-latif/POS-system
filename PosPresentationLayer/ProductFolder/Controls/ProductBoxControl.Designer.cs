@@ -76,7 +76,7 @@
             this.Name = "ProductBoxControl";
             this.Size = new System.Drawing.Size(173, 175);
             this.Load += new System.EventHandler(this.ProductBoxControl_Load);
-            this.DoubleClick += new System.EventHandler(this.ProductBoxControl_DoubleClick);
+            this.Click += new System.EventHandler(this.ProductBoxControl_Click);
             ((System.ComponentModel.ISupportInitialize)(this.ProductPic)).EndInit();
             this.ResumeLayout(false);
 

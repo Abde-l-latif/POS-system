@@ -30,38 +30,33 @@
         {
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.updateSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.LBrecords = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LBtitle = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.textFilter = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.supplierDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.updateSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteSupplierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateSupplierToolStripMenuItem});
+            this.updateSupplierToolStripMenuItem,
+            this.deleteSupplierToolStripMenuItem,
+            this.supplierDetailsToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(167, 34);
-            // 
-            // updateSupplierToolStripMenuItem
-            // 
-            this.updateSupplierToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.edit;
-            this.updateSupplierToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.updateSupplierToolStripMenuItem.Name = "updateSupplierToolStripMenuItem";
-            this.updateSupplierToolStripMenuItem.Size = new System.Drawing.Size(166, 30);
-            this.updateSupplierToolStripMenuItem.Text = "Update Supplier";
-            this.updateSupplierToolStripMenuItem.Click += new System.EventHandler(this.updateSupplierToolStripMenuItem_Click);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(189, 116);
             // 
             // dataGridView1
             // 
@@ -82,16 +77,6 @@
             this.LBrecords.Size = new System.Drawing.Size(67, 17);
             this.LBrecords.TabIndex = 3;
             this.LBrecords.Text = "0 Records";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PosPresentationLayer.Properties.Resources.userss;
-            this.pictureBox1.Location = new System.Drawing.Point(326, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(118, 113);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
             // 
             // LBtitle
             // 
@@ -116,20 +101,6 @@
             this.comboBox2.Size = new System.Drawing.Size(75, 21);
             this.comboBox2.TabIndex = 33;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::PosPresentationLayer.Properties.Resources.plus;
-            this.button2.Location = new System.Drawing.Point(416, 180);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(39, 24);
-            this.button2.TabIndex = 32;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textFilter
             // 
@@ -166,6 +137,15 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "Filter By :";
             // 
+            // supplierDetailsToolStripMenuItem
+            // 
+            this.supplierDetailsToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.customer;
+            this.supplierDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.supplierDetailsToolStripMenuItem.Name = "supplierDetailsToolStripMenuItem";
+            this.supplierDetailsToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.supplierDetailsToolStripMenuItem.Text = "Supplier Details";
+            this.supplierDetailsToolStripMenuItem.Click += new System.EventHandler(this.supplierDetailsToolStripMenuItem_Click);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::PosPresentationLayer.Properties.Resources.box;
@@ -174,6 +154,48 @@
             this.pictureBox2.Size = new System.Drawing.Size(75, 70);
             this.pictureBox2.TabIndex = 34;
             this.pictureBox2.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::PosPresentationLayer.Properties.Resources.plus;
+            this.button2.Location = new System.Drawing.Point(416, 180);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(39, 24);
+            this.button2.TabIndex = 32;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PosPresentationLayer.Properties.Resources.userss;
+            this.pictureBox1.Location = new System.Drawing.Point(326, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(118, 113);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
+            // updateSupplierToolStripMenuItem
+            // 
+            this.updateSupplierToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.edit;
+            this.updateSupplierToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.updateSupplierToolStripMenuItem.Name = "updateSupplierToolStripMenuItem";
+            this.updateSupplierToolStripMenuItem.Size = new System.Drawing.Size(166, 30);
+            this.updateSupplierToolStripMenuItem.Text = "Update Supplier";
+            this.updateSupplierToolStripMenuItem.Click += new System.EventHandler(this.updateSupplierToolStripMenuItem_Click);
+            // 
+            // deleteSupplierToolStripMenuItem
+            // 
+            this.deleteSupplierToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.delete_column;
+            this.deleteSupplierToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.deleteSupplierToolStripMenuItem.Name = "deleteSupplierToolStripMenuItem";
+            this.deleteSupplierToolStripMenuItem.Size = new System.Drawing.Size(166, 30);
+            this.deleteSupplierToolStripMenuItem.Text = "Delete Supplier";
+            this.deleteSupplierToolStripMenuItem.Click += new System.EventHandler(this.deleteSupplierToolStripMenuItem_Click);
             // 
             // ManageSupplierList
             // 
@@ -195,8 +217,8 @@
             this.Text = "ManageSupplierList";
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,5 +237,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolStripMenuItem deleteSupplierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supplierDetailsToolStripMenuItem;
     }
 }

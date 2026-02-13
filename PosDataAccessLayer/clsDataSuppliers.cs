@@ -173,6 +173,108 @@ public static class clsDataSuppliers
 
         return IsFound;
     }
+
+    static public bool IsSupplierExist(int ID)
+    {
+        bool IsFound = false;
+
+        using (SqlConnection Connection = new SqlConnection(clsDataSettings.ConnectionString))
+        {
+            Connection.Open();
+
+            string Query = @"SELECT found = 1 FROM Suppliers WHERE SupplierID = @SupplierID;";
+
+            try
+            {
+                using (SqlCommand Command = new SqlCommand(Query, Connection))
+                {
+                    Command.Parameters.AddWithValue("@SupplierID", ID);
+
+                    object result = Command.ExecuteScalar();
+
+                    if(result != null)
+                        IsFound = Convert.ToInt32(result) == 1;
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
+
+        return IsFound;
+    }
+
+    static public bool IsPersonAlreadySupplier(int ID)
+    {
+        bool IsFound = false;
+
+        using (SqlConnection Connection = new SqlConnection(clsDataSettings.ConnectionString))
+        {
+            Connection.Open();
+
+            string Query = @"SELECT found = 1 FROM Suppliers WHERE PersonID = @PersonID;";
+
+            try
+            {
+                using (SqlCommand Command = new SqlCommand(Query, Connection))
+                {
+                    Command.Parameters.AddWithValue("@PersonID", ID);
+
+                    object result = Command.ExecuteScalar();
+
+                    if (result != null)
+                        IsFound = Convert.ToInt32(result) == 1;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
+
+        return IsFound;
+    }
+
+    static public int GetSupplierIDByFirstName(string FirstName)
+    {
+        int ID = -1;
+
+        using (SqlConnection Connection = new SqlConnection(clsDataSettings.ConnectionString))
+        {
+            Connection.Open();
+
+            string Query = @"SELECT SupplierID FROM Suppliers S
+            INNER JOIN Persons P ON P.PersonID = S.PersonID
+            WHERE FirstName = @FirstName
+            ;";
+
+            try
+            {
+                using (SqlCommand Command = new SqlCommand(Query, Connection))
+                {
+                    Command.Parameters.AddWithValue("@FirstName", FirstName);
+
+                    object result = Command.ExecuteScalar();
+
+                    if (result != null)
+                        ID = Convert.ToInt32(result);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
+
+        return ID;
+    }
 }
 
 

@@ -171,5 +171,33 @@ namespace PosPresentationLayer.SuppliersFolder
                 e.Handled = true;
 
         }
+
+        private void deleteSupplierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                if(clsSupplier.Delete(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value)))
+                {
+                    MessageBox.Show("Supplier Deleted successfully", "succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _ReloadDataGrid();
+                }
+                else
+                    MessageBox.Show("Operation failed", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+                MessageBox.Show("Please Select first a row", "Unselected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void supplierDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                SupplierDetailsForm fm = new SupplierDetailsForm(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value));
+                fm.ShowDialog();
+            }
+            else
+                MessageBox.Show("Please Select first a row", "Unselected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }
