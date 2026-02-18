@@ -1,37 +1,35 @@
 ﻿using PosBusinessLayer;
+using PosPresentationLayer.SuppliersFolder.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PosPresentationLayer.SuppliersFolder.Controls
+namespace PosPresentationLayer.CustomerFolder.Controls
 {
-    public partial class SupplierDetailsWithFilter : UserControl
+    public partial class CustomerDetailsWithFilter : UserControl
     {
-
-        public SupplierDetailsWithFilter()
+        public CustomerDetailsWithFilter()
         {
             InitializeComponent();
             comboBox1.SelectedIndex = 0;
         }
 
-        private void BtnAddSupplier_Click(object sender, EventArgs e)
+        private void BtnAddCustomer_Click(object sender, EventArgs e)
         {
-            AddUpdateSupplierForm fm = new AddUpdateSupplierForm();
-            fm.SupplierIdSelected += _SupplierIdReceived;
+            AddUpdateCustomersForm fm = new AddUpdateCustomersForm();
+            fm.CustomerIdSelected += _CustomerIdReceived;
             fm.ShowDialog();
-
         }
 
-        private void _SupplierIdReceived(object sender, int ID)
+        private void _CustomerIdReceived(object sender, int ID)
         {
-            supplierDetails1.LoadBySupplierID(ID);
+            customerDetailsControl1.LoadByCustomerID(ID);
             comboBox1.SelectedIndex = 0;
             TextBoxFilter.Text = ID.ToString();
         }
@@ -44,24 +42,24 @@ namespace PosPresentationLayer.SuppliersFolder.Controls
                 return;
             }
 
-            if (comboBox1.Text == "Supplier ID")
+            if (comboBox1.Text == "Customer ID")
             {
-                int SupplierID = Convert.ToInt32(TextBoxFilter.Text);
+                int CustomerID = Convert.ToInt32(TextBoxFilter.Text);
 
-                if (clsSupplier.isSupplierExist(SupplierID))
+                if (clsCustomers.isCustomerExist(CustomerID))
                 {
-                    supplierDetails1.LoadBySupplierID(SupplierID);
+                    customerDetailsControl1.LoadByCustomerID(CustomerID);
                 }
                 else
-                    MessageBox.Show("Supplier Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Customer Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (comboBox1.Text == "First Name")
             {
-                int ID = clsSupplier.GetSupplierIDByFirstName(TextBoxFilter.Text);
+                int ID = clsCustomers.GetCustomerIDByFirstName(TextBoxFilter.Text);
 
                 if (ID != -1)
                 {
-                    supplierDetails1.LoadBySupplierID(ID);
+                    customerDetailsControl1.LoadByCustomerID(ID);
                 }
                 else
                     MessageBox.Show("Supplier Not Found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -81,7 +79,7 @@ namespace PosPresentationLayer.SuppliersFolder.Controls
         {
             TextBoxFilter.KeyPress -= textFilter_KeyPress;
 
-            if (comboBox1.Text == "Supplier ID")
+            if (comboBox1.Text == "Customer ID")
             {
                 TextBoxFilter.KeyPress += textFilter_KeyPress;
             }

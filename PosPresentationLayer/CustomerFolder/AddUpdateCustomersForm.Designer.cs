@@ -32,14 +32,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.LbCustomerID = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.LBpersonID = new System.Windows.Forms.Label();
-            this.pictureTitle = new System.Windows.Forms.PictureBox();
             this.LbTitle = new System.Windows.Forms.Label();
             this.personDetailsWithFilter1 = new PosPresentationLayer.PeopleFolder.Controls.personDetailsWithFilter();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureTitle = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -79,7 +79,7 @@
             this.groupBox1.Size = new System.Drawing.Size(615, 95);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Supplier Information";
+            this.groupBox1.Text = "Customer Information";
             // 
             // checkBox1
             // 
@@ -104,16 +104,6 @@
             this.label2.TabIndex = 43;
             this.label2.Text = "Customer ID :";
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::PosPresentationLayer.Properties.Resources.id;
-            this.pictureBox3.Location = new System.Drawing.Point(99, 25);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(21, 21);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 42;
-            this.pictureBox3.TabStop = false;
-            // 
             // LbCustomerID
             // 
             this.LbCustomerID.AutoSize = true;
@@ -135,16 +125,6 @@
             this.label6.TabIndex = 40;
             this.label6.Text = "Person ID :";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::PosPresentationLayer.Properties.Resources.id;
-            this.pictureBox2.Location = new System.Drawing.Point(99, 54);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(21, 21);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 39;
-            this.pictureBox2.TabStop = false;
-            // 
             // LBpersonID
             // 
             this.LBpersonID.AutoSize = true;
@@ -154,16 +134,6 @@
             this.LBpersonID.Size = new System.Drawing.Size(20, 17);
             this.LBpersonID.TabIndex = 38;
             this.LBpersonID.Text = "??";
-            // 
-            // pictureTitle
-            // 
-            this.pictureTitle.Image = global::PosPresentationLayer.Properties.Resources.network_diagramAddTitle;
-            this.pictureTitle.Location = new System.Drawing.Point(271, 12);
-            this.pictureTitle.Name = "pictureTitle";
-            this.pictureTitle.Size = new System.Drawing.Size(105, 97);
-            this.pictureTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureTitle.TabIndex = 7;
-            this.pictureTitle.TabStop = false;
             // 
             // LbTitle
             // 
@@ -184,6 +154,36 @@
             this.personDetailsWithFilter1.Size = new System.Drawing.Size(630, 273);
             this.personDetailsWithFilter1.TabIndex = 5;
             this.personDetailsWithFilter1.TextField = "";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::PosPresentationLayer.Properties.Resources.id;
+            this.pictureBox3.Location = new System.Drawing.Point(99, 25);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(21, 21);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 42;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::PosPresentationLayer.Properties.Resources.id;
+            this.pictureBox2.Location = new System.Drawing.Point(99, 54);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(21, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 39;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureTitle
+            // 
+            this.pictureTitle.Image = global::PosPresentationLayer.Properties.Resources.network_diagramAddTitle;
+            this.pictureTitle.Location = new System.Drawing.Point(271, 12);
+            this.pictureTitle.Name = "pictureTitle";
+            this.pictureTitle.Size = new System.Drawing.Size(105, 97);
+            this.pictureTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureTitle.TabIndex = 7;
+            this.pictureTitle.TabStop = false;
             // 
             // AddUpdateCustomersForm
             // 

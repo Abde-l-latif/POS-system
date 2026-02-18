@@ -173,5 +173,19 @@ namespace PosPresentationLayer.CustomerFolder
 
             _ReloadDataGrid();
         }
+
+        private void customerDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a customer to update.", "No Customer Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int CustomerID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["CustomerID"].Value);
+
+            CustomerDetailsForm fm = new CustomerDetailsForm(CustomerID);
+            fm.ShowDialog();
+        }
     }
 }

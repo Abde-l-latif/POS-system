@@ -229,5 +229,11 @@ namespace PosPresentationLayer
             AddUpdateCustomersForm fm = new AddUpdateCustomersForm();
             fm.ShowDialog();
         }
+
+        private void findCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FindCustomerForm fm = new FindCustomerForm();
+            fm.ShowDialog();
+        }
     }
 }

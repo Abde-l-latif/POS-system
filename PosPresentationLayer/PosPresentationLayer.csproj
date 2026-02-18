@@ -67,6 +67,30 @@
     <Compile Include="CustomerFolder\AddUpdateCustomersForm.Designer.cs">
       <DependentUpon>AddUpdateCustomersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerFolder\Controls\CustomerDetailsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerFolder\Controls\CustomerDetailsControl.Designer.cs">
+      <DependentUpon>CustomerDetailsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerFolder\Controls\CustomerDetailsWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerFolder\Controls\CustomerDetailsWithFilter.Designer.cs">
+      <DependentUpon>CustomerDetailsWithFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerFolder\CustomerDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerFolder\CustomerDetailsForm.Designer.cs">
+      <DependentUpon>CustomerDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerFolder\FindCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerFolder\FindCustomerForm.Designer.cs">
+      <DependentUpon>FindCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerFolder\ManageCustomersList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +282,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerFolder\AddUpdateCustomersForm.resx">
       <DependentUpon>AddUpdateCustomersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerFolder\Controls\CustomerDetailsControl.resx">
+      <DependentUpon>CustomerDetailsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerFolder\Controls\CustomerDetailsWithFilter.resx">
+      <DependentUpon>CustomerDetailsWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerFolder\CustomerDetailsForm.resx">
+      <DependentUpon>CustomerDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerFolder\FindCustomerForm.resx">
+      <DependentUpon>FindCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerFolder\ManageCustomersList.resx">
       <DependentUpon>ManageCustomersList.cs</DependentUpon>

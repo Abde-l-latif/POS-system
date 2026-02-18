@@ -385,6 +385,7 @@
             this.findCustomerToolStripMenuItem.Name = "findCustomerToolStripMenuItem";
             this.findCustomerToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.findCustomerToolStripMenuItem.Text = "Find Customer";
+            this.findCustomerToolStripMenuItem.Click += new System.EventHandler(this.findCustomerToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
