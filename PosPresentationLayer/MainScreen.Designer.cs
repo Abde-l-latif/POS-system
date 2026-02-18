@@ -57,9 +57,21 @@
             this.findCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowProductCard = new System.Windows.Forms.FlowLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.LbTotal = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.LbTotalTax = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.LbSubTotal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BtnQuantity = new System.Windows.Forms.Button();
+            this.BtnTrash = new System.Windows.Forms.Button();
             this.searchForProducts1 = new PosPresentationLayer.ProductFolder.Controls.SearchForProducts();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -248,6 +260,7 @@
             this.manageCustomerListToolStripMenuItem.Name = "manageCustomerListToolStripMenuItem";
             this.manageCustomerListToolStripMenuItem.Size = new System.Drawing.Size(230, 38);
             this.manageCustomerListToolStripMenuItem.Text = "Manage Customer List";
+            this.manageCustomerListToolStripMenuItem.Click += new System.EventHandler(this.manageCustomerListToolStripMenuItem_Click);
             // 
             // aToolStripMenuItem
             // 
@@ -360,8 +373,9 @@
             this.addCustomerToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.network_diagramAdd;
             this.addCustomerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addCustomerToolStripMenuItem.Name = "addCustomerToolStripMenuItem";
-            this.addCustomerToolStripMenuItem.Size = new System.Drawing.Size(174, 30);
+            this.addCustomerToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.addCustomerToolStripMenuItem.Text = "Add Customer";
+            this.addCustomerToolStripMenuItem.Click += new System.EventHandler(this.addCustomerToolStripMenuItem_Click);
             // 
             // findCustomerToolStripMenuItem
             // 
@@ -369,7 +383,7 @@
             this.findCustomerToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.network_diagramFind;
             this.findCustomerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.findCustomerToolStripMenuItem.Name = "findCustomerToolStripMenuItem";
-            this.findCustomerToolStripMenuItem.Size = new System.Drawing.Size(174, 30);
+            this.findCustomerToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.findCustomerToolStripMenuItem.Text = "Find Customer";
             // 
             // groupBox1
@@ -393,6 +407,151 @@
             this.flowProductCard.TabIndex = 0;
             this.flowProductCard.WrapContents = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.HotPink;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(4, 563);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(365, 31);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Reset";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.LbTotal);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.LbTotalTax);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.LbSubTotal);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Location = new System.Drawing.Point(168, 598);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 106);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(5, 62);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(189, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "-------------------------------------";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // LbTotal
+            // 
+            this.LbTotal.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbTotal.ForeColor = System.Drawing.Color.IndianRed;
+            this.LbTotal.Location = new System.Drawing.Point(83, 77);
+            this.LbTotal.Name = "LbTotal";
+            this.LbTotal.Size = new System.Drawing.Size(112, 17);
+            this.LbTotal.TabIndex = 5;
+            this.LbTotal.Text = "0.00";
+            this.LbTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(6, 77);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 17);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Total";
+            // 
+            // LbTotalTax
+            // 
+            this.LbTotalTax.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbTotalTax.ForeColor = System.Drawing.Color.IndianRed;
+            this.LbTotalTax.Location = new System.Drawing.Point(83, 47);
+            this.LbTotalTax.Name = "LbTotalTax";
+            this.LbTotalTax.Size = new System.Drawing.Size(112, 17);
+            this.LbTotalTax.TabIndex = 3;
+            this.LbTotalTax.Text = "0.00";
+            this.LbTotalTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Location = new System.Drawing.Point(6, 47);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Total Tax";
+            // 
+            // LbSubTotal
+            // 
+            this.LbSubTotal.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbSubTotal.ForeColor = System.Drawing.Color.IndianRed;
+            this.LbSubTotal.Location = new System.Drawing.Point(83, 19);
+            this.LbSubTotal.Name = "LbSubTotal";
+            this.LbSubTotal.Size = new System.Drawing.Size(112, 17);
+            this.LbSubTotal.TabIndex = 1;
+            this.LbSubTotal.Text = "0.00";
+            this.LbSubTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(6, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "SubTotal";
+            // 
+            // BtnQuantity
+            // 
+            this.BtnQuantity.BackColor = System.Drawing.Color.IndianRed;
+            this.BtnQuantity.Enabled = false;
+            this.BtnQuantity.FlatAppearance.BorderSize = 0;
+            this.BtnQuantity.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.BtnQuantity.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.BtnQuantity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnQuantity.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnQuantity.Image = global::PosPresentationLayer.Properties.Resources.shopping_basket;
+            this.BtnQuantity.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnQuantity.Location = new System.Drawing.Point(5, 606);
+            this.BtnQuantity.Name = "BtnQuantity";
+            this.BtnQuantity.Size = new System.Drawing.Size(157, 28);
+            this.BtnQuantity.TabIndex = 5;
+            this.BtnQuantity.Text = "Quantity";
+            this.BtnQuantity.UseVisualStyleBackColor = false;
+            this.BtnQuantity.Click += new System.EventHandler(this.BtnQuantity_Click);
+            // 
+            // BtnTrash
+            // 
+            this.BtnTrash.BackColor = System.Drawing.Color.Tomato;
+            this.BtnTrash.Enabled = false;
+            this.BtnTrash.FlatAppearance.BorderSize = 0;
+            this.BtnTrash.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.BtnTrash.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.BtnTrash.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnTrash.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnTrash.Image = global::PosPresentationLayer.Properties.Resources.trash_can;
+            this.BtnTrash.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnTrash.Location = new System.Drawing.Point(5, 640);
+            this.BtnTrash.Name = "BtnTrash";
+            this.BtnTrash.Size = new System.Drawing.Size(157, 28);
+            this.BtnTrash.TabIndex = 6;
+            this.BtnTrash.Text = "Remove";
+            this.BtnTrash.UseVisualStyleBackColor = false;
+            this.BtnTrash.Click += new System.EventHandler(this.BtnTrash_Click);
+            // 
             // searchForProducts1
             // 
             this.searchForProducts1.ForeColor = System.Drawing.SystemColors.GrayText;
@@ -407,6 +566,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 799);
+            this.Controls.Add(this.BtnTrash);
+            this.Controls.Add(this.BtnQuantity);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.searchForProducts1);
             this.Controls.Add(this.menuStrip1);
@@ -421,6 +584,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -457,5 +622,16 @@
         private System.Windows.Forms.ToolStripMenuItem findCustomerToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.FlowLayoutPanel flowProductCard;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LbTotal;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label LbTotalTax;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label LbSubTotal;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button BtnQuantity;
+        private System.Windows.Forms.Button BtnTrash;
     }
 }

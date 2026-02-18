@@ -1,18 +1,25 @@
-﻿using PosPresentationLayer.utilitiesFolder;
-using System;
-using System.Windows.Forms;
-using PosPresentationLayer.UsersFolder;
+﻿using PosBusinessLayer;
+using PosPresentationLayer.CategoriesFolder;
+using PosPresentationLayer.CustomerFolder;
 using PosPresentationLayer.PeopleFolder;
 using PosPresentationLayer.ProductFolder;
-using PosPresentationLayer.CategoriesFolder;
-using PosPresentationLayer.SuppliersFolder;
-using PosBusinessLayer;
 using PosPresentationLayer.ProductFolder.Controls;
+using PosPresentationLayer.SuppliersFolder;
+using PosPresentationLayer.UsersFolder;
+using PosPresentationLayer.utilitiesFolder;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace PosPresentationLayer
 {
     public partial class MainScreen : Form
     {
+
+        private decimal _Subtotal = 0; 
+        private decimal _AmountTax = 0;
+        private int _SelectedControlIndex = -1;
         public MainScreen()
         {
             InitializeComponent();
@@ -24,18 +31,107 @@ namespace PosPresentationLayer
 
         private void SetProductCard(object sender, clsProducts Product)
         {
+            foreach(ProductCard card in flowProductCard.Controls.OfType<ProductCard>())
+            {
+                if(card.ProducName == Product.ProductName)
+                {
+                    card.Quantity++;
+                    _Recalculate();
+                    card.ProductCard_Load(null, null);
+                    return;
+                }
+            }
+
             ProductCard Card = new ProductCard();
+
+            Card.ProductSelected += CardProductSelected;
 
             if(!String.IsNullOrEmpty(Product.ProductImage))
                 Card.ImagePath = Product.ProductImage;
 
             Card.ProducName = Product.ProductName;
 
+            Card.StockQuantity = Product.StockQuantity;
+
             Card.Quantity = 1;
+
+            Card.Tax = Product.TaxRate;
 
             Card.Price = Product.SellingPrice;
 
             flowProductCard.Controls.Add(Card);
+
+            SetCalculation(Card);
+
+        }
+
+        private void CardProductSelected(object sender, int Index)
+        {
+            BtnQuantity.Enabled = true;
+            BtnTrash.Enabled = true;
+
+            _SelectedControlIndex = Index;
+        }
+
+        private void SetCalculation(ProductCard Card)
+        {
+            _Subtotal += Card.SubTotal;
+            _AmountTax += Card.TaxAmount;
+
+            LbSubTotal.Text = _Subtotal.ToString("0.00");
+            LbTotalTax.Text = _AmountTax.ToString("0.00");
+            LbTotal.Text = (_Subtotal + _AmountTax).ToString("0.00");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            flowProductCard.Controls.Clear();
+            BtnQuantity.Enabled = false;
+            BtnTrash.Enabled = false;
+            _Subtotal = 0;
+            _AmountTax = 0;
+            LbSubTotal.Text = "0.00";
+            LbTotalTax.Text = "0.00";
+            LbTotal.Text = "0.00";
+        }
+
+        private void BtnQuantity_Click(object sender, EventArgs e)
+        {
+            ProductQuantityForm fm = new ProductQuantityForm(((ProductCard)flowProductCard.Controls[_SelectedControlIndex]).StockQuantity);
+            fm.QuantitySelected += QuantitySelected;
+            fm.ShowDialog();
+        }
+
+        private void QuantitySelected(object sender, int Quantity)
+        {
+            ProductCard Card = (ProductCard)flowProductCard.Controls[_SelectedControlIndex];
+            Card.Quantity = Quantity;
+            Card.ProductCard_Load(null, null);
+            _Recalculate();
+        }
+
+        private void _Recalculate()
+        {
+            _Subtotal = 0;
+            _AmountTax = 0;
+
+            foreach (ProductCard Card in flowProductCard.Controls.OfType<ProductCard>())
+            {
+                _Subtotal += Card.SubTotal;
+                _AmountTax += Card.TaxAmount;
+            }
+
+            LbSubTotal.Text = _Subtotal.ToString("0.00");
+            LbTotalTax.Text = _AmountTax.ToString("0.00");
+            LbTotal.Text = (_Subtotal + _AmountTax).ToString("0.00");
+        }
+
+        private void BtnTrash_Click(object sender, EventArgs e)
+        {
+            flowProductCard.Controls.RemoveAt(_SelectedControlIndex);
+            _Recalculate();
+            BtnTrash.Enabled = false;
+            BtnQuantity.Enabled = false;
         }
 
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
@@ -122,6 +218,16 @@ namespace PosPresentationLayer
             fm.ShowDialog();
         }
 
+        private void manageCustomerListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           ManageCustomersList fm = new ManageCustomersList();
+            fm.ShowDialog();
+        }
 
+        private void addCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddUpdateCustomersForm fm = new AddUpdateCustomersForm();
+            fm.ShowDialog();
+        }
     }
 }

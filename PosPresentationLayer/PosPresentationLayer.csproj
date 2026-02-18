@@ -61,6 +61,18 @@
       <DependentUpon>CategoriesListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="clsGlobal.cs" />
+    <Compile Include="CustomerFolder\AddUpdateCustomersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerFolder\AddUpdateCustomersForm.Designer.cs">
+      <DependentUpon>AddUpdateCustomersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerFolder\ManageCustomersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerFolder\ManageCustomersList.Designer.cs">
+      <DependentUpon>ManageCustomersList.cs</DependentUpon>
+    </Compile>
     <Compile Include="PeopleFolder\AddUpdatePersonScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +163,12 @@
     <Compile Include="ProductFolder\ProductDetailsForm.Designer.cs">
       <DependentUpon>ProductDetailsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductFolder\ProductQuantityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductFolder\ProductQuantityForm.Designer.cs">
+      <DependentUpon>ProductQuantityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SuppliersFolder\AddUpdateSupplierForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +256,12 @@
     <EmbeddedResource Include="CategoriesFolder\CategoriesListForm.resx">
       <DependentUpon>CategoriesListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerFolder\AddUpdateCustomersForm.resx">
+      <DependentUpon>AddUpdateCustomersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerFolder\ManageCustomersList.resx">
+      <DependentUpon>ManageCustomersList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PeopleFolder\AddUpdatePersonScreen.resx">
       <DependentUpon>AddUpdatePersonScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -282,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductFolder\ProductDetailsForm.resx">
       <DependentUpon>ProductDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductFolder\ProductQuantityForm.resx">
+      <DependentUpon>ProductQuantityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SuppliersFolder\AddUpdateSupplierForm.resx">
       <DependentUpon>AddUpdateSupplierForm.cs</DependentUpon>
@@ -527,6 +554,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\network_diagramUpdateTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping_basket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_can.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

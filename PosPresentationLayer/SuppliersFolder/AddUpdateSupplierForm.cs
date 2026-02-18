@@ -55,7 +55,6 @@ namespace PosPresentationLayer.SuppliersFolder
                 LbTitle.Text = "Update Supplier";
 
                 personDetailsWithFilter1.TextField = supplier.PersonID.ToString();
-                personDetailsWithFilter1.FilterField = false;
 
                 personDetailsWithFilter1.PersonID = supplier.PersonID;
                 personDetailsWithFilter1.personDetails.EnableUpdate = true;
@@ -78,11 +77,15 @@ namespace PosPresentationLayer.SuppliersFolder
         {   
             supplier.IsActive = checkBox1.Checked;
 
-            if (supplier.isPersonAlreadySupplier())
+            if(_Mode == enMode.AddMode)
             {
-                MessageBox.Show("This Person is Already a supplier !", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                personDetailsWithFilter1.FilterField = true;
-                return;
+                if (supplier.isPersonAlreadySupplier())
+                {
+                    MessageBox.Show("This Person is Already a supplier !", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    personDetailsWithFilter1.FilterField = true;
+                    return;
+                }
+
             }
 
             if(supplier.Save())

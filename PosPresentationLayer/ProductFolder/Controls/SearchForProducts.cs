@@ -88,10 +88,10 @@ namespace PosPresentationLayer.ProductFolder.Controls
                 if (String.IsNullOrEmpty(textSearch.Text))
                 {
                     _InitializePreviousNextButton();
-                    return;
+                    DT = clsProducts.GetAllProducts(_Page, _PageSize, _Column, _OrderBy);
                 }
-
-                DT = clsProducts.GetProductsByName(textSearch.Text, _Page, _PageSize);
+                else
+                    DT = clsProducts.GetProductsByName(textSearch.Text, _Page, _PageSize);
             }
 
             flowLayoutPanel1.Controls.Clear();
