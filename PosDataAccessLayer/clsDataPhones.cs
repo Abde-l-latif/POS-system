@@ -116,6 +116,42 @@ namespace PosDataAccessLayer
             }
         }
 
+        static public bool DeleteByPersonID(int PersonID)
+        {
+
+            using (SqlConnection Connection = new SqlConnection(clsDataSettings.ConnectionString))
+            {
+
+                bool Deleted = false;
+
+                Connection.Open();
+
+                string query = @"DELETE FROM Phones Where PersonID = @PersonID";
+
+                try
+                {
+
+                    using (SqlCommand cmd = new SqlCommand(query, Connection))
+                    {
+                        cmd.Parameters.AddWithValue("@PersonID", PersonID);
+
+                        int result = cmd.ExecuteNonQuery();
+
+                        if (result > 0)
+                        {
+                            Deleted = true;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
+                return Deleted;
+            }
+        }
+
         static public bool UpdatePhoneNumber(int PhoneID , string PhoneNumber)
         {
 

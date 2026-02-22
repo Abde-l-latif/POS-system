@@ -308,5 +308,30 @@ namespace PosDataAccessLayer
 
             return ProductID;
         }
+
+        public static bool DeleteProducts(int id)
+        {
+            string query = "DELETE FROM Products WHERE ProductID = @ProductID";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(clsDataSettings.ConnectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ProductID", id);
+                        conn.Open();
+
+                        return cmd.ExecuteNonQuery() > 0;
+                    }
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                throw;
+            }
+        }
+
     }
 }

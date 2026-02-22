@@ -14,6 +14,17 @@ namespace PosPresentationLayer
 {
     internal class clsGlobal
     {
+        [Flags]
+        public enum Permissions
+        {
+            None = 0,
+            ManageProducts = 1,
+            ManageCustomers = 2,
+            AddUsers = 4,
+            ManageSuppliers = 8,
+            ManagePersons = 16
+        }
+
         static public clsUsers User = new clsUsers();
 
         static public string GenerateProtectedKey()

@@ -35,6 +35,9 @@
             this.manageCategoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showCategoriesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addRolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rolesListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.personsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +49,7 @@
             this.manageCustomerListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.findUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,7 +103,8 @@
             this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.PaleVioletRed;
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.securityToolStripMenuItem,
-            this.manageCategoriesToolStripMenuItem});
+            this.manageCategoriesToolStripMenuItem,
+            this.manageRolesToolStripMenuItem});
             this.settingsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settingsToolStripMenuItem.ForeColor = System.Drawing.Color.Snow;
             this.settingsToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.settingsIcon;
@@ -160,6 +165,38 @@
             this.showCategoriesListToolStripMenuItem.Size = new System.Drawing.Size(212, 30);
             this.showCategoriesListToolStripMenuItem.Text = "Show Categories List";
             this.showCategoriesListToolStripMenuItem.Click += new System.EventHandler(this.showCategoriesListToolStripMenuItem_Click);
+            // 
+            // manageRolesToolStripMenuItem
+            // 
+            this.manageRolesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addRolesToolStripMenuItem,
+            this.rolesListToolStripMenuItem});
+            this.manageRolesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.manageRolesToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.roleMain;
+            this.manageRolesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.manageRolesToolStripMenuItem.Name = "manageRolesToolStripMenuItem";
+            this.manageRolesToolStripMenuItem.Size = new System.Drawing.Size(202, 30);
+            this.manageRolesToolStripMenuItem.Text = "Manage Roles";
+            // 
+            // addRolesToolStripMenuItem
+            // 
+            this.addRolesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.addRolesToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.role_add;
+            this.addRolesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addRolesToolStripMenuItem.Name = "addRolesToolStripMenuItem";
+            this.addRolesToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.addRolesToolStripMenuItem.Text = "Add Roles";
+            this.addRolesToolStripMenuItem.Click += new System.EventHandler(this.addRolesToolStripMenuItem_Click);
+            // 
+            // rolesListToolStripMenuItem
+            // 
+            this.rolesListToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.rolesListToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.role_zoom1;
+            this.rolesListToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.rolesListToolStripMenuItem.Name = "rolesListToolStripMenuItem";
+            this.rolesListToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.rolesListToolStripMenuItem.Text = "Roles List";
+            this.rolesListToolStripMenuItem.Click += new System.EventHandler(this.rolesListToolStripMenuItem_Click);
             // 
             // personsToolStripMenuItem
             // 
@@ -266,7 +303,8 @@
             // 
             this.aToolStripMenuItem.BackColor = System.Drawing.Color.PaleVioletRed;
             this.aToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addUserToolStripMenuItem});
+            this.addUserToolStripMenuItem,
+            this.findUserToolStripMenuItem});
             this.aToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aToolStripMenuItem.ForeColor = System.Drawing.Color.Snow;
             this.aToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.users;
@@ -281,9 +319,19 @@
             this.addUserToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.user_add;
             this.addUserToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(140, 30);
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(142, 30);
             this.addUserToolStripMenuItem.Text = "Add User";
             this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
+            // 
+            // findUserToolStripMenuItem
+            // 
+            this.findUserToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.findUserToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.FindPerson;
+            this.findUserToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.findUserToolStripMenuItem.Name = "findUserToolStripMenuItem";
+            this.findUserToolStripMenuItem.Size = new System.Drawing.Size(142, 30);
+            this.findUserToolStripMenuItem.Text = "Find User";
+            this.findUserToolStripMenuItem.Click += new System.EventHandler(this.findUserToolStripMenuItem_Click);
             // 
             // productsToolStripMenuItem
             // 
@@ -373,7 +421,7 @@
             this.addCustomerToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.network_diagramAdd;
             this.addCustomerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addCustomerToolStripMenuItem.Name = "addCustomerToolStripMenuItem";
-            this.addCustomerToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.addCustomerToolStripMenuItem.Size = new System.Drawing.Size(174, 30);
             this.addCustomerToolStripMenuItem.Text = "Add Customer";
             this.addCustomerToolStripMenuItem.Click += new System.EventHandler(this.addCustomerToolStripMenuItem_Click);
             // 
@@ -383,7 +431,7 @@
             this.findCustomerToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.network_diagramFind;
             this.findCustomerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.findCustomerToolStripMenuItem.Name = "findCustomerToolStripMenuItem";
-            this.findCustomerToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.findCustomerToolStripMenuItem.Size = new System.Drawing.Size(174, 30);
             this.findCustomerToolStripMenuItem.Text = "Find Customer";
             this.findCustomerToolStripMenuItem.Click += new System.EventHandler(this.findCustomerToolStripMenuItem_Click);
             // 
@@ -634,5 +682,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BtnQuantity;
         private System.Windows.Forms.Button BtnTrash;
+        private System.Windows.Forms.ToolStripMenuItem findUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageRolesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addRolesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rolesListToolStripMenuItem;
     }
 }

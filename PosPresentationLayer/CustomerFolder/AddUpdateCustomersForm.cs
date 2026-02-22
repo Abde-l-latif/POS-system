@@ -49,6 +49,13 @@ namespace PosPresentationLayer.CustomerFolder
 
         private void AddUpdateCustomerForm_Load(object sender, EventArgs e)
         {
+            if (!clsUsers.HasPermission(clsGlobal.User, (int)clsGlobal.Permissions.ManageCustomers))
+            {
+                MessageBox.Show("You don't have the permission to access this form !", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+
             if (_Mode == enMode.UpdateMode)
             {
 
@@ -56,6 +63,7 @@ namespace PosPresentationLayer.CustomerFolder
                 LbTitle.Text = "Update Customer";
 
                 personDetailsWithFilter1.TextField = customer.PersonID.ToString();
+                personDetailsWithFilter1.FilterField = false;
 
                 personDetailsWithFilter1.PersonID = customer.PersonID;
                 personDetailsWithFilter1.personDetails.EnableUpdate = true;

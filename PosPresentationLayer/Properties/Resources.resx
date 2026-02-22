@@ -250,6 +250,27 @@
   <data name="role" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="roleMain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\roleMain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="role_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\role_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="role_addTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\role_addTitle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="role_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\role_edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="role_editTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\role_editTitle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="role_zoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\role_zoom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="role_zoom1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\role_zoom1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="search__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

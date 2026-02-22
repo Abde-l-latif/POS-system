@@ -37,10 +37,11 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.updateCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.customerDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -120,9 +121,10 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.updateCustomerToolStripMenuItem,
-            this.customerDetailsToolStripMenuItem});
+            this.customerDetailsToolStripMenuItem,
+            this.deleteCustomerToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(189, 86);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(189, 116);
             // 
             // updateCustomerToolStripMenuItem
             // 
@@ -132,6 +134,15 @@
             this.updateCustomerToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.updateCustomerToolStripMenuItem.Text = "Update Customer";
             this.updateCustomerToolStripMenuItem.Click += new System.EventHandler(this.updateCustomerToolStripMenuItem_Click);
+            // 
+            // customerDetailsToolStripMenuItem
+            // 
+            this.customerDetailsToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.network_diagramFind;
+            this.customerDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.customerDetailsToolStripMenuItem.Name = "customerDetailsToolStripMenuItem";
+            this.customerDetailsToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.customerDetailsToolStripMenuItem.Text = "Customer Details";
+            this.customerDetailsToolStripMenuItem.Click += new System.EventHandler(this.customerDetailsToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -167,14 +178,14 @@
             this.pictureBox2.TabIndex = 37;
             this.pictureBox2.TabStop = false;
             // 
-            // customerDetailsToolStripMenuItem
+            // deleteCustomerToolStripMenuItem
             // 
-            this.customerDetailsToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.network_diagramFind;
-            this.customerDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.customerDetailsToolStripMenuItem.Name = "customerDetailsToolStripMenuItem";
-            this.customerDetailsToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
-            this.customerDetailsToolStripMenuItem.Text = "Customer Details";
-            this.customerDetailsToolStripMenuItem.Click += new System.EventHandler(this.customerDetailsToolStripMenuItem_Click);
+            this.deleteCustomerToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.delete_column;
+            this.deleteCustomerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.deleteCustomerToolStripMenuItem.Name = "deleteCustomerToolStripMenuItem";
+            this.deleteCustomerToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.deleteCustomerToolStripMenuItem.Text = "Delete Customer";
+            this.deleteCustomerToolStripMenuItem.Click += new System.EventHandler(this.deleteCustomerToolStripMenuItem_Click);
             // 
             // ManageCustomersList
             // 
@@ -215,5 +226,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem updateCustomerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteCustomerToolStripMenuItem;
     }
 }

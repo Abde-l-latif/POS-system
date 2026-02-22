@@ -227,5 +227,30 @@ namespace PosDataAccessLayer
 
             return Exists;
         }
+
+        public static bool DeletePerson(int id)
+        {
+            string query = "DELETE FROM Persons WHERE PersonID = @PersonID";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(clsDataSettings.ConnectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@PersonID", id);
+                        conn.Open();
+
+                        return cmd.ExecuteNonQuery() > 0;
+                    }
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                throw;
+            }
+        }
+
     }
 }

@@ -48,13 +48,21 @@ namespace PosPresentationLayer.SuppliersFolder
 
         private void AddUpdateSupplierForm_Load(object sender, EventArgs e)
         {
-            if(_Mode == enMode.UpdateMode)
+            if (!clsUsers.HasPermission(clsGlobal.User, (int)clsGlobal.Permissions.ManageSuppliers))
+            {
+                MessageBox.Show("You don't have the permission to access this form !", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+
+            if (_Mode == enMode.UpdateMode)
             {
 
                 pictureTitle.Image = Resources.SupplierEdit;
                 LbTitle.Text = "Update Supplier";
 
                 personDetailsWithFilter1.TextField = supplier.PersonID.ToString();
+                personDetailsWithFilter1.FilterField = false;
 
                 personDetailsWithFilter1.PersonID = supplier.PersonID;
                 personDetailsWithFilter1.personDetails.EnableUpdate = true;

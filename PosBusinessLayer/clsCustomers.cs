@@ -87,15 +87,11 @@ namespace PosBusinessLayer
             return clsDataCustomers.GetCustomerIDByFirstName(FirstName);
         }
 
-        public bool Delete()
+        public override bool Delete()
         {
             return clsDataCustomers.DeleteCustomers(this.CustomerID);
         }
 
-        static public bool Delete(int id)
-        {
-            return clsDataCustomers.DeleteCustomers(id);
-        }
 
         static public clsCustomers FindCustomerByID(int id)
         {

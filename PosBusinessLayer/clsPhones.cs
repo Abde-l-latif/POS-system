@@ -51,6 +51,11 @@ namespace PosBusinessLayer
             return clsDataPhones.DeleteByPhoneID(this.PhoneID);
         }
 
+        public static bool DeleteByPersonID(int id)
+        {
+            return clsDataPhones.DeleteByPersonID(id);
+        }
+
         private bool _UpdatePhone()
         {
             return clsDataPhones.UpdatePhoneNumber(this.PhoneID , this.PhoneNumber);

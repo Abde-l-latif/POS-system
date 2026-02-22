@@ -187,5 +187,40 @@ namespace PosPresentationLayer.CustomerFolder
             CustomerDetailsForm fm = new CustomerDetailsForm(CustomerID);
             fm.ShowDialog();
         }
+
+        private void deleteCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int CustomerID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+                clsCustomers Customer = clsCustomers.FindCustomerByID(CustomerID);
+
+                if (Customer == null)
+                {
+                    MessageBox.Show("Customer not found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+
+                    if (clsGlobal.User.Role.Permissions != -1)
+                    {
+                        MessageBox.Show("You don't have the permission to access to Delete!", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (Customer.Delete())
+                    {
+                        MessageBox.Show("Customer Deleted successfully", "succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        _ReloadDataGrid();
+                    }
+                    else
+                        MessageBox.Show("Operation failed", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+                MessageBox.Show("Please Select first a row", "Unselected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

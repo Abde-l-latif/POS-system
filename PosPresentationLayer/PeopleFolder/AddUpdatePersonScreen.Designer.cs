@@ -467,6 +467,7 @@
             this.Name = "AddUpdatePersonScreen";
             this.Text = "AddPersonScreen";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddUpdatePersonScreen_FormClosing);
+            this.Load += new System.EventHandler(this.AddUpdatePersonScreen_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();

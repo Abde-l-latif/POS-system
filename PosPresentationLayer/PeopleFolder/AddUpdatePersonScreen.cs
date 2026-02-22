@@ -397,5 +397,14 @@ namespace PosPresentationLayer.PeopleFolder
             }
         }
 
+        private void AddUpdatePersonScreen_Load(object sender, EventArgs e)
+        {
+            if (!clsUsers.HasPermission(clsGlobal.User, (int)clsGlobal.Permissions.ManagePersons))
+            {
+                MessageBox.Show("You don't have the permission to access this form !", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+        }
     }
 }

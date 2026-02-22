@@ -275,5 +275,16 @@ namespace PosPresentationLayer.ProductFolder
 
             _InitializeCategories();
         }
+
+        private void AddUpdateProductsForm_Load(object sender, EventArgs e)
+        {
+            if (!clsUsers.HasPermission(clsGlobal.User, (int)clsGlobal.Permissions.ManageProducts))
+            {
+                MessageBox.Show("You don't have the permission to access this form !", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return; 
+            }
+        }
+  
     }
 }

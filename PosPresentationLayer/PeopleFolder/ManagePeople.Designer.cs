@@ -40,6 +40,7 @@
             this.textFilter = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.LBrecords = new System.Windows.Forms.Label();
+            this.deletePersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,9 +60,10 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showPersonDetailsToolStripMenuItem,
-            this.editPersonInformationToolStripMenuItem});
+            this.editPersonInformationToolStripMenuItem,
+            this.deletePersonToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(208, 64);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(208, 116);
             // 
             // showPersonDetailsToolStripMenuItem
             // 
@@ -161,6 +163,15 @@
             this.LBrecords.TabIndex = 9;
             this.LBrecords.Text = "0 Records";
             // 
+            // deletePersonToolStripMenuItem
+            // 
+            this.deletePersonToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.delete_column;
+            this.deletePersonToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.deletePersonToolStripMenuItem.Name = "deletePersonToolStripMenuItem";
+            this.deletePersonToolStripMenuItem.Size = new System.Drawing.Size(207, 30);
+            this.deletePersonToolStripMenuItem.Text = "Delete Person";
+            this.deletePersonToolStripMenuItem.Click += new System.EventHandler(this.deletePersonToolStripMenuItem_Click);
+            // 
             // ManagePeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -200,5 +211,6 @@
         private System.Windows.Forms.TextBox textFilter;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label LBrecords;
+        private System.Windows.Forms.ToolStripMenuItem deletePersonToolStripMenuItem;
     }
 }

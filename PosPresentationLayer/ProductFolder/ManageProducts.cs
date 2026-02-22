@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -187,6 +188,40 @@ namespace PosPresentationLayer.ProductFolder
 
                 ProductDetailsForm fm = new ProductDetailsForm(ProductID);
                 fm.ShowDialog();
+
+            }
+            else
+                MessageBox.Show("Please Select first a row", "Unselected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void deleteProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int ProductID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+                clsProducts Product = clsProducts.GetProductByID(ProductID);
+
+                if (Product == null)
+                {
+                    MessageBox.Show("Product not found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    if(clsGlobal.User.Role.Permissions != -1)
+                    {
+                        MessageBox.Show("You don't have the permission to access to Delete!", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (Product.Delete())
+                    {
+                        MessageBox.Show("Product Deleted successfully", "succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        _ReloadDataGrid();
+                    }
+                    else
+                        MessageBox.Show("Operation failed", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
             else

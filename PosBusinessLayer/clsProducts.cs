@@ -137,5 +137,11 @@ namespace PosBusinessLayer
                 return _UpdateProducts(); 
         }
 
+        public bool Delete()
+        {
+            return clsDataProducts.DeleteProducts(this.ProductID);
+        }
+
+
     }
 }

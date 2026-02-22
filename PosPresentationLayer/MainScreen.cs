@@ -4,6 +4,7 @@ using PosPresentationLayer.CustomerFolder;
 using PosPresentationLayer.PeopleFolder;
 using PosPresentationLayer.ProductFolder;
 using PosPresentationLayer.ProductFolder.Controls;
+using PosPresentationLayer.RolesFolder;
 using PosPresentationLayer.SuppliersFolder;
 using PosPresentationLayer.UsersFolder;
 using PosPresentationLayer.utilitiesFolder;
@@ -160,7 +161,7 @@ namespace PosPresentationLayer
 
         private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddUser fm = new AddUser();
+            AddUpdateUser fm = new AddUpdateUser();
             fm.ShowDialog();
         }
 
@@ -233,6 +234,24 @@ namespace PosPresentationLayer
         private void findCustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FindCustomerForm fm = new FindCustomerForm();
+            fm.ShowDialog();
+        }
+
+        private void findUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FindUserForm fm = new FindUserForm();
+            fm.ShowDialog();
+        }
+
+        private void addRolesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddUpdateRoles fm = new AddUpdateRoles();
+            fm.ShowDialog();
+        }
+
+        private void rolesListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RolesListForm fm = new RolesListForm();
             fm.ShowDialog();
         }
     }

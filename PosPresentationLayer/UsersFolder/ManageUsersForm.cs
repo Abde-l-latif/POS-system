@@ -52,7 +52,7 @@ namespace PosPresentationLayer.UsersFolder
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AddUser fm = new AddUser();
+            AddUpdateUser fm = new AddUpdateUser();
             fm.ShowDialog();
             dataGridView1.DataSource = Dt;
             LBrecords.Text = dataGridView1.Rows.Count.ToString() + " Records";
@@ -150,6 +150,78 @@ namespace PosPresentationLayer.UsersFolder
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void _ReloadDataGrid()
+        {
+            Dt = clsUsers.GetAllUsers();
+            dataGridView1.DataSource = Dt;
+            LBrecords.Text = Convert.ToString(dataGridView1.Rows.Count) + " Records";
+        }
+
+
+        private void updateUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(dataGridView1.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Please select a user to update.", "No User Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int UserID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["UserID"].Value);
+
+            AddUpdateUser fm = new AddUpdateUser(UserID);
+            fm.ShowDialog();
+
+            _ReloadDataGrid();
+        }
+
+        private void userDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Please select a user to view details.", "No User Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int UserID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["UserID"].Value);
+
+            UserDetailsForm fm = new UserDetailsForm(UserID);
+            fm.ShowDialog();
+        }
+
+        private void deleteUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int UserID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+                clsUsers User = clsUsers.GetUserById(UserID);
+
+                if (User == null)
+                {
+                    MessageBox.Show("User not found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    if (clsGlobal.User.Role.Permissions != -1)
+                    {
+                        MessageBox.Show("You don't have the permission to access to Delete!", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (User.Delete())
+                    {
+                        MessageBox.Show("User Deleted successfully", "succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        _ReloadDataGrid();
+                    }
+                    else
+                        MessageBox.Show("Operation failed", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+                MessageBox.Show("Please Select first a row", "Unselected", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

@@ -93,15 +93,11 @@ namespace PosBusinessLayer
             return clsDataSuppliers.GetAllSuppliers();
         }
 
-        public bool Delete()
+        public override bool Delete()
         {
             return clsDataSuppliers.DeleteSuppliers(this.SupplierID);
         }
 
-        static public bool Delete(int id)
-        {
-            return clsDataSuppliers.DeleteSuppliers(id);
-        }
 
         static public clsSupplier FindSupplierByID(int id)
         {

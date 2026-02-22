@@ -13,7 +13,7 @@ namespace PosBusinessLayer
 {
     public class clsPeople
     {
-        enum enMode { addMode , updateMode }
+        enum enMode { addMode, updateMode }
 
         private enMode _Mode;
 
@@ -40,7 +40,7 @@ namespace PosBusinessLayer
         }
 
         public clsPeople(int PersonID, string FirstName, string LastName, DateTime BirthDate,
-            string PersonAddress, string PersonImage, string Gender , List<clsPhones> Phones)
+            string PersonAddress, string PersonImage, string Gender, List<clsPhones> Phones)
         {
             _Mode = enMode.updateMode;
             this.PersonID = PersonID;
@@ -57,7 +57,7 @@ namespace PosBusinessLayer
         private bool _AddPerson()
         {
             this.PersonID = clsDataPeople.InsertPerson(this.FirstName, this.LastName, this.BirthDate, this.PersonAddress, this.PersonImage, this.Gender);
-            return this.PersonID != -1; 
+            return this.PersonID != -1;
         }
 
         private bool _UpdatePerson()
@@ -68,7 +68,7 @@ namespace PosBusinessLayer
         static public clsPeople GetPersonByID(int ID)
         {
 
-            string FirstName = "", LastName = "" , PersonAddress = "" , PersonImage = "";
+            string FirstName = "", LastName = "", PersonAddress = "", PersonImage = "";
             DateTime BirthDate = DateTime.Now;
             string Gender = "";
             List<clsPhones> Phones = new List<clsPhones>();
@@ -77,9 +77,9 @@ namespace PosBusinessLayer
             if (clsDataPeople.SelectPersonByID(ID, ref FirstName, ref LastName, ref BirthDate,
             ref PersonAddress, ref PersonImage, ref Gender))
             {
-                DataTable DT = clsPhones.GetPersonPhones(ID); 
+                DataTable DT = clsPhones.GetPersonPhones(ID);
 
-                foreach(DataRow row in DT.Rows)
+                foreach (DataRow row in DT.Rows)
                 {
                     Phones.Add(new clsPhones((int)row["PhoneID"], (string)row["PhoneNumber"], (int)row["PersonID"]));
                 }
@@ -105,7 +105,7 @@ namespace PosBusinessLayer
 
         public virtual bool Save()
         {
-    
+
             if (_Mode == enMode.addMode)
             {
                 using (var scope = new TransactionScope())
@@ -120,16 +120,16 @@ namespace PosBusinessLayer
                         }
                     }
                     else
-                        return false; 
+                        return false;
 
                     scope.Complete();
                     _Mode = enMode.updateMode;
                     return true;
                 }
-               
-     
+
+
             }
-            else if(_Mode == enMode.updateMode)
+            else if (_Mode == enMode.updateMode)
             {
                 using (var scope = new TransactionScope())
                 {
@@ -150,7 +150,12 @@ namespace PosBusinessLayer
             }
 
 
-                return false; 
+            return false;
+        }
+
+        public virtual bool Delete()
+        {
+            return clsDataPeople.DeletePerson(this.PersonID);
         }
 
     }

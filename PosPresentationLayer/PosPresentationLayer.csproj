@@ -193,6 +193,18 @@
     <Compile Include="ProductFolder\ProductQuantityForm.Designer.cs">
       <DependentUpon>ProductQuantityForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RolesFolder\AddUpdateRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RolesFolder\AddUpdateRoles.Designer.cs">
+      <DependentUpon>AddUpdateRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RolesFolder\RolesListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RolesFolder\RolesListForm.Designer.cs">
+      <DependentUpon>RolesListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SuppliersFolder\AddUpdateSupplierForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,11 +241,11 @@
     <Compile Include="SuppliersFolder\SupplierDetailsForm.Designer.cs">
       <DependentUpon>SupplierDetailsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UsersFolder\AddUser.cs">
+    <Compile Include="UsersFolder\AddUpdateUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UsersFolder\AddUser.Designer.cs">
-      <DependentUpon>AddUser.cs</DependentUpon>
+    <Compile Include="UsersFolder\AddUpdateUser.Designer.cs">
+      <DependentUpon>AddUpdateUser.cs</DependentUpon>
     </Compile>
     <Compile Include="UsersFolder\ChangeUserPassword.cs">
       <SubType>Form</SubType>
@@ -261,17 +273,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsersFolder\Controls\UserDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsersFolder\Controls\UserDetails.Designer.cs">
+      <DependentUpon>UserDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsersFolder\Controls\UserDetailsWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UsersFolder\Controls\UserDetailsWithFilter.Designer.cs">
+      <DependentUpon>UserDetailsWithFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsersFolder\Controls\UserInformationControle.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UsersFolder\Controls\UserInformationControle.Designer.cs">
       <DependentUpon>UserInformationControle.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsersFolder\FindUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersFolder\FindUserForm.Designer.cs">
+      <DependentUpon>FindUserForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsersFolder\ManageUsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UsersFolder\ManageUsersForm.Designer.cs">
       <DependentUpon>ManageUsersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsersFolder\UserDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersFolder\UserDetailsForm.Designer.cs">
+      <DependentUpon>UserDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="utilitiesFolder\CustomMenuRenderer.cs" />
     <EmbeddedResource Include="CategoriesFolder\AddUpdateCategoryForm.resx">
@@ -346,6 +382,12 @@
     <EmbeddedResource Include="ProductFolder\ProductQuantityForm.resx">
       <DependentUpon>ProductQuantityForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RolesFolder\AddUpdateRoles.resx">
+      <DependentUpon>AddUpdateRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RolesFolder\RolesListForm.resx">
+      <DependentUpon>RolesListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SuppliersFolder\AddUpdateSupplierForm.resx">
       <DependentUpon>AddUpdateSupplierForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -364,8 +406,8 @@
     <EmbeddedResource Include="SuppliersFolder\SupplierDetailsForm.resx">
       <DependentUpon>SupplierDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UsersFolder\AddUser.resx">
-      <DependentUpon>AddUser.cs</DependentUpon>
+    <EmbeddedResource Include="UsersFolder\AddUpdateUser.resx">
+      <DependentUpon>AddUpdateUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsersFolder\ChangeUserPassword.resx">
       <DependentUpon>ChangeUserPassword.cs</DependentUpon>
@@ -389,11 +431,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UsersFolder\Controls\UserDetails.resx">
+      <DependentUpon>UserDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersFolder\Controls\UserDetailsWithFilter.resx">
+      <DependentUpon>UserDetailsWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UsersFolder\Controls\UserInformationControle.resx">
       <DependentUpon>UserInformationControle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UsersFolder\FindUserForm.resx">
+      <DependentUpon>FindUserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UsersFolder\ManageUsersForm.resx">
       <DependentUpon>ManageUsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersFolder\UserDetailsForm.resx">
+      <DependentUpon>UserDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -596,6 +650,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\trash_can.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\role_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\role_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\role_zoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\roleMain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\role_addTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\role_editTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\role_zoom1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

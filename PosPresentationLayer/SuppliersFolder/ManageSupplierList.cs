@@ -176,13 +176,30 @@ namespace PosPresentationLayer.SuppliersFolder
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                if(clsSupplier.Delete(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value)))
+                int SupplierID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+                clsSupplier Supplier = clsSupplier.FindSupplierByID(SupplierID);
+                
+                if(Supplier == null)
                 {
-                    MessageBox.Show("Supplier Deleted successfully", "succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    _ReloadDataGrid();
+                    MessageBox.Show("Supplier not found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
                 else
-                    MessageBox.Show("Operation failed", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                {
+                    if (clsGlobal.User.Role.Permissions != -1)
+                    {
+                        MessageBox.Show("You don't have the permission to access to Delete!", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (Supplier.Delete())
+                    {
+                        MessageBox.Show("Supplier Deleted successfully", "succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        _ReloadDataGrid();
+                    }
+                    else
+                        MessageBox.Show("Operation failed", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
             else

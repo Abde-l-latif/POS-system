@@ -139,5 +139,64 @@ namespace PosPresentationLayer.PeopleFolder
             if(!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
+
+        private void _ReloadDataGrid()
+        {
+            Dt = clsPeople.GetPeopleList();
+            dataGridView1.DataSource = Dt;
+            LBrecords.Text = Convert.ToString(dataGridView1.Rows.Count) + " Records";
+        }
+
+        private void deletePersonToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int PersonID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+                clsPeople Person = clsPeople.GetPersonByID(PersonID);
+
+                if (Person == null)
+                {
+                    MessageBox.Show("Person not found", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                else
+                {
+                    if (clsGlobal.User.Role.Permissions != -1)
+                    {
+                        MessageBox.Show("You don't have the permission to access to Delete!", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if(clsUsers.IsPersonAlreadyUser(PersonID))
+                    {
+                        MessageBox.Show("This person is already a user, you can't delete it", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if(clsSupplier.isPersonAlreadySupplier(PersonID))
+                    {
+                        MessageBox.Show("This person is already a supplier, you can't delete it", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if(clsCustomers.isPersonAlreadyCustomer(PersonID))
+                    {
+                        MessageBox.Show("This person is already a customer, you can't delete it", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    if (clsPhones.DeleteByPersonID(PersonID) && Person.Delete())
+                    {
+                        MessageBox.Show("Person Deleted successfully", "succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        _ReloadDataGrid();
+                    }
+                    else
+                        MessageBox.Show("Operation failed", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            else
+                MessageBox.Show("Please Select first a row", "Unselected", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }
