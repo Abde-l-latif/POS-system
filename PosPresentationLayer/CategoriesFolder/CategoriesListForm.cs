@@ -58,5 +58,37 @@ namespace PosPresentationLayer.CategoriesFolder
             else
                 MessageBox.Show("Please Select first a row", "Unselected", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        private void deleteCategoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Please select a category First.", "No Category Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int CategoryID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+
+            clsCategories Category = clsCategories.GetCategoryByID(CategoryID);
+
+            if (Category != null)
+            {
+
+                if (clsGlobal.User.Role.Permissions != -1)
+                {
+                    MessageBox.Show("You don't have the permission to access to Delete!", "Access Denied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (Category.Delete())
+                {
+                    MessageBox.Show("User Deleted successfully", "succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _FillDataGrid();
+                }
+                else
+                    MessageBox.Show("Operation failed, this Category Has Products in it!", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
     }
 }

@@ -32,9 +32,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LBtitle = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.BtnClose = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.updateCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnClose = new System.Windows.Forms.Button();
+            this.deleteCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -70,6 +71,23 @@
             this.dataGridView1.Size = new System.Drawing.Size(571, 209);
             this.dataGridView1.TabIndex = 3;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateCategoryToolStripMenuItem,
+            this.deleteCategoryToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(189, 86);
+            // 
+            // updateCategoryToolStripMenuItem
+            // 
+            this.updateCategoryToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.inventory_categoryMiniUpdate;
+            this.updateCategoryToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.updateCategoryToolStripMenuItem.Name = "updateCategoryToolStripMenuItem";
+            this.updateCategoryToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.updateCategoryToolStripMenuItem.Text = "Update Category";
+            this.updateCategoryToolStripMenuItem.Click += new System.EventHandler(this.updateCategoryToolStripMenuItem_Click);
+            // 
             // BtnClose
             // 
             this.BtnClose.BackColor = System.Drawing.Color.Gray;
@@ -88,21 +106,14 @@
             this.BtnClose.UseVisualStyleBackColor = false;
             this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
-            // contextMenuStrip1
+            // deleteCategoryToolStripMenuItem
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.updateCategoryToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(172, 34);
-            // 
-            // updateCategoryToolStripMenuItem
-            // 
-            this.updateCategoryToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.inventory_categoryMiniUpdate;
-            this.updateCategoryToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.updateCategoryToolStripMenuItem.Name = "updateCategoryToolStripMenuItem";
-            this.updateCategoryToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
-            this.updateCategoryToolStripMenuItem.Text = "Update Category";
-            this.updateCategoryToolStripMenuItem.Click += new System.EventHandler(this.updateCategoryToolStripMenuItem_Click);
+            this.deleteCategoryToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.delete_column;
+            this.deleteCategoryToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.deleteCategoryToolStripMenuItem.Name = "deleteCategoryToolStripMenuItem";
+            this.deleteCategoryToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.deleteCategoryToolStripMenuItem.Text = "Delete Category";
+            this.deleteCategoryToolStripMenuItem.Click += new System.EventHandler(this.deleteCategoryToolStripMenuItem_Click);
             // 
             // CategoriesListForm
             // 
@@ -131,5 +142,6 @@
         private System.Windows.Forms.Button BtnClose;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem updateCategoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteCategoryToolStripMenuItem;
     }
 }

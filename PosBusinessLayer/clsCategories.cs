@@ -83,6 +83,11 @@ namespace PosBusinessLayer
             return clsDataCategories.UpdateCategory(this.CategoryID, this.CategoryName , this.IsActive);
         }
 
+        public bool Delete()
+        {
+            return clsDataCategories.DeleteCategory(this.CategoryID);
+        }
+
         public bool Save()
         {
             if(_Mode == enMode.AddMode)

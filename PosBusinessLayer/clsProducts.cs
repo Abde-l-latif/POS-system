@@ -38,7 +38,11 @@ namespace PosBusinessLayer
 
         public int CategoryID { get; set; }
 
+        public clsCategories Category { get; }
+
         public int CreatedByUserID { get; set; }
+
+        public clsUsers User { get; }
 
         public string ProductImage { get; set; } = "";
 
@@ -66,6 +70,8 @@ namespace PosBusinessLayer
             this.CreatedByUserID = CreatedByUserID;
             this.ProductImage = ProductImage;
             this.TaxRate = TaxRate;
+            Category = clsCategories.GetCategoryByID(CategoryID);
+            User = clsUsers.GetUserById(CreatedByUserID);
         }
 
 

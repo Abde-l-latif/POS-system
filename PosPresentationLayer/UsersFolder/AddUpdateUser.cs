@@ -91,6 +91,20 @@ namespace PosPresentationLayer.UsersFolder
                     return;
                 }
 
+                if(clsCustomers.isPersonAlreadyCustomer(user.PersonID))
+                {
+                    MessageBox.Show("Operation Failed this person already is a customer !", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    personDetailsWithFilter1.FilterField = true;
+                    return;
+                }
+
+                if (clsSupplier.isPersonAlreadySupplier(user.PersonID))
+                {
+                    MessageBox.Show("Operation Failed this person already is a supplier !", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    personDetailsWithFilter1.FilterField = true;
+                    return;
+                }
+
                 user.UserPassword = clsGlobal.HashPassword(textPassword.Text);
             }
 

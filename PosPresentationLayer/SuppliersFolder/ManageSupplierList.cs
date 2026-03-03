@@ -39,9 +39,8 @@ namespace PosPresentationLayer.SuppliersFolder
 
             dataGridView1.Columns["SupplierID"].HeaderText = "Supplier ID";
             dataGridView1.Columns["PersonID"].HeaderText = "Person ID";
-            dataGridView1.Columns["FirstName"].HeaderText = "First Name";
+            dataGridView1.Columns["FullName"].HeaderText = "Full Name";
             dataGridView1.Columns["IsActive"].HeaderText = "Active";
-            dataGridView1.Columns["LastName"].HeaderText = "Last Name";
             dataGridView1.Columns["CreatedAt"].HeaderText = "Created At";
             dataGridView1.Columns["UpdatedAt"].HeaderText = "Updated At";
 

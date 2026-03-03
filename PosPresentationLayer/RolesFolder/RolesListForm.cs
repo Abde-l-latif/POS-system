@@ -71,7 +71,7 @@ namespace PosPresentationLayer.RolesFolder
                     _ReloadDataGrid();
                 }
                 else
-                    MessageBox.Show("Operation failed", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Operation failed, this role is being used by a user !", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }

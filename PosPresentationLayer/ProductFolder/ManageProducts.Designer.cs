@@ -39,9 +39,9 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.updateProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.deleteProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -136,7 +136,7 @@
             this.productDetailsToolStripMenuItem,
             this.deleteProductToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(189, 116);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(166, 94);
             // 
             // updateProductToolStripMenuItem
             // 
@@ -144,7 +144,7 @@
             this.updateProductToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.product;
             this.updateProductToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.updateProductToolStripMenuItem.Name = "updateProductToolStripMenuItem";
-            this.updateProductToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.updateProductToolStripMenuItem.Size = new System.Drawing.Size(165, 30);
             this.updateProductToolStripMenuItem.Text = "Update Product";
             this.updateProductToolStripMenuItem.Click += new System.EventHandler(this.updateProductToolStripMenuItem_Click);
             // 
@@ -154,9 +154,19 @@
             this.productDetailsToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.product__1_;
             this.productDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.productDetailsToolStripMenuItem.Name = "productDetailsToolStripMenuItem";
-            this.productDetailsToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.productDetailsToolStripMenuItem.Size = new System.Drawing.Size(165, 30);
             this.productDetailsToolStripMenuItem.Text = "Product Details";
             this.productDetailsToolStripMenuItem.Click += new System.EventHandler(this.productDetailsToolStripMenuItem_Click);
+            // 
+            // deleteProductToolStripMenuItem
+            // 
+            this.deleteProductToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.deleteProductToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.delete_column;
+            this.deleteProductToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.deleteProductToolStripMenuItem.Name = "deleteProductToolStripMenuItem";
+            this.deleteProductToolStripMenuItem.Size = new System.Drawing.Size(165, 30);
+            this.deleteProductToolStripMenuItem.Text = "Delete Product";
+            this.deleteProductToolStripMenuItem.Click += new System.EventHandler(this.deleteProductToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -181,15 +191,6 @@
             this.button2.TabIndex = 23;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // deleteProductToolStripMenuItem
-            // 
-            this.deleteProductToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.delete_column;
-            this.deleteProductToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.deleteProductToolStripMenuItem.Name = "deleteProductToolStripMenuItem";
-            this.deleteProductToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
-            this.deleteProductToolStripMenuItem.Text = "Delete Product";
-            this.deleteProductToolStripMenuItem.Click += new System.EventHandler(this.deleteProductToolStripMenuItem_Click);
             // 
             // ManageProducts
             // 

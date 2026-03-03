@@ -28,16 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.userDetails1 = new PosPresentationLayer.UsersFolder.Controls.UserDetails();
             this.label1 = new System.Windows.Forms.Label();
+            this.userDetails1 = new PosPresentationLayer.UsersFolder.Controls.UserDetails();
             this.SuspendLayout();
-            // 
-            // userDetails1
-            // 
-            this.userDetails1.Location = new System.Drawing.Point(1, 76);
-            this.userDetails1.Name = "userDetails1";
-            this.userDetails1.Size = new System.Drawing.Size(633, 334);
-            this.userDetails1.TabIndex = 0;
             // 
             // label1
             // 
@@ -50,11 +43,18 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "User Details";
             // 
+            // userDetails1
+            // 
+            this.userDetails1.Location = new System.Drawing.Point(1, 76);
+            this.userDetails1.Name = "userDetails1";
+            this.userDetails1.Size = new System.Drawing.Size(633, 427);
+            this.userDetails1.TabIndex = 0;
+            // 
             // UserDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 415);
+            this.ClientSize = new System.Drawing.Size(634, 505);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.userDetails1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

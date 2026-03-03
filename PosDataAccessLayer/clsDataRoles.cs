@@ -172,7 +172,7 @@ namespace PosDataAccessLayer
             }
             catch (Exception Ex)
             {
-                throw;
+                return false;
             }
         }
 

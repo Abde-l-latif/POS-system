@@ -13,6 +13,7 @@ namespace PosPresentationLayer.UsersFolder.Controls
 {
     public partial class UserDetails : UserControl
     {
+        long? userPermission = 0;
         public UserDetails()
         {
             InitializeComponent();
@@ -22,8 +23,24 @@ namespace PosPresentationLayer.UsersFolder.Controls
         {
             clsUsers user = clsUsers.GetUserById(ID);
 
+
             if (user != null)
             {
+                userPermission = user.CurrentPermissions ?? user.Role.Permissions;
+
+                foreach(clsGlobal.Permissions P in Enum.GetValues(typeof(clsGlobal.Permissions)))
+                {
+                    if(P == clsGlobal.Permissions.None)
+                    {
+                        continue;
+                    }
+
+                    if ((userPermission & (long)P) == (long)P)
+                    {
+                        checkedListBox1.Items.Add(P, true);
+                    }
+                }
+
                 userInformationControle1.loadDataByUserID(user.UserID);
                 personDetails1.FillByPersonID(user.PersonID);
                 personDetails1.EnableUpdate = false;

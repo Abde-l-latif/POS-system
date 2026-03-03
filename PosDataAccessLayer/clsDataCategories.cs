@@ -200,5 +200,29 @@ namespace PosDataAccessLayer
             return EffectedRows > 0;
 
         }
+
+        public static bool DeleteCategory(int id)
+        {
+            string query = "DELETE FROM Categories WHERE CategoryID = @CategoryID";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(clsDataSettings.ConnectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@CategoryID", id);
+                        conn.Open();
+
+                        return cmd.ExecuteNonQuery() > 0;
+                    }
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                return false;
+            }
+        }
     }
 }

@@ -46,6 +46,8 @@
     <Compile Include="clsDataPeople.cs" />
     <Compile Include="clsDataPhones.cs" />
     <Compile Include="clsDataProducts.cs" />
+    <Compile Include="clsDataPurchaseItems.cs" />
+    <Compile Include="clsDataPurchases.cs" />
     <Compile Include="clsDataRoles.cs" />
     <Compile Include="clsDataSettings.cs" />
     <Compile Include="clsDataSuppliers.cs" />

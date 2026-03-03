@@ -247,6 +247,27 @@
   <data name="product__1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\product (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="purchase" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\purchase.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="purchaseAdd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\purchaseAdd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="purchaseAddTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\purchaseAddTitle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="purchaseEdit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\purchaseEdit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="purchaseEditTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\purchaseEditTitle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="purchaseList" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\purchaseList.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="purchaseListTitle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\purchaseListTitle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="role" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\role.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

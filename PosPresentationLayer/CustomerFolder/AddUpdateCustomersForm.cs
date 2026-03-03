@@ -94,6 +94,19 @@ namespace PosPresentationLayer.CustomerFolder
                     personDetailsWithFilter1.FilterField = true;
                     return;
                 }
+                if (clsUsers.IsPersonAlreadyUser(customer.PersonID))
+                {
+                    MessageBox.Show("Operation Failed this person already is a user !", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    personDetailsWithFilter1.FilterField = true;
+                    return;
+                }
+
+                if (clsSupplier.isPersonAlreadySupplier(customer.PersonID))
+                {
+                    MessageBox.Show("Operation Failed this person already is a supplier !", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    personDetailsWithFilter1.FilterField = true;
+                    return;
+                }
 
             }
 

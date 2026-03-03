@@ -47,7 +47,7 @@ public static class clsDataSuppliers
     {
         DataTable dt = new DataTable();
 
-        string query = @"select S.SupplierID, P.PersonID, P.FirstName, P.LastName, S.IsActive, S.CreatedAt, S.UpdatedAt from Suppliers S
+        string query = @"select S.SupplierID, P.PersonID, P.FirstName + ' ' + P.LastName as FullName, S.IsActive, S.CreatedAt, S.UpdatedAt from Suppliers S
                             INNER JOIN Persons P ON P.PersonID = S.PersonID";
 
         try

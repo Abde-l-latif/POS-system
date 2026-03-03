@@ -193,6 +193,12 @@
     <Compile Include="ProductFolder\ProductQuantityForm.Designer.cs">
       <DependentUpon>ProductQuantityForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PurchaseFolder\AddUpdatePurchaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseFolder\AddUpdatePurchaseForm.Designer.cs">
+      <DependentUpon>AddUpdatePurchaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RolesFolder\AddUpdateRoles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,6 +387,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductFolder\ProductQuantityForm.resx">
       <DependentUpon>ProductQuantityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseFolder\AddUpdatePurchaseForm.resx">
+      <DependentUpon>AddUpdatePurchaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RolesFolder\AddUpdateRoles.resx">
       <DependentUpon>AddUpdateRoles.cs</DependentUpon>
@@ -671,6 +680,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\role_zoom1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\purchase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\purchaseAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\purchaseAddTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\purchaseEdit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\purchaseEditTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\purchaseList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\purchaseListTitle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

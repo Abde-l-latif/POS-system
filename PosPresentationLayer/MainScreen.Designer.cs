@@ -73,6 +73,9 @@
             this.BtnQuantity = new System.Windows.Forms.Button();
             this.BtnTrash = new System.Windows.Forms.Button();
             this.searchForProducts1 = new PosPresentationLayer.ProductFolder.Controls.SearchForProducts();
+            this.documentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.purchasesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addPurchaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -90,7 +93,8 @@
             this.aToolStripMenuItem,
             this.productsToolStripMenuItem,
             this.suppliersToolStripMenuItem,
-            this.customersToolStripMenuItem});
+            this.customersToolStripMenuItem,
+            this.documentsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
@@ -184,7 +188,7 @@
             this.addRolesToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.role_add;
             this.addRolesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addRolesToolStripMenuItem.Name = "addRolesToolStripMenuItem";
-            this.addRolesToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.addRolesToolStripMenuItem.Size = new System.Drawing.Size(146, 30);
             this.addRolesToolStripMenuItem.Text = "Add Roles";
             this.addRolesToolStripMenuItem.Click += new System.EventHandler(this.addRolesToolStripMenuItem_Click);
             // 
@@ -194,7 +198,7 @@
             this.rolesListToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.role_zoom1;
             this.rolesListToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.rolesListToolStripMenuItem.Name = "rolesListToolStripMenuItem";
-            this.rolesListToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.rolesListToolStripMenuItem.Size = new System.Drawing.Size(146, 30);
             this.rolesListToolStripMenuItem.Text = "Roles List";
             this.rolesListToolStripMenuItem.Click += new System.EventHandler(this.rolesListToolStripMenuItem_Click);
             // 
@@ -421,7 +425,7 @@
             this.addCustomerToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.network_diagramAdd;
             this.addCustomerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addCustomerToolStripMenuItem.Name = "addCustomerToolStripMenuItem";
-            this.addCustomerToolStripMenuItem.Size = new System.Drawing.Size(174, 30);
+            this.addCustomerToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.addCustomerToolStripMenuItem.Text = "Add Customer";
             this.addCustomerToolStripMenuItem.Click += new System.EventHandler(this.addCustomerToolStripMenuItem_Click);
             // 
@@ -431,7 +435,7 @@
             this.findCustomerToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.network_diagramFind;
             this.findCustomerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.findCustomerToolStripMenuItem.Name = "findCustomerToolStripMenuItem";
-            this.findCustomerToolStripMenuItem.Size = new System.Drawing.Size(174, 30);
+            this.findCustomerToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.findCustomerToolStripMenuItem.Text = "Find Customer";
             this.findCustomerToolStripMenuItem.Click += new System.EventHandler(this.findCustomerToolStripMenuItem_Click);
             // 
@@ -610,6 +614,32 @@
             this.searchForProducts1.Size = new System.Drawing.Size(873, 749);
             this.searchForProducts1.TabIndex = 1;
             // 
+            // documentsToolStripMenuItem
+            // 
+            this.documentsToolStripMenuItem.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.documentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.purchasesToolStripMenuItem});
+            this.documentsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.documentsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.documentsToolStripMenuItem.Name = "documentsToolStripMenuItem";
+            this.documentsToolStripMenuItem.Size = new System.Drawing.Size(90, 37);
+            this.documentsToolStripMenuItem.Text = "Documents";
+            // 
+            // purchasesToolStripMenuItem
+            // 
+            this.purchasesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addPurchaseToolStripMenuItem});
+            this.purchasesToolStripMenuItem.Name = "purchasesToolStripMenuItem";
+            this.purchasesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.purchasesToolStripMenuItem.Text = "Purchases";
+            // 
+            // addPurchaseToolStripMenuItem
+            // 
+            this.addPurchaseToolStripMenuItem.Name = "addPurchaseToolStripMenuItem";
+            this.addPurchaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addPurchaseToolStripMenuItem.Text = "Add Purchase";
+            this.addPurchaseToolStripMenuItem.Click += new System.EventHandler(this.addPurchaseToolStripMenuItem_Click);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -686,5 +716,8 @@
         private System.Windows.Forms.ToolStripMenuItem manageRolesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addRolesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rolesListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem documentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem purchasesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addPurchaseToolStripMenuItem;
     }
 }

@@ -4,6 +4,7 @@ using PosPresentationLayer.CustomerFolder;
 using PosPresentationLayer.PeopleFolder;
 using PosPresentationLayer.ProductFolder;
 using PosPresentationLayer.ProductFolder.Controls;
+using PosPresentationLayer.PurchaseFolder;
 using PosPresentationLayer.RolesFolder;
 using PosPresentationLayer.SuppliersFolder;
 using PosPresentationLayer.UsersFolder;
@@ -252,6 +253,12 @@ namespace PosPresentationLayer
         private void rolesListToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RolesListForm fm = new RolesListForm();
+            fm.ShowDialog();
+        }
+
+        private void addPurchaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddUpdatePurchaseForm fm = new AddUpdatePurchaseForm();
             fm.ShowDialog();
         }
     }
