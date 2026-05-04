@@ -74,6 +74,35 @@ public static class clsDataPurchaseItems
         return dt;
     }
 
+    public static DataTable GetAllPurchaseItemsByPurchaseID(int ID)
+    {
+        DataTable dt = new DataTable();
+
+        string query = "select p.ProductID, Products.ProductName, p.Quantity, p.UnitBuyingPrice  from PurchaseItems p inner join Products on Products.ProductID = p.ProductID where p.PurchaseID = @id;";
+
+        try
+        {
+
+            using (SqlConnection conn = new SqlConnection(clsDataSettings.ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", ID);
+                    conn.Open(); 
+                    dt.Load(cmd.ExecuteReader());
+                }
+            }
+
+        }
+        catch (Exception Ex)
+        {
+            throw;
+        }
+
+
+        return dt;
+    }
+
     public static bool DeletePurchaseItems(int id)
     {
         string query = "DELETE FROM PurchaseItems WHERE PurchaseItemID = @PurchaseItemID";
@@ -98,7 +127,7 @@ public static class clsDataPurchaseItems
         }
     }
 
-    static public bool UpdatePurchaseItems(int ID, int Quantity, decimal UnitBuyingPrice, decimal UpdatedAt)
+    static public bool UpdatePurchaseItems(int ID, int Quantity, decimal UnitBuyingPrice, DateTime UpdatedAt)
     {
         int EffectedRows = -1;
 
@@ -135,7 +164,49 @@ public static class clsDataPurchaseItems
 
     }
 
-    static public bool GetPurchaseItemsById(int ID, ref int Quantity, ref decimal UnitBuyingPrice, ref int ProductID, ref int PurchaseID, ref DateTime CreatedAt, ref decimal UpdatedAt)
+    static public bool GetPurchaseItemsByProductIDandPurchaseID(ref int ID, ref int Quantity, ref decimal UnitBuyingPrice, int ProductID, int PurchaseID, ref DateTime CreatedAt, ref DateTime UpdatedAt)
+    {
+        bool IsFound = false;
+
+        using (SqlConnection Connection = new SqlConnection(clsDataSettings.ConnectionString))
+        {
+            Connection.Open();
+
+            string Query = @"SELECT * FROM PurchaseItems WHERE ProductID = @ProductID and PurchaseID = @PurchaseID;";
+
+            try
+            {
+                using (SqlCommand Command = new SqlCommand(Query, Connection))
+                {
+                    Command.Parameters.AddWithValue("@PurchaseID", PurchaseID);
+                    Command.Parameters.AddWithValue("@ProductID", ProductID);
+
+                    using (SqlDataReader Reader = Command.ExecuteReader())
+                    {
+                        if (Reader.Read())
+                        {
+                            IsFound = true;
+
+                            Quantity = (int)Reader["Quantity"];
+                            UnitBuyingPrice = (decimal)Reader["UnitBuyingPrice"];
+                            ID = (int)Reader["PurchaseItemID"];
+                            CreatedAt = (DateTime)Reader["CreatedAt"];
+                            UpdatedAt = (DateTime)Reader["UpdatedAt"];
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
+        }
+
+        return IsFound;
+    }
+
+    static public bool GetPurchaseItemsById(int ID, ref int Quantity, ref decimal UnitBuyingPrice, ref int ProductID, ref int PurchaseID, ref DateTime CreatedAt, ref DateTime UpdatedAt)
     {
         bool IsFound = false;
 
@@ -162,7 +233,7 @@ public static class clsDataPurchaseItems
                             ProductID = (int)Reader["ProductID"];
                             PurchaseID = (int)Reader["PurchaseID"];
                             CreatedAt = (DateTime)Reader["CreatedAt"];
-                            UpdatedAt = (decimal)Reader["UpdatedAt"];
+                            UpdatedAt = (DateTime)Reader["UpdatedAt"];
                         }
                     }
                 }

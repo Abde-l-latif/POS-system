@@ -254,5 +254,7 @@ namespace PosPresentationLayer.UsersFolder
                 LBtitle.Text = "Add New User";
             }
         }
+
+
     }
 }

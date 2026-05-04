@@ -284,6 +284,9 @@ namespace PosPresentationLayer.ProductFolder
                 this.Close();
                 return; 
             }
+
+            textQuantity.Text = "0";
+            textQuantity.Enabled = false;
         }
   
     }

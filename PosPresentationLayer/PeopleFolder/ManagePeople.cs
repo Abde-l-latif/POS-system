@@ -185,6 +185,11 @@ namespace PosPresentationLayer.PeopleFolder
                         return;
                     }
 
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this person?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (result == DialogResult.No)
+                        return;
+
                     if (clsPhones.DeleteByPersonID(PersonID) && Person.Delete())
                     {
                         MessageBox.Show("Person Deleted successfully", "succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);

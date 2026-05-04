@@ -70,14 +70,20 @@ namespace PosDataAccessLayer
             {
                 Connection.Open();
 
-                string query = @"SELECT P.PersonID , P.FirstName, P.LastName, P.BirthDate, P.PersonAddress , P.PersonImage , 
+                string query = @"
+                                   WITH PeopleWithRankedPhones AS
+                                    (
+                                    SELECT P.PersonID , P.FirstName, P.LastName, P.BirthDate, P.PersonAddress , P.PersonImage , 
                                     CASE P.Gender
 	                                    WHEN 'M' THEN 'Male'
 	                                    ELSE 'Female'
                                     END AS Gender ,
-                                    Phones.PhoneNumber
+                                    Phones.PhoneNumber,
+                                    Row_Number() OVER (PARTITION BY P.PersonID ORDER BY P.PersonID ASC) as RowNum
                                     FROM Persons P
-                                    inner join Phones on P.PersonID = Phones.PersonID";
+                                    inner join Phones on P.PersonID = Phones.PersonID
+                                    )
+                                    SELECT * FROM PeopleWithRankedPhones WHERE RowNum = 1";
                 try
                 {
 

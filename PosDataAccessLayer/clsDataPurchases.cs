@@ -223,8 +223,17 @@ public static class clsDataPurchases
                             IsDeleted = (bool)Reader["IsDeleted"];
                             CreatedAt = (DateTime)Reader["CreatedAt"];
                             UpdatedAt = (DateTime)Reader["UpdatedAt"];
-                            InternalInvoiceNo = (string)Reader["InternalInvoiceNo"];
-                            SupplierInvoiceNo = (string)Reader["SupplierInvoiceNo"];
+                            if (Reader["InternalInvoiceNo"] == DBNull.Value)
+                                InternalInvoiceNo = "";
+                            else
+                                InternalInvoiceNo = (string)Reader["InternalInvoiceNo"];
+
+                            if (Reader["SupplierInvoiceNo"] == DBNull.Value)
+                                SupplierInvoiceNo = "";
+                            else
+                                SupplierInvoiceNo = (string)Reader["SupplierInvoiceNo"];
+
+
                         }
                     }
                 }

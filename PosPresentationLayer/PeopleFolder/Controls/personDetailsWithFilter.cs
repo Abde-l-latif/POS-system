@@ -21,6 +21,7 @@ namespace PosPresentationLayer.PeopleFolder.Controls
             InitializeComponent();
         }
 
+
         public PersonDetails personDetails
         {
             get
@@ -100,6 +101,7 @@ namespace PosPresentationLayer.PeopleFolder.Controls
         {
             personDetails1.FillByPersonID(id);
             personDetails1.EnableUpdate = true;
+            textFilter.Text = id.ToString();
             PersonSelected?.Invoke(this, Convert.ToInt32(textFilter.Text));
             FilterField = false;
         }

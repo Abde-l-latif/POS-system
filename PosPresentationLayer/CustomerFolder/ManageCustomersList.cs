@@ -209,6 +209,12 @@ namespace PosPresentationLayer.CustomerFolder
                         return;
                     }
 
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this customer?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (result == DialogResult.No)
+                        return;
+
+
                     if (Customer.Delete())
                     {
                         MessageBox.Show("Customer Deleted successfully", "succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);

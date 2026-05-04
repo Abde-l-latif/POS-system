@@ -210,6 +210,12 @@ namespace PosPresentationLayer.UsersFolder
                         return;
                     }
 
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this user?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (result == DialogResult.No)
+                        return;
+
+
                     if (User.Delete())
                     {
                         MessageBox.Show("User Deleted successfully", "succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);

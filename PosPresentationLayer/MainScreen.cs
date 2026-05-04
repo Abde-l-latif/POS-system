@@ -261,5 +261,11 @@ namespace PosPresentationLayer
             AddUpdatePurchaseForm fm = new AddUpdatePurchaseForm();
             fm.ShowDialog();
         }
+
+        private void purchaseListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManagePurchases fm = new ManagePurchases();
+            fm.ShowDialog();
+        }
     }
 }

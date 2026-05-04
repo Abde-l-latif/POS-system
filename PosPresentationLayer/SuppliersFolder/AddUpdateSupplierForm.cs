@@ -42,6 +42,7 @@ namespace PosPresentationLayer.SuppliersFolder
         {
             supplier.SetPersonID(PersonID);
             LBpersonID.Text = PersonID.ToString();
+            personDetailsWithFilter1.TextField = PersonID.ToString();
             personDetailsWithFilter1.personDetails.EnableUpdate = false;
             BtnSave.Enabled = true;
         }
@@ -70,7 +71,6 @@ namespace PosPresentationLayer.SuppliersFolder
                 LbSupplierID.Text = supplier.SupplierID.ToString();
                 LBpersonID.Text = supplier.PersonID.ToString();
                 checkBox1.Checked = supplier.IsActive;
-
 
                 BtnSave.Enabled = true;
             }

@@ -214,6 +214,12 @@ namespace PosPresentationLayer.ProductFolder
                         return;
                     }
 
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this product?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (result == DialogResult.No)
+                        return;
+
+
                     if (Product.Delete())
                     {
                         MessageBox.Show("Product Deleted successfully", "succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -59,6 +59,9 @@
             this.customersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.findCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.documentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.purchasesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addPurchaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.flowProductCard = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
@@ -70,12 +73,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.LbSubTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnQuantity = new System.Windows.Forms.Button();
-            this.BtnTrash = new System.Windows.Forms.Button();
             this.searchForProducts1 = new PosPresentationLayer.ProductFolder.Controls.SearchForProducts();
-            this.documentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.purchasesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addPurchaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnTrash = new System.Windows.Forms.Button();
+            this.BtnQuantity = new System.Windows.Forms.Button();
+            this.purchaseListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -425,7 +426,7 @@
             this.addCustomerToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.network_diagramAdd;
             this.addCustomerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addCustomerToolStripMenuItem.Name = "addCustomerToolStripMenuItem";
-            this.addCustomerToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.addCustomerToolStripMenuItem.Size = new System.Drawing.Size(174, 30);
             this.addCustomerToolStripMenuItem.Text = "Add Customer";
             this.addCustomerToolStripMenuItem.Click += new System.EventHandler(this.addCustomerToolStripMenuItem_Click);
             // 
@@ -435,9 +436,44 @@
             this.findCustomerToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.network_diagramFind;
             this.findCustomerToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.findCustomerToolStripMenuItem.Name = "findCustomerToolStripMenuItem";
-            this.findCustomerToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.findCustomerToolStripMenuItem.Size = new System.Drawing.Size(174, 30);
             this.findCustomerToolStripMenuItem.Text = "Find Customer";
             this.findCustomerToolStripMenuItem.Click += new System.EventHandler(this.findCustomerToolStripMenuItem_Click);
+            // 
+            // documentsToolStripMenuItem
+            // 
+            this.documentsToolStripMenuItem.BackColor = System.Drawing.Color.PaleVioletRed;
+            this.documentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.purchasesToolStripMenuItem});
+            this.documentsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.documentsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.documentsToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.documents;
+            this.documentsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.documentsToolStripMenuItem.Name = "documentsToolStripMenuItem";
+            this.documentsToolStripMenuItem.Size = new System.Drawing.Size(114, 37);
+            this.documentsToolStripMenuItem.Text = "Documents";
+            // 
+            // purchasesToolStripMenuItem
+            // 
+            this.purchasesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addPurchaseToolStripMenuItem,
+            this.purchaseListToolStripMenuItem});
+            this.purchasesToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.purchasesToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.purchase;
+            this.purchasesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.purchasesToolStripMenuItem.Name = "purchasesToolStripMenuItem";
+            this.purchasesToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.purchasesToolStripMenuItem.Text = "Purchases";
+            // 
+            // addPurchaseToolStripMenuItem
+            // 
+            this.addPurchaseToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.addPurchaseToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.purchaseAdd;
+            this.addPurchaseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.addPurchaseToolStripMenuItem.Name = "addPurchaseToolStripMenuItem";
+            this.addPurchaseToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.addPurchaseToolStripMenuItem.Text = "Add Purchase";
+            this.addPurchaseToolStripMenuItem.Click += new System.EventHandler(this.addPurchaseToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -567,24 +603,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "SubTotal";
             // 
-            // BtnQuantity
+            // searchForProducts1
             // 
-            this.BtnQuantity.BackColor = System.Drawing.Color.IndianRed;
-            this.BtnQuantity.Enabled = false;
-            this.BtnQuantity.FlatAppearance.BorderSize = 0;
-            this.BtnQuantity.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
-            this.BtnQuantity.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
-            this.BtnQuantity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnQuantity.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnQuantity.Image = global::PosPresentationLayer.Properties.Resources.shopping_basket;
-            this.BtnQuantity.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnQuantity.Location = new System.Drawing.Point(5, 606);
-            this.BtnQuantity.Name = "BtnQuantity";
-            this.BtnQuantity.Size = new System.Drawing.Size(157, 28);
-            this.BtnQuantity.TabIndex = 5;
-            this.BtnQuantity.Text = "Quantity";
-            this.BtnQuantity.UseVisualStyleBackColor = false;
-            this.BtnQuantity.Click += new System.EventHandler(this.BtnQuantity_Click);
+            this.searchForProducts1.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.searchForProducts1.Location = new System.Drawing.Point(366, 47);
+            this.searchForProducts1.Margin = new System.Windows.Forms.Padding(4);
+            this.searchForProducts1.Name = "searchForProducts1";
+            this.searchForProducts1.Size = new System.Drawing.Size(873, 749);
+            this.searchForProducts1.TabIndex = 1;
             // 
             // BtnTrash
             // 
@@ -605,40 +631,34 @@
             this.BtnTrash.UseVisualStyleBackColor = false;
             this.BtnTrash.Click += new System.EventHandler(this.BtnTrash_Click);
             // 
-            // searchForProducts1
+            // BtnQuantity
             // 
-            this.searchForProducts1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.searchForProducts1.Location = new System.Drawing.Point(366, 47);
-            this.searchForProducts1.Margin = new System.Windows.Forms.Padding(4);
-            this.searchForProducts1.Name = "searchForProducts1";
-            this.searchForProducts1.Size = new System.Drawing.Size(873, 749);
-            this.searchForProducts1.TabIndex = 1;
+            this.BtnQuantity.BackColor = System.Drawing.Color.IndianRed;
+            this.BtnQuantity.Enabled = false;
+            this.BtnQuantity.FlatAppearance.BorderSize = 0;
+            this.BtnQuantity.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.BtnQuantity.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Crimson;
+            this.BtnQuantity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnQuantity.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnQuantity.Image = global::PosPresentationLayer.Properties.Resources.shopping_basket;
+            this.BtnQuantity.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnQuantity.Location = new System.Drawing.Point(5, 606);
+            this.BtnQuantity.Name = "BtnQuantity";
+            this.BtnQuantity.Size = new System.Drawing.Size(157, 28);
+            this.BtnQuantity.TabIndex = 5;
+            this.BtnQuantity.Text = "Quantity";
+            this.BtnQuantity.UseVisualStyleBackColor = false;
+            this.BtnQuantity.Click += new System.EventHandler(this.BtnQuantity_Click);
             // 
-            // documentsToolStripMenuItem
+            // purchaseListToolStripMenuItem
             // 
-            this.documentsToolStripMenuItem.BackColor = System.Drawing.Color.PaleVioletRed;
-            this.documentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.purchasesToolStripMenuItem});
-            this.documentsToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.documentsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.documentsToolStripMenuItem.Name = "documentsToolStripMenuItem";
-            this.documentsToolStripMenuItem.Size = new System.Drawing.Size(90, 37);
-            this.documentsToolStripMenuItem.Text = "Documents";
-            // 
-            // purchasesToolStripMenuItem
-            // 
-            this.purchasesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addPurchaseToolStripMenuItem});
-            this.purchasesToolStripMenuItem.Name = "purchasesToolStripMenuItem";
-            this.purchasesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.purchasesToolStripMenuItem.Text = "Purchases";
-            // 
-            // addPurchaseToolStripMenuItem
-            // 
-            this.addPurchaseToolStripMenuItem.Name = "addPurchaseToolStripMenuItem";
-            this.addPurchaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addPurchaseToolStripMenuItem.Text = "Add Purchase";
-            this.addPurchaseToolStripMenuItem.Click += new System.EventHandler(this.addPurchaseToolStripMenuItem_Click);
+            this.purchaseListToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.purchaseListToolStripMenuItem.Image = global::PosPresentationLayer.Properties.Resources.purchaseList;
+            this.purchaseListToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.purchaseListToolStripMenuItem.Name = "purchaseListToolStripMenuItem";
+            this.purchaseListToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.purchaseListToolStripMenuItem.Text = "Purchase List";
+            this.purchaseListToolStripMenuItem.Click += new System.EventHandler(this.purchaseListToolStripMenuItem_Click);
             // 
             // MainScreen
             // 
@@ -719,5 +739,6 @@
         private System.Windows.Forms.ToolStripMenuItem documentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem purchasesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addPurchaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem purchaseListToolStripMenuItem;
     }
 }

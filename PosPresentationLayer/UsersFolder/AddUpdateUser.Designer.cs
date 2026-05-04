@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.GROU = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.checkedListPermissions = new System.Windows.Forms.CheckedListBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.textPassword = new System.Windows.Forms.TextBox();
             this.textUsername = new System.Windows.Forms.TextBox();
@@ -46,8 +48,6 @@
             this.LBtitle = new System.Windows.Forms.Label();
             this.BTNSave = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.checkedListPermissions = new System.Windows.Forms.CheckedListBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.pictureTitle = new System.Windows.Forms.PictureBox();
             this.personDetailsWithFilter1 = new PosPresentationLayer.PeopleFolder.Controls.personDetailsWithFilter();
             this.GROU.SuspendLayout();
@@ -83,6 +83,24 @@
             this.GROU.TabIndex = 0;
             this.GROU.TabStop = false;
             this.GROU.Text = "Fill New User Information";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(370, 52);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 17);
+            this.label4.TabIndex = 52;
+            this.label4.Text = "Permissions :";
+            // 
+            // checkedListPermissions
+            // 
+            this.checkedListPermissions.FormattingEnabled = true;
+            this.checkedListPermissions.Location = new System.Drawing.Point(373, 76);
+            this.checkedListPermissions.Name = "checkedListPermissions";
+            this.checkedListPermissions.Size = new System.Drawing.Size(199, 64);
+            this.checkedListPermissions.TabIndex = 51;
             // 
             // pictureBox4
             // 
@@ -254,24 +272,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // checkedListPermissions
-            // 
-            this.checkedListPermissions.FormattingEnabled = true;
-            this.checkedListPermissions.Location = new System.Drawing.Point(373, 76);
-            this.checkedListPermissions.Name = "checkedListPermissions";
-            this.checkedListPermissions.Size = new System.Drawing.Size(199, 64);
-            this.checkedListPermissions.TabIndex = 51;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(370, 52);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 17);
-            this.label4.TabIndex = 52;
-            this.label4.Text = "Permissions :";
-            // 
             // pictureTitle
             // 
             this.pictureTitle.Image = global::PosPresentationLayer.Properties.Resources._operator;
@@ -291,7 +291,7 @@
             this.personDetailsWithFilter1.TabIndex = 1;
             this.personDetailsWithFilter1.TextField = "";
             // 
-            // AddUser
+            // AddUpdateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -303,7 +303,7 @@
             this.Controls.Add(this.GROU);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "AddUser";
+            this.Name = "AddUpdateUser";
             this.Text = "AddUser";
             this.Load += new System.EventHandler(this.AddUser_Load);
             this.GROU.ResumeLayout(false);

@@ -199,6 +199,18 @@
     <Compile Include="PurchaseFolder\AddUpdatePurchaseForm.Designer.cs">
       <DependentUpon>AddUpdatePurchaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PurchaseFolder\ManagePurchases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseFolder\ManagePurchases.Designer.cs">
+      <DependentUpon>ManagePurchases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseItemFolder\UpdatePurchaseItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PurchaseItemFolder\UpdatePurchaseItem.Designer.cs">
+      <DependentUpon>UpdatePurchaseItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="RolesFolder\AddUpdateRoles.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -390,6 +402,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PurchaseFolder\AddUpdatePurchaseForm.resx">
       <DependentUpon>AddUpdatePurchaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseFolder\ManagePurchases.resx">
+      <DependentUpon>ManagePurchases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseItemFolder\UpdatePurchaseItem.resx">
+      <DependentUpon>UpdatePurchaseItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RolesFolder\AddUpdateRoles.resx">
       <DependentUpon>AddUpdateRoles.cs</DependentUpon>
@@ -701,6 +719,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\purchaseListTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\documents.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

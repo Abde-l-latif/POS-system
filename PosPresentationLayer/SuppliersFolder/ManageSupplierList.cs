@@ -191,6 +191,12 @@ namespace PosPresentationLayer.SuppliersFolder
                         return;
                     }
 
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this supplier?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (result == DialogResult.No)
+                        return;
+
+
                     if (Supplier.Delete())
                     {
                         MessageBox.Show("Supplier Deleted successfully", "succeeded", MessageBoxButtons.OK, MessageBoxIcon.Information);
